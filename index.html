@@ -309,6 +309,101 @@ footer.site-footer{
   font-family:'IBM Plex Mono',monospace;
 }
 
+/* ---------- Icons & keyboard keys ---------- */
+.icon{display:inline-block; vertical-align:middle; fill:none; stroke:currentColor;}
+kbd{
+  display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:600;
+  background:linear-gradient(180deg,#fff,#EEF2F6); color:var(--navy);
+  border:1px solid var(--gray-light); border-bottom:3px solid #B9C7D6;
+  border-radius:6px; padding:3px 8px; margin:0 2px; box-shadow:0 1px 0 rgba(0,0,0,0.04);
+}
+.icon-chip{
+  display:inline-flex; align-items:center; gap:6px;
+  background:var(--white); border:1.3px solid var(--gray-light); border-radius:7px;
+  padding:5px 10px; font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:var(--navy);
+  font-weight:600; margin:0 2px;
+}
+.icon-chip .icon{width:16px; height:16px; color:var(--accent);}
+.step-list{list-style:none; padding:0; margin:0; counter-reset:steplist;}
+.step-list > li{
+  counter-increment:steplist; position:relative; padding:10px 0 10px 42px; margin-bottom:4px;
+  border-bottom:1px dashed var(--gray-light); font-size:14.5px; line-height:1.7; color:#24313f;
+}
+.step-list > li:last-child{border-bottom:none;}
+.step-list > li::before{
+  content:counter(steplist); position:absolute; left:0; top:9px;
+  width:26px; height:26px; border-radius:7px; background:var(--navy); color:#fff;
+  font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-weight:700;
+  display:flex; align-items:center; justify-content:center;
+}
+
+/* ---------- Interactive demo widgets ---------- */
+.demo-widget{
+  background:#0D1B2E; border-radius:12px; padding:18px 20px 22px; margin:16px 0;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,0.06);
+}
+.demo-widget .demo-label{
+  font-family:'IBM Plex Mono',monospace; color:#7EB8F2; font-size:11px; letter-spacing:1.5px;
+  text-transform:uppercase; margin-bottom:10px; display:flex; align-items:center; gap:6px;
+}
+.demo-widget .demo-label::before{content:"●"; color:#3FBF63; font-size:10px;}
+.demo-surface{background:#fff; border-radius:8px; overflow:hidden;}
+.demo-toolbar{
+  display:flex; flex-wrap:wrap; gap:4px; background:var(--ice); padding:8px 10px; border-bottom:1px solid var(--gray-light);
+}
+.demo-toolbar button{
+  display:flex; align-items:center; justify-content:center; gap:4px;
+  width:34px; height:32px; border-radius:6px; border:1px solid transparent; background:transparent;
+  color:var(--navy); font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:14px;
+}
+.demo-toolbar button.wide{width:auto; padding:0 10px; font-family:'Inter',sans-serif; font-weight:600; font-size:12.5px; gap:6px;}
+.demo-toolbar button:hover{background:#E8F1FC;}
+.demo-toolbar button.active{background:var(--accent); color:#fff;}
+.demo-toolbar .sep{width:1px; background:var(--gray-light); margin:2px 4px;}
+.demo-editable{
+  min-height:110px; padding:16px 18px; font-size:14.5px; line-height:1.7; outline:none; color:#1c2733;
+}
+.demo-editable:empty::before{content:attr(data-placeholder); color:#9aa8b5;}
+.demo-hint{color:#B8CBE0; font-size:12px; margin-top:10px; font-family:'IBM Plex Mono',monospace;}
+
+/* Excel-style grid demo */
+.grid-demo{border-collapse:collapse; width:100%; font-size:13px;}
+.grid-demo th{background:#EDF3FA; color:var(--navy); font-family:'IBM Plex Mono',monospace; font-weight:600; padding:6px; border:1px solid var(--gray-light); width:70px;}
+.grid-demo td{border:1px solid var(--gray-light); padding:0; height:32px; text-align:center; position:relative;}
+.grid-demo td.rowhead{background:#EDF3FA; color:var(--navy); font-family:'IBM Plex Mono',monospace; font-weight:600;}
+.grid-demo td input{
+  width:100%; height:100%; border:none; text-align:center; font-family:'Inter',sans-serif; font-size:13px;
+  background:transparent; outline:none;
+}
+.grid-demo td.active input{background:#EAF3FD; outline:2px solid var(--accent); outline-offset:-2px;}
+.formula-bar{
+  display:flex; align-items:center; gap:8px; padding:6px 10px; background:#fff; border-bottom:1px solid var(--gray-light);
+  font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:var(--navy);
+}
+.formula-bar .fx{color:var(--accent); font-weight:700;}
+.formula-bar span#fxCellRef{background:var(--ice); padding:2px 8px; border-radius:4px; min-width:30px; text-align:center;}
+.formula-bar #fxValue{flex:1; color:#1c2733;}
+
+/* Slide layout demo */
+.slide-demo-stage{aspect-ratio:16/9; background:#fff; margin:14px; border:1.5px solid var(--gray-light); border-radius:6px; position:relative; overflow:hidden; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:14px; transition:opacity .3s ease;}
+.slide-demo-stage.fading{opacity:0;}
+.slide-demo-stage .s-title{font-family:'Space Grotesk',sans-serif; color:var(--navy); font-weight:700; font-size:15px;}
+.slide-demo-stage .s-sub{font-family:'Inter',sans-serif; color:var(--gray); font-size:10.5px; margin-top:4px;}
+.slide-demo-stage ul{text-align:left; font-size:10px; color:#24313f; margin:8px 0 0; padding-left:16px;}
+.layout-picker{display:flex; gap:6px; padding:8px 10px 0;}
+.layout-picker button{
+  flex:1; padding:7px 4px; font-size:11px; border-radius:6px; border:1px solid var(--gray-light);
+  background:var(--ice); color:var(--navy); font-family:'IBM Plex Mono',monospace;
+}
+.layout-picker button.active{background:var(--navy); color:#fff; border-color:var(--navy);}
+
+/* Device / keyboard diagram */
+.diagram-box{background:var(--white); border:1px solid var(--gray-light); border-radius:10px; padding:18px; margin:14px 0; text-align:center;}
+.diagram-box svg{max-width:100%; height:auto;}
+.diagram-legend{display:flex; flex-wrap:wrap; gap:14px; justify-content:center; margin-top:12px; font-size:12px; font-family:'IBM Plex Mono',monospace;}
+.diagram-legend span{display:inline-flex; align-items:center; gap:6px;}
+.diagram-legend i{width:10px; height:10px; border-radius:3px; display:inline-block;}
+
 /* ---------- Print ---------- */
 @media print{
   .topbar, footer.site-footer, .crumb, .cert-actions, .no-print{display:none !important;}
@@ -328,6 +423,37 @@ footer.site-footer{
 </style>
 </head>
 <body>
+
+<!-- Reusable original icon sprite (hand-drawn SVG, no third-party assets) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+<symbol id="ic-bold" viewBox="0 0 24 24"><path d="M6 4h7a4 4 0 0 1 0 8H6zM6 12h8a4 4 0 0 1 0 8H6z" stroke-width="2" stroke-linejoin="round"/></symbol>
+<symbol id="ic-italic" viewBox="0 0 24 24"><path d="M10 4h8M6 20h8M14 4L10 20" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="ic-underline" viewBox="0 0 24 24"><path d="M6 4v7a6 6 0 0 0 12 0V4M4 20h16" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="ic-align" viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h16" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="ic-bullets" viewBox="0 0 24 24"><circle cx="5" cy="6" r="1.6" fill="currentColor" stroke="none"/><circle cx="5" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="5" cy="18" r="1.6" fill="currentColor" stroke="none"/><path d="M10 6h10M10 12h10M10 18h10" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="ic-save" viewBox="0 0 24 24"><path d="M5 4h11l3 3v13H5z" stroke-width="2" stroke-linejoin="round"/><path d="M8 4v6h8V4M8 20v-6h8v6" stroke-width="2" stroke-linejoin="round"/></symbol>
+<symbol id="ic-folder" viewBox="0 0 24 24"><path d="M3 6h6l2 2h10v11H3z" stroke-width="2" stroke-linejoin="round"/></symbol>
+<symbol id="ic-printer" viewBox="0 0 24 24"><path d="M6 9V4h12v5M6 18H4v-6h16v6h-2M6 14h12v6H6z" stroke-width="2" stroke-linejoin="round"/></symbol>
+<symbol id="ic-usb" viewBox="0 0 24 24"><path d="M9 3v6M9 3l-3 3M9 3l3 3M9 9h6a3 3 0 0 1 3 3v3M15 15a2 2 0 1 0 0 4 2 2 0 0 0 0-4z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="ic-monitor" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1.5" stroke-width="2"/><path d="M9 20h6M12 16v4" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="ic-keyboard" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="1.5" stroke-width="2"/><path d="M5 10h1M8 10h1M11 10h1M14 10h1M17 10h1M5 13h13" stroke-width="1.6" stroke-linecap="round"/></symbol>
+<symbol id="ic-mouse" viewBox="0 0 24 24"><rect x="7" y="3" width="10" height="18" rx="5" stroke-width="2"/><path d="M12 3v6" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="ic-printer2" viewBox="0 0 24 24"><path d="M6 9V4h12v5" stroke-width="2"/></symbol>
+<symbol id="ic-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3" stroke-width="2"/><path d="M6 11a6 6 0 0 0 12 0M12 17v4M9 21h6" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="ic-speaker" viewBox="0 0 24 24"><path d="M4 9v6h4l6 4V5L8 9z" stroke-width="2" stroke-linejoin="round"/><path d="M17 9a4 4 0 0 1 0 6" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="ic-scanner" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="1.5" stroke-width="2"/><path d="M7 12h10" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="ic-webcam" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5" stroke-width="2"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><path d="M4 20c1.5-2 4-3 8-3s6.5 1 8 3" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="ic-cpu" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="1" stroke-width="2"/><path d="M9 3v3M12 3v3M15 3v3M9 18v3M12 18v3M15 18v3M3 9h3M3 12h3M3 15h3M18 9h3M18 12h3M18 15h3" stroke-width="1.6" stroke-linecap="round"/></symbol>
+<symbol id="ic-chart-bar" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M4 20h16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="ic-chart-pie" viewBox="0 0 24 24"><path d="M12 3v9l7.5 4.3A9 9 0 1 0 12 3z" stroke-width="2" stroke-linejoin="round"/></symbol>
+<symbol id="ic-table" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="1.5" stroke-width="2"/><path d="M3 10h18M3 16h18M9 4v16M15 4v16" stroke-width="1.6"/></symbol>
+<symbol id="ic-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z" stroke-width="2" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="ic-refresh" viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3" stroke-width="2" stroke-linecap="round"/><path d="M18 4v4h-4M6 20v-4h4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="ic-image" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="1.5" stroke-width="2"/><circle cx="9" cy="10" r="1.6" fill="currentColor" stroke="none"/><path d="M4 18l6-6 4 4 3-3 3 3" stroke-width="2" stroke-linejoin="round"/></symbol>
+<symbol id="ic-wifi" viewBox="0 0 24 24"><path d="M2 8.5a16 16 0 0 1 20 0M5.5 12a11 11 0 0 1 13 0M9 15.5a6 6 0 0 1 6 0" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="19" r="1.4" fill="currentColor" stroke="none"/></symbol>
+</defs>
+</svg>
 
 <div class="topbar">
   <div class="brand"><span class="dot"></span><b>TEAM21</b><span class="tag">IT ACADEMY</span></div>
@@ -458,7 +584,13 @@ footer.site-footer{
 
 <script>
 /* ==================== DATA & LOGIC ==================== */
-const MODULES = [
+/* ==================== ICON HELPER (loaded first, used inside module data template literals) ==================== */
+function ic(name, size){
+  size = size || 16;
+  return `<svg class="icon" width="${size}" height="${size}" viewBox="0 0 24 24"><use href="#ic-${name}"></use></svg>`;
+}
+const MODULES = [];
+MODULES.push(
 {
   id:1,
   title:"Introduction à l'ordinateur",
@@ -524,7 +656,7 @@ const MODULES = [
     <h2><span class="tagnum">06</span>Laboratoire pratique — Découverte de votre ordinateur</h2>
     <div class="exercise-box">
       <h4>🖥️ Labo 1 — Identifier le cycle Entrée → Traitement → Sortie sur votre propre appareil</h4>
-      <ol>
+      <ol class="step-list">
         <li>Sur l'ordinateur ou le smartphone que vous utilisez actuellement, listez sur une feuille 3 périphériques d'entrée que vous voyez ou touchez (ex : clavier, écran tactile, microphone).</li>
         <li>Listez ensuite 3 périphériques de sortie (ex : écran, haut-parleurs).</li>
         <li>Ouvrez une calculatrice (application intégrée à votre appareil) et tapez « 25 + 17 = ». Identifiez ce qui correspond à l'entrée, au traitement, et à la sortie dans cette action.</li>
@@ -533,7 +665,7 @@ const MODULES = [
     </div>
     <div class="exercise-box">
       <h4>🖥️ Labo 2 — Explorer le type de votre ordinateur</h4>
-      <ol>
+      <ol class="step-list">
         <li>Identifiez le type exact de votre appareil (desktop, laptop, tablette...) parmi ceux vus dans la leçon.</li>
         <li>Recherchez (dans les paramètres « À propos de cet ordinateur / About this PC ») le nom du modèle, la quantité de mémoire (RAM) et l'espace de stockage total.</li>
         <li>Notez ces informations : elles vous serviront de référence tout au long de cette formation.</li>
@@ -613,6 +745,10 @@ const MODULES = [
       <li><b>Alimentation (Power Supply)</b> — convertit le courant électrique en énergie utilisable par les composants internes.</li>
       <li><b>Carte graphique (GPU)</b> — traite les images et vidéos, essentielle pour le design, la vidéo et les jeux.</li>
     </ul>
+    <div class="diagram-box">
+      <h4 style="margin:0 0 12px; font-size:13px; color:var(--gray); font-family:'IBM Plex Mono',monospace; text-transform:uppercase; letter-spacing:1px;">🔍 Diagramme interactif — cliquez sur un composant</h4>
+      <div id="deviceDiagram2"></div>
+    </div>
     <div class="quote-box">« Le matériel, c'est la partie de l'ordinateur qu'on peut donner un coup de pied ; le logiciel, c'est ce qu'on ne peut que maudire. »<footer>— Amirale Grace Hopper, pionnière de la programmation</footer></div>
   </div>
 
@@ -629,7 +765,7 @@ const MODULES = [
     <h2><span class="tagnum">06</span>Laboratoire pratique</h2>
     <div class="exercise-box">
       <h4>🖥️ Labo 1 — Inventaire matériel et logiciel de votre ordinateur</h4>
-      <ol>
+      <ol class="step-list">
         <li>Ouvrez les paramètres « Système » (ou « À propos de ce Mac ») de votre appareil.</li>
         <li>Notez le nom du processeur, la quantité de RAM et le type de stockage (HDD ou SSD) installés.</li>
         <li>Ouvrez le « Gestionnaire de périphériques » (Windows) ou « Rapport système » (macOS) et repérez au moins 5 composants matériels différents listés.</li>
@@ -639,7 +775,7 @@ const MODULES = [
     </div>
     <div class="exercise-box">
       <h4>🖥️ Labo 2 — Observer la relation matériel/logiciel en action</h4>
-      <ol>
+      <ol class="step-list">
         <li>Ouvrez le Gestionnaire des tâches (Ctrl+Maj+Échap sous Windows) ou le Moniteur d'activité (macOS).</li>
         <li>Ouvrez un logiciel lourd (par exemple un navigateur avec plusieurs onglets) et observez la consommation de RAM et de CPU augmenter en temps réel — la preuve visible que le logiciel « utilise » le matériel.</li>
         <li>Fermez le logiciel et observez la consommation redescendre.</li>
@@ -714,6 +850,10 @@ const MODULES = [
       <li><b>Sortie :</b> écran (moniteur), imprimante, haut-parleurs, casque audio, vidéoprojecteur, imprimante 3D, plotter (traceur).</li>
       <li><b>Entrée/Sortie :</b> écran tactile, clé USB, carte mémoire, modem/routeur, casque avec microphone intégré, disque dur externe.</li>
     </ul>
+    <div class="diagram-box">
+      <h4 style="margin:0 0 12px; font-size:13px; color:var(--gray); font-family:'IBM Plex Mono',monospace; text-transform:uppercase; letter-spacing:1px;">🔍 Diagramme interactif — cliquez sur un périphérique</h4>
+      <div id="deviceDiagram3"></div>
+    </div>
     <div class="quote-box">« Le design, ce n'est pas seulement l'apparence — c'est la façon dont ça fonctionne. »<footer>— Steve Jobs, cofondateur d'Apple</footer></div>
   </div>
 
@@ -731,7 +871,7 @@ const MODULES = [
     <h2><span class="tagnum">06</span>Laboratoire pratique</h2>
     <div class="exercise-box">
       <h4>🖥️ Labo 1 — Cartographier les périphériques de votre poste de travail</h4>
-      <ol>
+      <ol class="step-list">
         <li>Dessinez ou listez sur une feuille tous les périphériques physiquement connectés à votre ordinateur en ce moment.</li>
         <li>Pour chacun, indiquez s'il s'agit d'une entrée, d'une sortie, ou des deux.</li>
         <li>Identifiez le type de connexion utilisé pour chacun (USB, Bluetooth, jack, HDMI...).</li>
@@ -740,7 +880,7 @@ const MODULES = [
     </div>
     <div class="exercise-box">
       <h4>🖥️ Labo 2 — Tester une chaîne complète entrée → sortie</h4>
-      <ol>
+      <ol class="step-list">
         <li>Ouvrez une application d'enregistrement vocal ou de dictée sur votre appareil.</li>
         <li>Parlez dans le microphone (entrée) pendant 10 secondes.</li>
         <li>Écoutez l'enregistrement via le haut-parleur ou un casque (sortie).</li>
@@ -776,7 +916,7 @@ const MODULES = [
     {q:"Pourquoi dit-on qu'un routeur/modem peut être entrée/sortie ?",options:["Il reçoit et envoie des données sur le réseau","Il sert uniquement à imprimer","Il n'a aucune fonction réelle","Il remplace le clavier"],correct:0}
   ]
 }
-];
+);
 MODULES.push(
 {
   id:4,
@@ -833,7 +973,7 @@ MODULES.push(
     <h2><span class="tagnum">06</span>Laboratoire pratique</h2>
     <div class="exercise-box">
       <h4>🖥️ Labo 1 — Classer les logiciels de votre appareil</h4>
-      <ol>
+      <ol class="step-list">
         <li>Ouvrez la liste des applications installées sur votre ordinateur ou smartphone.</li>
         <li>Choisissez 9 logiciels différents et classez-les dans un tableau à trois colonnes : Système / Application / Utilitaire.</li>
         <li>Pour 3 de ces logiciels, écrivez une phrase expliquant à quoi ils servent concrètement dans votre vie quotidienne.</li>
@@ -842,7 +982,7 @@ MODULES.push(
     </div>
     <div class="exercise-box">
       <h4>🖥️ Labo 2 — Compresser et décompresser un fichier</h4>
-      <ol>
+      <ol class="step-list">
         <li>Créez un dossier contenant 3 petits fichiers (par exemple des documents texte ou des images).</li>
         <li>Faites un clic droit sur le dossier et choisissez « Compresser » ou « Envoyer vers → Dossier compressé » (Windows) / « Compresser » (macOS).</li>
         <li>Comparez la taille du dossier compressé (.zip) à la taille originale.</li>
@@ -901,6 +1041,10 @@ MODULES.push(
       <li><b>Barre d'état (en bas) :</b> nombre de pages, nombre de mots, langue du document, niveau de zoom.</li>
       <li><b>Règle horizontale/verticale :</b> permet d'ajuster précisément les marges et les tabulations.</li>
     </ul>
+    <div class="demo-widget">
+      <div class="demo-label">Essayez maintenant — mini traitement de texte interactif</div>
+      <div id="wordDemo1"></div>
+    </div>
   </div>
 
   <div class="lesson-block">
@@ -924,46 +1068,51 @@ MODULES.push(
   </div>
 
   <div class="lesson-block">
-    <h2><span class="tagnum">05</span>Laboratoire 1 (niveau débutant) — Créer une lettre simple</h2>
+    <h2><span class="tagnum">05</span>Raccourcis clavier à connaître</h2>
+    <div id="keyboardDemo5"></div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">06</span>Laboratoire 1 (niveau débutant) — Créer une lettre simple</h2>
     <div class="exercise-box">
       <h4>🖥️ À faire dans Word (ou Google Docs / LibreOffice Writer) :</h4>
-      <ol>
-        <li>Ouvrez le logiciel et créez un <b>nouveau document vierge</b> (menu Fichier → Nouveau).</li>
-        <li>Tapez le titre « Ma première lettre » et mettez-le en <b>gras</b> et centré.</li>
+      <ol class="step-list">
+        <li>Ouvrez le logiciel et créez un <b>nouveau document vierge</b> (menu <span class="icon-chip">${ic("folder",14)} Fichier → Nouveau</span>).</li>
+        <li>Tapez le titre « Ma première lettre » et mettez-le en <span class="icon-chip">${ic("bold",14)} Gras</span> puis centré avec <span class="icon-chip">${ic("align",14)} Aligner</span>.</li>
         <li>Écrivez trois phrases sur vous-même en dessous.</li>
-        <li>Sélectionnez une phrase et mettez-la en <b>italique</b>, puis une autre en <b>souligné</b>.</li>
-        <li>Insérez une liste à puces avec 3 de vos compétences (onglet Accueil → Puces).</li>
+        <li>Sélectionnez une phrase et mettez-la en <span class="icon-chip">${ic("italic",14)} Italique</span>, puis une autre en <span class="icon-chip">${ic("underline",14)} Souligné</span>.</li>
+        <li>Insérez une liste à puces avec 3 de vos compétences : <span class="icon-chip">${ic("bullets",14)} Puces</span> (onglet Accueil).</li>
         <li>Changez la police du titre et sa taille (par exemple 18 pt).</li>
-        <li>Utilisez « Enregistrer sous » (Fichier → Enregistrer sous) pour sauvegarder le fichier sur votre <b>Bureau</b>, puis recommencez et enregistrez une copie sur une <b>clé USB</b> (un autre lecteur/drive), afin de comprendre la différence entre les emplacements de stockage.</li>
+        <li>Enregistrez avec <kbd>Ctrl</kbd>+<kbd>S</kbd> ou <span class="icon-chip">${ic("save",14)} Enregistrer sous</span> sur votre <b>Bureau</b>, puis recommencez et enregistrez une copie sur une <b>clé USB</b> <span class="icon-chip">${ic("usb",14)} un autre lecteur</span>, afin de comprendre la différence entre les emplacements de stockage.</li>
       </ol>
     </div>
   </div>
 
   <div class="lesson-block">
-    <h2><span class="tagnum">06</span>Laboratoire 2 (niveau intermédiaire) — Mise en page et tableaux</h2>
+    <h2><span class="tagnum">07</span>Laboratoire 2 (niveau intermédiaire) — Mise en page et tableaux</h2>
     <div class="exercise-box">
       <h4>🖥️ En continuant votre document ou en en créant un nouveau :</h4>
-      <ol>
-        <li>Insérez un tableau simple de 3 colonnes × 4 lignes (onglet Insertion → Tableau) et remplissez-le avec une liste de contacts fictifs (Nom, Téléphone, Ville).</li>
+      <ol class="step-list">
+        <li>Insérez un tableau simple de 3 colonnes × 4 lignes : <span class="icon-chip">${ic("table",14)} Insertion → Tableau</span> et remplissez-le avec une liste de contacts fictifs (Nom, Téléphone, Ville).</li>
         <li>Formatez la ligne d'en-tête du tableau en gras avec une couleur de fond.</li>
-        <li>Insérez une image ou une forme, puis redimensionnez-la en gardant les proportions.</li>
+        <li>Insérez une image : <span class="icon-chip">${ic("image",14)} Insertion → Image</span>, puis redimensionnez-la en gardant les proportions.</li>
         <li>Ajoutez un en-tête de page avec le nom « Team21 IT Academy » et un pied de page avec le numéro de page (Insertion → En-tête et pied de page).</li>
         <li>Formatez la page en orientation Paysage (Mise en page → Orientation) puis remettez-la en Portrait.</li>
-        <li>Utilisez « Rechercher et remplacer » (Ctrl+H) pour remplacer un mot par un autre dans tout le document.</li>
+        <li>Utilisez « Rechercher et remplacer » avec <kbd>Ctrl</kbd>+<kbd>H</kbd> pour remplacer un mot par un autre dans tout le document.</li>
       </ol>
     </div>
   </div>
 
   <div class="lesson-block">
-    <h2><span class="tagnum">07</span>Laboratoire 3 (niveau avancé) — Document long et export</h2>
+    <h2><span class="tagnum">08</span>Laboratoire 3 (niveau avancé) — Document long et export</h2>
     <div class="exercise-box">
       <h4>🖥️ Pour aller plus loin :</h4>
-      <ol>
+      <ol class="step-list">
         <li>Rédigez un court document de 3 sections, chacune avec un titre utilisant le style « Titre 1 ».</li>
         <li>Générez automatiquement une table des matières (Références → Table des matières).</li>
         <li>Activez le suivi des modifications (Révision → Suivi des modifications) et faites une correction — observez comment elle apparaît en couleur.</li>
         <li>Exportez votre document final en PDF (Fichier → Exporter ou Enregistrer sous → PDF).</li>
-        <li>Imprimez (ou faites un aperçu avant impression) votre document final.</li>
+        <li>Imprimez avec <kbd>Ctrl</kbd>+<kbd>P</kbd> (ou faites un aperçu avant impression) votre document final.</li>
         <li>Comparez la taille du fichier .docx original et celle du fichier .pdf exporté.</li>
       </ol>
     </div>
@@ -1017,6 +1166,10 @@ MODULES.push(
       <li><b>Icônes courantes :</b> Somme automatique (Σ), Filtre, Trier, Format de nombre, Fusionner et centrer, Mise en forme conditionnelle.</li>
       <li><b>Onglet Données :</b> trier, filtrer, valider des données, gérer les tableaux croisés dynamiques.</li>
     </ul>
+    <div class="demo-widget">
+      <div class="demo-label">Essayez maintenant — mini tableur interactif</div>
+      <div id="excelDemo1"></div>
+    </div>
   </div>
 
   <div class="lesson-block">
@@ -1043,7 +1196,7 @@ MODULES.push(
     <h2><span class="tagnum">05</span>Laboratoire 1 (niveau débutant) — Premier tableau et calculs</h2>
     <div class="exercise-box">
       <h4>🖥️ À faire dans Excel (ou Google Sheets / LibreOffice Calc) :</h4>
-      <ol>
+      <ol class="step-list">
         <li>Créez un nouveau classeur vierge (Fichier → Nouveau).</li>
         <li>Dans la cellule A1, tapez « Produit », en B1 tapez « Prix », en C1 tapez « Quantité ».</li>
         <li>Remplissez 5 lignes avec des produits, prix et quantités fictifs.</li>
@@ -1058,11 +1211,11 @@ MODULES.push(
     <h2><span class="tagnum">06</span>Laboratoire 2 (niveau intermédiaire) — Fonctions, tri et graphique</h2>
     <div class="exercise-box">
       <h4>🖥️ En continuant votre classeur :</h4>
-      <ol>
+      <ol class="step-list">
         <li>Ajoutez une colonne « Statut » et utilisez <span class="mono">=SI(D2>50000;"Bonne vente";"Vente faible")</span> (adaptez le seuil selon vos données).</li>
         <li>Calculez le prix moyen avec <span class="mono">=MOYENNE(B2:B6)</span> et le prix maximum avec <span class="mono">=MAX(B2:B6)</span>.</li>
-        <li>Sélectionnez les données et insérez un graphique en barres (onglet Insertion → Graphique).</li>
-        <li>Triez votre tableau par Total décroissant (Données → Trier).</li>
+        <li>Sélectionnez les données et insérez un graphique en barres : <span class="icon-chip">${ic("chart-bar",14)} Insertion → Graphique</span>.</li>
+        <li>Triez votre tableau par Total décroissant : <span class="icon-chip">${ic("table",14)} Données → Trier</span>.</li>
         <li>Renommez la feuille en bas (double-cliquez sur « Feuille1 ») en « Ventes ».</li>
         <li>Appliquez un format « Devise » (ex. Franc CFA) à la colonne Prix (clic droit → Format de cellule).</li>
       </ol>
@@ -1073,11 +1226,11 @@ MODULES.push(
     <h2><span class="tagnum">07</span>Laboratoire 3 (niveau avancé) — Export et organisation multi-feuilles</h2>
     <div class="exercise-box">
       <h4>🖥️ Pour aller plus loin :</h4>
-      <ol>
+      <ol class="step-list">
         <li>Créez une deuxième feuille nommée « Résumé » et, dans une cellule, référencez une donnée de la feuille « Ventes » en tapant <span class="mono">=Ventes!D7</span> (le nom de la feuille suivi de « ! » puis la cellule).</li>
         <li>Ajoutez une mise en forme conditionnelle sur la colonne Quantité pour colorer en rouge les valeurs inférieures à 3.</li>
         <li>Figez la ligne d'en-tête (Affichage → Figer les volets) pour qu'elle reste visible en faisant défiler le tableau.</li>
-        <li>Enregistrez le fichier avec « Enregistrer sous » sur votre Bureau, puis exportez-le aussi au format CSV pour voir la différence de format.</li>
+        <li>Enregistrez avec <kbd>Ctrl</kbd>+<kbd>S</kbd> ou <span class="icon-chip">${ic("save",14)} Enregistrer sous</span> sur votre Bureau, puis exportez-le aussi au format CSV pour voir la différence de format.</li>
         <li>Comparez l'ouverture du fichier .xlsx et du fichier .csv dans un éditeur de texte simple (Bloc-notes) : que remarquez-vous sur la mise en forme ?</li>
       </ol>
     </div>
@@ -1134,6 +1287,10 @@ MODULES.push(
       <li><b>Mode Diaporama :</b> affiche la présentation en plein écran (touche F5, ou Maj+F5 depuis la diapositive actuelle).</li>
       <li><b>Volet des commentaires du présentateur (Notes) :</b> zone sous chaque diapositive pour écrire ce que vous direz à l'oral, invisible du public pendant le diaporama.</li>
     </ul>
+    <div class="demo-widget">
+      <div class="demo-label">Essayez maintenant — mini éditeur de diapositives</div>
+      <div id="slideDemo1"></div>
+    </div>
   </div>
 
   <div class="lesson-block">
@@ -1160,12 +1317,12 @@ MODULES.push(
     <h2><span class="tagnum">05</span>Laboratoire 1 (niveau débutant) — Première présentation</h2>
     <div class="exercise-box">
       <h4>🖥️ À faire dans PowerPoint (ou Google Slides / LibreOffice Impress) :</h4>
-      <ol>
+      <ol class="step-list">
         <li>Créez une nouvelle présentation vierge et choisissez un thème (onglet Création).</li>
         <li>Sur la diapositive 1, tapez un titre « Team21 IT Academy » et un sous-titre avec votre nom.</li>
         <li>Ajoutez une nouvelle diapositive (Accueil → Nouvelle diapositive) avec une disposition « Titre et contenu ».</li>
         <li>Ajoutez une troisième diapositive avec une liste à puces de 3 points sur un sujet de votre choix.</li>
-        <li>Insérez une image (Insertion → Images) sur la deuxième diapositive et redimensionnez-la en gardant les proportions.</li>
+        <li>Insérez une image : <span class="icon-chip">${ic("image",14)} Insertion → Images</span> sur la deuxième diapositive et redimensionnez-la en gardant les proportions.</li>
       </ol>
     </div>
   </div>
@@ -1174,12 +1331,12 @@ MODULES.push(
     <h2><span class="tagnum">06</span>Laboratoire 2 (niveau intermédiaire) — Transitions, animations et notes</h2>
     <div class="exercise-box">
       <h4>🖥️ En continuant votre présentation :</h4>
-      <ol>
+      <ol class="step-list">
         <li>Appliquez une transition « Fondu » entre chaque diapositive (onglet Transitions → sélectionnez chaque diapositive et appliquez l'effet).</li>
         <li>Ajoutez une animation simple sur le titre de la diapositive 1 (onglet Animations).</li>
         <li>Écrivez une note pour le présentateur sous chaque diapositive (zone Notes en bas de l'écran).</li>
         <li>Ajoutez un tableau simple (Insertion → Tableau) sur une nouvelle diapositive.</li>
-        <li>Utilisez « Enregistrer sous » pour sauvegarder le fichier sur votre Bureau, puis dans un dossier différent, pour bien comprendre l'organisation des dossiers/lecteurs.</li>
+        <li>Enregistrez avec <kbd>Ctrl</kbd>+<kbd>S</kbd> ou « Enregistrer sous » pour sauvegarder le fichier sur votre Bureau, puis dans un dossier différent, pour bien comprendre l'organisation des dossiers/lecteurs.</li>
       </ol>
     </div>
   </div>
@@ -1188,8 +1345,8 @@ MODULES.push(
     <h2><span class="tagnum">07</span>Laboratoire 3 (niveau avancé) — Diaporama et export</h2>
     <div class="exercise-box">
       <h4>🖥️ Pour aller plus loin :</h4>
-      <ol>
-        <li>Lancez le diaporama en plein écran (touche F5) et parcourez vos diapositives avec les flèches du clavier.</li>
+      <ol class="step-list">
+        <li>Lancez le diaporama en plein écran avec <kbd>F5</kbd> et parcourez vos diapositives avec les flèches du clavier.</li>
         <li>Réorganisez l'ordre de vos diapositives par glisser-déposer dans le volet de gauche.</li>
         <li>Ajoutez une minuterie automatique de transition (Transitions → Après, définir un délai en secondes) sur une diapositive.</li>
         <li>Exportez votre présentation en PDF (Fichier → Exporter) et vérifiez que les animations ne sont plus interactives dans ce format.</li>
@@ -1281,7 +1438,7 @@ MODULES.push(
     <h2><span class="tagnum">06</span>Laboratoire pratique — Routine d'entretien complète</h2>
     <div class="exercise-box">
       <h4>🖥️ Labo 1 — Nettoyage logiciel</h4>
-      <ol>
+      <ol class="step-list">
         <li>Ouvrez la Corbeille de votre ordinateur et videz-la si elle contient des fichiers inutiles.</li>
         <li>Vérifiez si des mises à jour du système sont disponibles (Paramètres → Mise à jour et sécurité).</li>
         <li>Faites une liste de 3 logiciels que vous n'utilisez plus et pourriez désinstaller.</li>
@@ -1291,7 +1448,7 @@ MODULES.push(
     </div>
     <div class="exercise-box">
       <h4>🖥️ Labo 2 — Sauvegarde et sécurité</h4>
-      <ol>
+      <ol class="step-list">
         <li>Créez un dossier « Sauvegardes » sur une clé USB ou un disque externe et copiez-y vos documents les plus importants.</li>
         <li>Vérifiez que votre antivirus est actif et à jour ; lancez une analyse rapide si possible.</li>
         <li>Vérifiez la force d'un de vos mots de passe habituels (longueur, chiffres, symboles) et notez comment l'améliorer.</li>
@@ -1375,7 +1532,7 @@ MODULES.push(
     <h2><span class="tagnum">06</span>Laboratoire pratique</h2>
     <div class="exercise-box">
       <h4>🖥️ Labo 1 — Explorer les réglages système</h4>
-      <ol>
+      <ol class="step-list">
         <li>Ouvrez l'application Paramètres (ou Préférences Système).</li>
         <li>Trouvez la section « Système » et notez l'espace de stockage disponible sur votre disque principal (C:).</li>
         <li>Connectez-vous (ou vérifiez la connexion) à un réseau Wi-Fi et notez le nom du réseau (SSID).</li>
@@ -1385,7 +1542,7 @@ MODULES.push(
     </div>
     <div class="exercise-box">
       <h4>🖥️ Labo 2 — Comptes, confidentialité et stockage</h4>
-      <ol>
+      <ol class="step-list">
         <li>Ouvrez la section « Comptes » et identifiez si votre compte est de type administrateur ou standard.</li>
         <li>Explorez les paramètres de confidentialité pour voir quelles applications ont accès à la caméra ou au micro, et désactivez-en une si cela vous semble injustifié.</li>
         <li>Insérez une clé USB (si disponible), ouvrez « Ce PC », faites un clic droit sur le lecteur et observez les options de formatage <b>sans confirmer</b> (pour ne pas effacer de données importantes) — notez les systèmes de fichiers proposés.</li>
@@ -1514,7 +1671,37 @@ function openLesson(id){
   `;
   document.getElementById("lessonBackBtn").addEventListener("click", ()=>{ renderDashboard(); showScreen("dashboard"); });
   document.getElementById("lessonQuizBtn").addEventListener("click", ()=> openQuiz(id));
+  initModuleWidgets(id);
   showScreen("lesson");
+}
+
+function initModuleWidgets(id){
+  if(id===2){
+    initDeviceDiagram("deviceDiagram2", [
+      {icon:"cpu", name:"Processeur (CPU)", type:"na", desc:"Le cerveau de l'ordinateur : exécute les instructions des programmes."},
+      {icon:"keyboard", name:"Clavier", type:"in", desc:"Entrée : envoie les touches pressées vers l'ordinateur."},
+      {icon:"monitor", name:"Écran", type:"out", desc:"Sortie : affiche le résultat du traitement à l'utilisateur."},
+      {icon:"usb", name:"Clé USB", type:"io", desc:"Entrée/Sortie : on peut y écrire des fichiers et en lire."},
+      {icon:"printer", name:"Imprimante", type:"out", desc:"Sortie : transforme un fichier numérique en document papier."},
+      {icon:"wifi", name:"Carte réseau / Wi-Fi", type:"io", desc:"Entrée/Sortie : envoie et reçoit des données sur internet."},
+    ]);
+  }
+  if(id===3){
+    initDeviceDiagram("deviceDiagram3", [
+      {icon:"keyboard", name:"Clavier", type:"in", desc:"Périphérique d'entrée : saisie de texte."},
+      {icon:"mouse", name:"Souris", type:"in", desc:"Périphérique d'entrée : pointer et cliquer."},
+      {icon:"scanner", name:"Scanner", type:"in", desc:"Périphérique d'entrée : numérise un document papier."},
+      {icon:"mic", name:"Microphone", type:"in", desc:"Périphérique d'entrée : capte le son / la voix."},
+      {icon:"webcam", name:"Webcam", type:"in", desc:"Périphérique d'entrée : capte la vidéo."},
+      {icon:"monitor", name:"Écran", type:"out", desc:"Périphérique de sortie : affiche l'image."},
+      {icon:"printer", name:"Imprimante", type:"out", desc:"Périphérique de sortie : imprime sur papier."},
+      {icon:"speaker", name:"Haut-parleur", type:"out", desc:"Périphérique de sortie : restitue le son."},
+      {icon:"usb", name:"Clé USB", type:"io", desc:"Entrée/Sortie : lecture et écriture de données."},
+    ]);
+  }
+  if(id===5){ initWordDemo("wordDemo1"); initKeyboardDiagram("keyboardDemo5"); }
+  if(id===6){ initExcelDemo("excelDemo1"); }
+  if(id===7){ initSlideDemo("slideDemo1"); }
 }
 
 /* ==================== QUIZ ==================== */
@@ -1666,6 +1853,181 @@ document.getElementById("certPrintBtn").addEventListener("click", ()=>{
   window.print();
   setTimeout(()=>document.getElementById("screen-cert").classList.remove("printing"), 500);
 });
+
+/* ==================== INTERACTIVE WIDGETS ==================== */
+
+function initWordDemo(rootId){
+  const root = document.getElementById(rootId);
+  if(!root) return;
+  root.innerHTML = `
+    <div class="demo-surface">
+      <div class="demo-toolbar">
+        <button data-cmd="bold" title="Gras">${ic('bold',16)}</button>
+        <button data-cmd="italic" title="Italique">${ic('italic',16)}</button>
+        <button data-cmd="underline" title="Souligné">${ic('underline',16)}</button>
+        <div class="sep"></div>
+        <button data-cmd="justifyLeft" title="Aligner à gauche">${ic('align',16)}</button>
+        <button data-cmd="insertUnorderedList" title="Puces">${ic('bullets',16)}</button>
+        <div class="sep"></div>
+        <button class="wide" data-action="save">${ic('save',15)} Enregistrer</button>
+      </div>
+      <div class="demo-editable" contenteditable="true" data-placeholder="Cliquez ici et tapez votre texte, puis essayez les boutons Gras / Italique / Souligné ci-dessus..."></div>
+    </div>
+    <div class="demo-hint">💡 Ceci est un mini traitement de texte fonctionnel : sélectionnez du texte puis cliquez sur un bouton pour voir l'effet en direct, exactement comme dans Word.</div>
+  `;
+  const toolbar = root.querySelector(".demo-toolbar");
+  const editable = root.querySelector(".demo-editable");
+  toolbar.querySelectorAll("button[data-cmd]").forEach(btn=>{
+    btn.addEventListener("click", ()=>{
+      editable.focus();
+      document.execCommand(btn.dataset.cmd, false, null);
+      btn.classList.toggle("active");
+    });
+  });
+  const saveBtn = toolbar.querySelector('[data-action="save"]');
+  if(saveBtn) saveBtn.addEventListener("click", ()=>{
+    saveBtn.innerHTML = `${ic('save',15)} Enregistré ✓`;
+    setTimeout(()=>{ saveBtn.innerHTML = `${ic('save',15)} Enregistrer`; }, 1400);
+  });
+}
+
+function initExcelDemo(rootId){
+  const root = document.getElementById(rootId);
+  if(!root) return;
+  const cols = ["A","B","C"];
+  const rows = [1,2,3,4];
+  const data = {};
+  root.innerHTML = `
+    <div class="demo-surface">
+      <div class="formula-bar"><span class="fx">fx</span><span id="fxCellRef">A1</span><span id="fxValue">&nbsp;</span></div>
+      <table class="grid-demo">
+        <tr><th></th>${cols.map(c=>`<th>${c}</th>`).join("")}</tr>
+        ${rows.map(r=>`<tr><td class="rowhead">${r}</td>${cols.map(c=>`<td data-cell="${c}${r}"><input type="text" data-cell-input="${c}${r}" placeholder=""></td>`).join("")}</tr>`).join("")}
+      </table>
+      <div class="demo-toolbar">
+        <button class="wide" data-action="sum">${ic('chart-bar',15)} Calculer =SOMME(B1:B4) dans C1</button>
+      </div>
+    </div>
+    <div class="demo-hint">💡 Cliquez sur une cellule pour la sélectionner (voir la barre de formule), tapez des nombres dans la colonne B, puis cliquez sur le bouton pour voir la formule calculer automatiquement le total.</div>
+  `;
+  const cells = root.querySelectorAll("[data-cell-input]");
+  cells.forEach(inp=>{
+    inp.addEventListener("focus", ()=>{
+      root.querySelectorAll("td.active").forEach(td=>td.classList.remove("active"));
+      inp.closest("td").classList.add("active");
+      root.querySelector("#fxCellRef").textContent = inp.dataset.cellInput;
+      root.querySelector("#fxValue").textContent = inp.value || "";
+    });
+    inp.addEventListener("input", ()=>{
+      root.querySelector("#fxValue").textContent = inp.value;
+    });
+  });
+  root.querySelector('[data-action="sum"]').addEventListener("click", ()=>{
+    let total = 0;
+    ["B1","B2","B3","B4"].forEach(ref=>{
+      const el = root.querySelector(`[data-cell-input="${ref}"]`);
+      const v = parseFloat(el.value);
+      if(!isNaN(v)) total += v;
+    });
+    const c1 = root.querySelector('[data-cell-input="C1"]');
+    c1.value = total;
+    c1.closest("td").classList.add("active");
+    root.querySelector("#fxCellRef").textContent = "C1";
+    root.querySelector("#fxValue").textContent = `=SOMME(B1:B4) → ${total}`;
+  });
+}
+
+function initSlideDemo(rootId){
+  const root = document.getElementById(rootId);
+  if(!root) return;
+  const layouts = {
+    title: `<div class="s-title">Team21 IT Academy</div><div class="s-sub">Votre nom ici</div>`,
+    content: `<div class="s-title" style="align-self:flex-start;">Titre du contenu</div><ul><li>Premier point</li><li>Deuxième point</li><li>Troisième point</li></ul>`,
+    blank: `<div class="s-sub">Diapositive vierge — insérez une image ou une forme ici</div>`
+  };
+  root.innerHTML = `
+    <div class="demo-surface">
+      <div class="layout-picker">
+        <button class="active" data-layout="title">Titre</button>
+        <button data-layout="content">Titre + contenu</button>
+        <button data-layout="blank">Vierge</button>
+      </div>
+      <div class="slide-demo-stage" id="${rootId}_stage">${layouts.title}</div>
+      <div class="demo-toolbar" style="justify-content:center;">
+        <button class="wide" data-action="transition">${ic('refresh',15)} Aperçu transition « Fondu »</button>
+      </div>
+    </div>
+    <div class="demo-hint">💡 Choisissez une disposition de diapositive, puis testez l'aperçu de transition — comme dans un vrai logiciel de présentation.</div>
+  `;
+  const stage = root.querySelector(`#${rootId}_stage`);
+  root.querySelectorAll("[data-layout]").forEach(btn=>{
+    btn.addEventListener("click", ()=>{
+      root.querySelectorAll("[data-layout]").forEach(b=>b.classList.remove("active"));
+      btn.classList.add("active");
+      stage.classList.add("fading");
+      setTimeout(()=>{
+        stage.innerHTML = layouts[btn.dataset.layout];
+        stage.classList.remove("fading");
+      }, 220);
+    });
+  });
+  root.querySelector('[data-action="transition"]').addEventListener("click", ()=>{
+    stage.classList.add("fading");
+    setTimeout(()=>stage.classList.remove("fading"), 350);
+  });
+}
+
+function initDeviceDiagram(rootId, devices){
+  const root = document.getElementById(rootId);
+  if(!root) return;
+  root.innerHTML = `
+    <div class="diagram-legend" style="margin-bottom:14px;">
+      <span><i style="background:var(--accent)"></i>Entrée</span>
+      <span><i style="background:var(--navy)"></i>Sortie</span>
+      <span><i style="background:#7EB8F2"></i>Entrée / Sortie</span>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(110px,1fr)); gap:10px;" id="${rootId}_grid"></div>
+    <div class="demo-hint" id="${rootId}_desc" style="text-align:center; min-height:18px;"></div>
+  `;
+  const grid = root.querySelector(`#${rootId}_grid`);
+  const desc = root.querySelector(`#${rootId}_desc`);
+  const colorFor = t => t==="in" ? "var(--accent)" : t==="out" ? "var(--navy)" : "#7EB8F2";
+  devices.forEach(d=>{
+    const card = document.createElement("div");
+    card.style.cssText = "background:var(--ice); border:1.5px solid var(--gray-light); border-radius:9px; padding:12px 8px; text-align:center; cursor:pointer; transition:transform .12s ease;";
+    card.innerHTML = `<div style="color:${colorFor(d.type)}; margin-bottom:6px;">${ic(d.icon,26)}</div><div style="font-size:11.5px; font-weight:600; color:var(--navy);">${d.name}</div>`;
+    card.addEventListener("click", ()=>{
+      grid.querySelectorAll("div").forEach(c=>c.style.borderColor="var(--gray-light)");
+      card.style.borderColor = colorFor(d.type);
+      desc.textContent = d.desc;
+    });
+    grid.appendChild(card);
+  });
+}
+
+function initKeyboardDiagram(rootId){
+  const root = document.getElementById(rootId);
+  if(!root) return;
+  const shortcuts = [
+    {keys:["Ctrl","S"], label:"Enregistrer"},
+    {keys:["Ctrl","B"], label:"Gras"},
+    {keys:["Ctrl","I"], label:"Italique"},
+    {keys:["Ctrl","U"], label:"Souligné"},
+    {keys:["Ctrl","Z"], label:"Annuler"},
+    {keys:["Ctrl","Y"], label:"Rétablir"},
+    {keys:["Ctrl","C"], label:"Copier"},
+    {keys:["Ctrl","V"], label:"Coller"},
+    {keys:["Ctrl","P"], label:"Imprimer"},
+    {keys:["Ctrl","F"], label:"Rechercher"},
+  ];
+  root.innerHTML = `<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:10px;">
+    ${shortcuts.map(s=>`
+      <div style="background:var(--ice); border:1px solid var(--gray-light); border-radius:8px; padding:10px; text-align:center;">
+        <div>${s.keys.map(k=>`<kbd>${k}</kbd>`).join("+")}</div>
+        <div style="font-size:11.5px; color:var(--gray); margin-top:6px;">${s.label}</div>
+      </div>`).join("")}
+  </div>`;
+}
 
 /* ==================== INIT ==================== */
 nameInput.focus();
