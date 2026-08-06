@@ -148,6 +148,14 @@ main{flex:1; width:100%; max-width:1000px; margin:0 auto; padding:32px 24px 60px
   font-family:'IBM Plex Mono',monospace; font-size:13px; color:var(--navy);
   background:var(--white); border:1px solid var(--gray-light); border-radius:8px; padding:10px 16px;
 }
+.resume-banner{
+  display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap;
+  background:linear-gradient(135deg, var(--navy), var(--blue)); color:#fff;
+  border-radius:var(--radius); padding:16px 22px; margin-bottom:20px;
+}
+.resume-banner .rb-text{font-size:14px;}
+.resume-banner .rb-text b{font-family:'Space Grotesk',sans-serif;}
+.resume-banner .rb-sub{font-size:12px; color:var(--accent-light); font-family:'IBM Plex Mono',monospace; margin-top:2px;}
 .module-grid{
   display:grid; grid-template-columns:repeat(auto-fill, minmax(280px,1fr)); gap:16px;
 }
@@ -219,6 +227,33 @@ main{flex:1; width:100%; max-width:1000px; margin:0 auto; padding:32px 24px 60px
 }
 .exercise-box h4{color:#8A6417; font-size:14.5px; margin:0 0 8px;}
 .exercise-box ol{margin:0; padding-left:20px;}
+.plain-box{
+  background:#FFF4E5; border:1px solid #F0C989; border-radius:10px; padding:16px 20px; margin:16px 0;
+  font-size:14.5px; line-height:1.7; color:#5C4111;
+}
+.plain-box .pb-label{font-family:'IBM Plex Mono',monospace; font-size:11.5px; text-transform:uppercase; letter-spacing:1px; color:#B9791A; margin-bottom:6px; font-weight:700;}
+.fact-box{
+  background:#E9FBF2; border:1px solid #9EE0BE; border-radius:10px; padding:16px 20px; margin:16px 0;
+  font-size:14.5px; line-height:1.7; color:#0E4A2C;
+}
+.fact-box .fb-label{font-family:'IBM Plex Mono',monospace; font-size:11.5px; text-transform:uppercase; letter-spacing:1px; color:#1E7B4D; margin-bottom:6px; font-weight:700;}
+.cheat-box{
+  background:var(--navy); border-radius:12px; padding:20px 24px; margin:20px 0; color:#fff;
+}
+.cheat-box h4{color:#fff; font-size:15px; margin:0 0 12px; font-family:'Space Grotesk',sans-serif;}
+.cheat-box ul{list-style:none; margin:0; padding:0; columns:2; column-gap:24px;}
+.cheat-box li{font-size:13.5px; line-height:1.8; padding-left:24px; position:relative; break-inside:avoid;}
+.cheat-box li::before{content:"✓"; position:absolute; left:0; color:#3FBF63; font-weight:700;}
+.lesson-meta{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;}
+.lesson-meta span{
+  font-family:'IBM Plex Mono',monospace; font-size:11.5px; background:rgba(255,255,255,0.12);
+  border:1px solid rgba(255,255,255,0.25); padding:5px 12px; border-radius:20px; color:#fff;
+}
+.objectives-box{
+  background:var(--ice); border:1px solid var(--gray-light); border-radius:10px; padding:16px 20px; margin-bottom:18px;
+}
+.objectives-box h4{margin:0 0 10px; font-size:13.5px; color:var(--navy); font-family:'IBM Plex Mono',monospace; text-transform:uppercase; letter-spacing:1px;}
+.objectives-box ul{margin:0; padding-left:20px; font-size:14px; line-height:1.8; color:#24313f;}
 .ref-list{font-size:13px; color:var(--gray); line-height:1.9;}
 .lesson-footer-actions{display:flex; justify-content:flex-end; gap:10px; margin-top:6px;}
 
@@ -270,7 +305,7 @@ main{flex:1; width:100%; max-width:1000px; margin:0 auto; padding:32px 24px 60px
   background:var(--white);
   border:10px solid var(--navy);
   outline:2px solid var(--accent); outline-offset:-18px;
-  position:relative; padding:40px 50px;
+  position:relative; padding:40px 50px 52px;
   display:flex; flex-direction:column; align-items:center; justify-content:space-between;
   font-family:'Inter',sans-serif; text-align:center;
   box-shadow:var(--shadow);
@@ -295,6 +330,10 @@ main{flex:1; width:100%; max-width:1000px; margin:0 auto; padding:32px 24px 60px
 .certificate .qr-block{text-align:center;}
 .certificate .qr-block img, .certificate .qr-block canvas{width:78px; height:78px;}
 .certificate .qr-block div.qrlabel{font-family:'IBM Plex Mono',monospace; font-size:9px; color:var(--gray); margin-top:4px;}
+.certificate .cert-website{
+  position:absolute; bottom:14px; left:0; right:0; text-align:center;
+  font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:1.5px; color:var(--accent);
+}
 .certificate .seal{
   position:absolute; right:56px; bottom:96px; width:64px; height:64px; border-radius:50%;
   border:2.5px solid var(--accent); display:flex; align-items:center; justify-content:center;
@@ -460,6 +499,7 @@ kbd{
   <div class="user-chip" id="userChip" style="display:none;">
     <span class="avatar" id="userAvatar">?</span>
     <span id="userChipName">—</span>
+    <button id="changeUserBtn" title="Changer d'utilisateur" style="background:none;border:none;color:var(--accent-light);cursor:pointer;font-size:14px;padding:0 2px;">✕</button>
   </div>
 </div>
 
@@ -493,6 +533,7 @@ kbd{
       </div>
       <div class="progress-summary" id="progressSummary">0 / 9 modules réussis</div>
     </div>
+    <div id="resumeBanner" style="display:none;"></div>
     <div class="module-grid" id="moduleGrid"></div>
   </section>
 
@@ -570,6 +611,7 @@ kbd{
           </div>
         </div>
         <div class="seal">TEAM21<br>★ CERTIFIÉ ★</div>
+        <div class="cert-website">www.team21.help</div>
       </div>
     </div>
     <div class="cert-actions">
@@ -595,6 +637,8 @@ MODULES.push(
   id:1,
   title:"Introduction à l'ordinateur",
   short:"Découvrez ce qu'est un ordinateur, ses caractéristiques et ses différents types.",
+  duration:"20-25 min",
+  objectives:["Expliquer avec vos propres mots ce qu'est un ordinateur","Citer les 4 grandes qualités d'un ordinateur","Reconnaître au moins 4 types d'ordinateurs différents"],
   lesson:`
   <div class="lesson-block">
     <h2><span class="tagnum">01</span>Qu'est-ce qu'un ordinateur ?</h2>
@@ -607,6 +651,15 @@ MODULES.push(
       <li><b>L'automatisation :</b> une fois programmé, l'ordinateur répète une tâche des millions de fois sans se fatiguer ni se plaindre — contrairement à un être humain.</li>
     </ul>
     <p>Il est important de comprendre que l'ordinateur, seul, n'a <b>aucune intelligence propre</b> : il exécute exactement ce qu'on lui demande, ni plus, ni moins. C'est pour cela qu'apprendre à bien l'utiliser — et non seulement à le regarder fonctionner — est une compétence essentielle aujourd'hui.</p>
+  </div>
+
+  <div class="plain-box">
+    <div class="pb-label">🤓 En clair, pour les débutants</div>
+    Imaginez un ordinateur comme un cuisinier extrêmement rapide et très obéissant. Vous lui donnez une recette précise (le programme) et des ingrédients (les données) ; il suit exactement ce qui est écrit, à une vitesse folle, sans jamais se fatiguer ni improviser. Si la recette est mauvaise, le plat sera raté — même si le cuisinier est parfait ! C'est pour cela qu'en informatique on dit : « Garbage In, Garbage Out » (si on entre n'importe quoi, on obtient n'importe quoi).
+  </div>
+  <div class="fact-box">
+    <div class="fb-label">💡 Le saviez-vous ?</div>
+    Le mot « ordinateur » vient du latin <i>ordinare</i> (mettre en ordre). En anglais, on dit <i>computer</i>, qui vient de <i>compute</i> (calculer) — à l'origine, ces machines ne servaient qu'à faire des calculs mathématiques très rapidement !
   </div>
 
   <div class="lesson-block">
@@ -676,6 +729,16 @@ MODULES.push(
 
   <div class="lesson-block">
     <h2><span class="tagnum">07</span>Références et pour aller plus loin</h2>
+    <div class="cheat-box">
+      <h4>✅ Fiche mémo — Ce que vous devez retenir du Module 1</h4>
+      <ul>
+        <li>Cycle : Entrée → Traitement → Sortie → Stockage</li>
+        <li>4 qualités : vitesse, précision, stockage, automatisation</li>
+        <li>L'ordinateur n'a aucune intelligence propre</li>
+        <li>6 types : bureau, portable, tablette/smartphone, serveur, embarqué, supercalculateur</li>
+        <li>La puissance double environ tous les 2 ans (loi de Moore)</li>
+      </ul>
+    </div>
     <div class="ref-list">
       • GCFGlobal — « Les bases de l'ordinateur » (edu.gcfglobal.org)<br>
       • Wikipédia — « Histoire de l'informatique »<br>
@@ -705,12 +768,23 @@ MODULES.push(
   id:2,
   title:"Matériel (Hardware) et Logiciel (Software)",
   short:"La différence entre ce que l'on peut toucher et ce que l'on ne peut que voir à l'écran.",
+  duration:"20-25 min",
+  objectives:["Distinguer clairement matériel et logiciel","Nommer 5 composants matériels essentiels","Diagnostiquer si un problème vient du matériel ou du logiciel"],
   lesson:`
   <div class="lesson-block">
     <h2><span class="tagnum">01</span>Deux mondes complémentaires</h2>
     <p>Le <b>matériel (Hardware)</b> désigne toutes les parties physiques d'un ordinateur : celles que vous pouvez toucher, voir et sentir — l'écran, le clavier, la souris, l'unité centrale, le disque dur. Le <b>logiciel (Software)</b> désigne les programmes et instructions invisibles qui indiquent au matériel quoi faire — comme Windows, Microsoft Word, ou une application de messagerie.</p>
     <p>Sans logiciel, le matériel est une coquille vide incapable d'agir intelligemment : un ordinateur sans système d'exploitation ne peut même pas afficher un simple menu. Sans matériel, le logiciel n'a aucun support physique pour s'exécuter : un programme ne « flotte » pas dans le vide, il a besoin d'un processeur pour l'exécuter et d'une mémoire pour fonctionner. Les deux doivent toujours travailler ensemble, comme le corps (matériel) et l'esprit (logiciel) d'un être vivant.</p>
     <p>On distingue également le <b>firmware</b> : un logiciel très basique, gravé directement dans certains composants matériels (comme le BIOS/UEFI d'une carte mère), qui permet à l'ordinateur de démarrer avant même que le système d'exploitation ne se charge.</p>
+  </div>
+
+  <div class="plain-box">
+    <div class="pb-label">🤓 En clair, pour les débutants</div>
+    Pensez au matériel comme au <b>corps</b> et au logiciel comme à l'<b>esprit</b>. Le corps (clavier, écran, disque dur) peut exister sans réfléchir ; l'esprit (Windows, Word) a besoin d'un corps pour agir dans le monde réel. Un ordinateur sans logiciel, c'est comme un corps endormi qui ne répond à rien — tout est là, mais rien ne se passe.
+  </div>
+  <div class="fact-box">
+    <div class="fb-label">💡 Le saviez-vous ?</div>
+    Le premier « bug » informatique (bogue) documenté était... un vrai insecte ! En 1947, une équipe dirigée par Grace Hopper a trouvé une mite coincée dans un relais électrique d'un ordinateur, causant une panne. Depuis, on appelle les erreurs de logiciel des « bugs » (insectes en anglais).
   </div>
 
   <div class="lesson-block">
@@ -786,6 +860,16 @@ MODULES.push(
 
   <div class="lesson-block">
     <h2><span class="tagnum">07</span>Références</h2>
+    <div class="cheat-box">
+      <h4>✅ Fiche mémo — Ce que vous devez retenir du Module 2</h4>
+      <ul>
+        <li>Matériel = physique, Logiciel = invisible</li>
+        <li>Les deux ont besoin l'un de l'autre pour fonctionner</li>
+        <li>CPU, RAM, disque, carte mère, GPU, alimentation</li>
+        <li>Un pilote (driver) traduit entre matériel et logiciel</li>
+        <li>Toujours redémarrer en premier réflexe de dépannage</li>
+      </ul>
+    </div>
     <div class="ref-list">
       • GCFGlobal — « Hardware Basics » et « Software Basics »<br>
       • Microsoft Support — support.microsoft.com<br>
@@ -815,11 +899,22 @@ MODULES.push(
   id:3,
   title:"Périphériques d'entrée et de sortie",
   short:"Comment l'ordinateur communique avec vous : claviers, souris, écrans, imprimantes...",
+  duration:"15-20 min",
+  objectives:["Différencier entrée, sortie et entrée/sortie","Associer chaque périphérique courant à sa catégorie","Reconnaître les principaux ports et connexions"],
   lesson:`
   <div class="lesson-block">
     <h2><span class="tagnum">01</span>Communiquer avec l'ordinateur</h2>
     <p>Un <b>périphérique d'entrée (Input)</b> permet à l'utilisateur d'envoyer des informations vers l'ordinateur. Un <b>périphérique de sortie (Output)</b> permet à l'ordinateur de communiquer un résultat à l'utilisateur. Certains périphériques font les deux à la fois : on les appelle des périphériques <b>entrée/sortie</b> (par exemple un écran tactile, qui reçoit vos gestes ET affiche des images).</p>
     <p>Cette distinction peut sembler simple, mais elle est fondamentale : c'est elle qui permet de comprendre le rôle de chaque appareil qu'on branche à un ordinateur, et de diagnostiquer un problème (« mon clavier ne répond pas » est un problème d'entrée ; « mon écran reste noir » est un problème de sortie).</p>
+  </div>
+
+  <div class="plain-box">
+    <div class="pb-label">🤓 En clair, pour les débutants</div>
+    Imaginez une conversation entre deux amis : quand vous parlez, c'est une <b>entrée</b> pour votre ami (il reçoit l'information) ; quand il vous répond, c'est une <b>sortie</b> pour lui (il envoie l'information) et une entrée pour vous. L'ordinateur fonctionne pareil : le clavier « parle » à l'ordinateur (entrée), et l'écran « répond » à vous (sortie).
+  </div>
+  <div class="fact-box">
+    <div class="fb-label">💡 Le saviez-vous ?</div>
+    La souris d'ordinateur a été inventée en 1964 par Douglas Engelbart. Son premier prototype était en bois, avec deux roues métalliques à l'intérieur — et on l'appelait déjà « souris » à cause de son fil qui ressemblait à une queue !
   </div>
 
   <div class="lesson-block">
@@ -891,6 +986,15 @@ MODULES.push(
 
   <div class="lesson-block">
     <h2><span class="tagnum">07</span>Références</h2>
+    <div class="cheat-box">
+      <h4>✅ Fiche mémo — Ce que vous devez retenir du Module 3</h4>
+      <ul>
+        <li>Entrée = vers l'ordinateur ; Sortie = vers l'utilisateur</li>
+        <li>Certains périphériques font les deux (écran tactile)</li>
+        <li>Le « Plug and Play » installe un pilote automatiquement</li>
+        <li>USB, HDMI, Bluetooth, Wi-Fi sont des connexions courantes</li>
+      </ul>
+    </div>
     <div class="ref-list">
       • GCFGlobal — « Basic Parts of a Computer »<br>
       • Computer Hope — « Input and Output devices »<br>
@@ -922,11 +1026,18 @@ MODULES.push(
   id:4,
   title:"Les différents types de logiciels et leurs usages",
   short:"Système d'exploitation, logiciels d'application, utilitaires : à quoi servent-ils ?",
+  duration:"20 min",
+  objectives:["Classer un logiciel dans la bonne famille","Citer 3 exemples pour chaque catégorie de logiciel","Choisir le bon logiciel selon une tâche donnée"],
   lesson:`
   <div class="lesson-block">
     <h2><span class="tagnum">01</span>Trois grandes familles de logiciels</h2>
     <p>Il existe trois grandes catégories de logiciels : les <b>logiciels système</b> (comme Windows ou macOS, qui gèrent l'ordinateur lui-même), les <b>logiciels d'application</b> (comme Word, Excel, un navigateur internet, qui servent à réaliser une tâche précise pour l'utilisateur) et les <b>logiciels utilitaires</b> (comme un antivirus ou un logiciel de compression, qui entretiennent et protègent le système).</p>
     <p>On peut imaginer un ordinateur comme un bâtiment : le <b>logiciel système</b> est les fondations et l'électricité (invisible mais indispensable), les <b>logiciels d'application</b> sont les pièces meublées où l'on vit réellement (bureau, cuisine, salon), et les <b>logiciels utilitaires</b> sont les agents d'entretien qui gardent le bâtiment propre et sécurisé.</p>
+  </div>
+
+  <div class="fact-box">
+    <div class="fb-label">💡 Le saviez-vous ?</div>
+    Il existe des millions d'applications rien que sur les magasins Google Play et App Store — mais le tout premier « logiciel d'application » de l'histoire était une simple calculatrice, écrite dans les années 1950 pour faire des additions plus vite qu'à la main.
   </div>
 
   <div class="lesson-block">
@@ -993,6 +1104,16 @@ MODULES.push(
 
   <div class="lesson-block">
     <h2><span class="tagnum">07</span>Références</h2>
+    <div class="cheat-box">
+      <h4>✅ Fiche mémo — Ce que vous devez retenir du Module 4</h4>
+      <ul>
+        <li>Système, Application, Utilitaire : 3 familles</li>
+        <li>Le système démarre et gère l'ordinateur</li>
+        <li>L'application réalise une tâche pour l'utilisateur</li>
+        <li>L'utilitaire entretient et protège</li>
+        <li>Libre (Linux) vs Propriétaire (Windows)</li>
+      </ul>
+    </div>
     <div class="ref-list">
       • GCFGlobal — « Application vs System Software »<br>
       • Microsoft Support — « Qu'est-ce qu'un système d'exploitation »<br>
@@ -1022,11 +1143,22 @@ MODULES.push(
   id:5,
   title:"Introduction aux traitements de texte",
   short:"Maîtrisez Microsoft Word : menus, mise en forme, enregistrement et plus encore.",
+  duration:"45-60 min (avec les 3 labos)",
+  objectives:["Créer, mettre en forme et enregistrer un document","Utiliser les tableaux, images et en-têtes/pieds de page","Exporter un document en PDF et comprendre les emplacements de stockage"],
   lesson:`
   <div class="lesson-block">
     <h2><span class="tagnum">01</span>Qu'est-ce qu'un traitement de texte ?</h2>
     <p>Un <b>traitement de texte</b> (comme Microsoft Word) est un logiciel d'application qui permet de créer, modifier, mettre en forme et imprimer des documents texte : lettres, CV, rapports, contrats, mémoires, etc. Il remplace avantageusement la machine à écrire car il permet de corriger les erreurs sans tout retaper, réorganiser le texte par simple glisser-déposer, l'enregistrer pour le réutiliser plus tard, et le partager facilement par email ou clé USB.</p>
     <p>Contrairement à la machine à écrire, le traitement de texte sépare la <b>saisie</b> (taper le contenu) de la <b>mise en forme</b> (présenter le contenu) : on peut d'abord écrire librement, puis revenir mettre en forme ensuite — une liberté impossible sur papier.</p>
+  </div>
+
+  <div class="plain-box">
+    <div class="pb-label">🤓 En clair, pour les débutants</div>
+    Word, c'est un peu comme une feuille de papier magique : vous pouvez écrire, effacer, déplacer des phrases entières d'un coup, changer les couleurs et même annuler une erreur en appuyant sur une seule touche (<kbd>Ctrl</kbd>+<kbd>Z</kbd>) — essayez de faire ça avec un stylo !
+  </div>
+  <div class="fact-box">
+    <div class="fb-label">💡 Le saviez-vous ?</div>
+    Microsoft Word a été lancé en 1983, à une époque où on l'utilisait avec des disquettes de seulement 360 Ko — aujourd'hui, une seule photo de smartphone est souvent plus lourde que tout le logiciel Word de l'époque !
   </div>
 
   <div class="lesson-block">
@@ -1121,6 +1253,16 @@ MODULES.push(
 
   <div class="lesson-block">
     <h2><span class="tagnum">08</span>Références</h2>
+    <div class="cheat-box">
+      <h4>✅ Fiche mémo — Ce que vous devez retenir du Module 5</h4>
+      <ul>
+        <li>Ctrl+S = Enregistrer / Ctrl+Z = Annuler</li>
+        <li>Styles de titre = table des matières automatique</li>
+        <li>Enregistrer sous ≠ Enregistrer (nouvel emplacement)</li>
+        <li>PDF garde la mise en forme intacte</li>
+        <li>Toujours vérifier l'orthographe avant d'envoyer</li>
+      </ul>
+    </div>
     <div class="ref-list">
       • Microsoft Support — « Formation Word »<br>
       • GCFGlobal — « Word Basics »<br>
@@ -1149,11 +1291,22 @@ MODULES.push(
   id:6,
   title:"Introduction aux tableurs",
   short:"Maîtrisez Excel : cellules, formules, feuilles de calcul et mise en forme des données.",
+  duration:"45-60 min (avec les 3 labos)",
+  objectives:["Saisir des données et utiliser des formules de base","Créer un graphique et trier/filtrer des données","Exporter un classeur et comprendre le format CSV"],
   lesson:`
   <div class="lesson-block">
     <h2><span class="tagnum">01</span>Qu'est-ce qu'un tableur ?</h2>
     <p>Un <b>tableur</b> (comme Microsoft Excel) est un logiciel organisé en <b>cellules</b> disposées en lignes et colonnes, qui permet de saisir des données, faire des calculs automatiques avec des <b>formules</b>, créer des graphiques, et analyser de grandes quantités d'informations : budgets, notes d'élèves, inventaires, factures, plannings.</p>
     <p>La force du tableur, c'est qu'une formule reste « vivante » : si vous changez une donnée de départ, tous les résultats qui en dépendent se recalculent automatiquement — contrairement à un calcul fait une fois pour toutes sur papier ou avec une calculatrice.</p>
+  </div>
+
+  <div class="plain-box">
+    <div class="pb-label">🤓 En clair, pour les débutants</div>
+    Un tableur, c'est comme une calculatrice géante avec une mémoire infinie : au lieu de taper « 12 + 8 = » et de perdre le résultat, vous écrivez « =A1+A2 » et le résultat se met à jour tout seul si vous changez A1 ou A2 plus tard. C'est un calcul qui « se souvient » d'où il vient.
+  </div>
+  <div class="fact-box">
+    <div class="fb-label">💡 Le saviez-vous ?</div>
+    Le premier tableur électronique, VisiCalc, est sorti en 1979 et a été l'une des principales raisons pour lesquelles les entreprises ont commencé à acheter des ordinateurs personnels — avant cela, tous les calculs de budget se faisaient à la main sur papier millimétré !
   </div>
 
   <div class="lesson-block">
@@ -1239,6 +1392,16 @@ MODULES.push(
 
   <div class="lesson-block">
     <h2><span class="tagnum">08</span>Références</h2>
+    <div class="cheat-box">
+      <h4>✅ Fiche mémo — Ce que vous devez retenir du Module 6</h4>
+      <ul>
+        <li>=SOMME() =MOYENNE() =SI() sont les formules clés</li>
+        <li>Une cellule = colonne + ligne (ex : B2)</li>
+        <li>Un classeur peut avoir plusieurs feuilles</li>
+        <li>CSV = format simple sans mise en forme</li>
+        <li>Toujours vérifier les références avant de recopier une formule</li>
+      </ul>
+    </div>
     <div class="ref-list">
       • Microsoft Support — « Formation Excel »<br>
       • GCFGlobal — « Excel Basics »<br>
@@ -1268,11 +1431,22 @@ MODULES.push(
   id:7,
   title:"Introduction aux logiciels de présentation",
   short:"Maîtrisez PowerPoint : diapositives, mise en forme, transitions et présentation.",
+  duration:"40-50 min (avec les 3 labos)",
+  objectives:["Créer une présentation avec plusieurs diapositives","Appliquer transitions, animations et notes du présentateur","Exporter une présentation en PDF ou en vidéo"],
   lesson:`
   <div class="lesson-block">
     <h2><span class="tagnum">01</span>Qu'est-ce qu'un logiciel de présentation ?</h2>
     <p>Un <b>logiciel de présentation</b> (comme Microsoft PowerPoint) permet de créer des <b>diapositives</b> (slides) contenant du texte, des images, des graphiques et des animations, pour présenter une idée devant un public : cours, rapport d'entreprise, projet, soutenance, formation.</p>
     <p>Une présentation n'est pas un document à lire mot pour mot : c'est un support visuel qui accompagne un orateur. La règle d'or est donc la <b>simplicité</b> : moins il y a de texte à l'écran, plus le public écoute réellement le présentateur au lieu de lire en silence.</p>
+  </div>
+
+  <div class="plain-box">
+    <div class="pb-label">🤓 En clair, pour les débutants</div>
+    Pensez à vos diapositives comme à des panneaux publicitaires sur l'autoroute : les gens les voient 2-3 secondes en passant. Un panneau bourré de texte, personne ne le lit. Un panneau avec une grande image et 3 mots clés, tout le monde le retient. C'est exactement pareil pour PowerPoint !
+  </div>
+  <div class="fact-box">
+    <div class="fb-label">💡 Le saviez-vous ?</div>
+    PowerPoint a été créé en 1987 pour Macintosh, avant même d'exister sur Windows ! À l'époque, les présentations se faisaient avec des transparents plastiques posés sur un rétroprojecteur — PowerPoint a littéralement changé la façon de présenter des idées dans le monde entier.
   </div>
 
   <div class="lesson-block">
@@ -1358,6 +1532,16 @@ MODULES.push(
 
   <div class="lesson-block">
     <h2><span class="tagnum">08</span>Références</h2>
+    <div class="cheat-box">
+      <h4>✅ Fiche mémo — Ce que vous devez retenir du Module 7</h4>
+      <ul>
+        <li>Une idée = une diapositive</li>
+        <li>Peu de texte, beaucoup de visuel</li>
+        <li>F5 = lancer le diaporama en plein écran</li>
+        <li>Notes du présentateur = invisibles du public</li>
+        <li>Contraste des couleurs = lisibilité garantie</li>
+      </ul>
+    </div>
     <div class="ref-list">
       • Microsoft Support — « Formation PowerPoint »<br>
       • GCFGlobal — « PowerPoint Basics »<br>
@@ -1386,11 +1570,18 @@ MODULES.push(
   id:8,
   title:"Prendre soin de son ordinateur",
   short:"Bonnes pratiques d'entretien : nettoyage, mises à jour, sécurité et longévité.",
+  duration:"20-25 min",
+  objectives:["Appliquer une routine d'entretien matériel et logiciel","Reconnaître les bons réflexes de sécurité informatique","Mettre en place une stratégie simple de sauvegarde"],
   lesson:`
   <div class="lesson-block">
     <h2><span class="tagnum">01</span>Pourquoi entretenir son ordinateur ?</h2>
     <p>Un ordinateur bien entretenu dure plus longtemps, fonctionne plus vite et protège mieux vos données. L'entretien concerne à la fois le <b>matériel</b> (nettoyage physique, ventilation, alimentation électrique) et le <b>logiciel</b> (mises à jour, antivirus, organisation des fichiers, gestion de l'espace disque).</p>
     <p>Beaucoup d'utilisateurs n'agissent qu'une fois qu'un problème est déjà survenu (fichier perdu, ordinateur infecté, panne matérielle). Or, la majorité de ces problèmes sont évitables grâce à un entretien simple et régulier — un peu comme la vidange d'une voiture évite des pannes coûteuses.</p>
+  </div>
+
+  <div class="fact-box">
+    <div class="fb-label">💡 Le saviez-vous ?</div>
+    Un ordinateur portable qui reste branché en permanence à 100% de batterie, dans une pièce chaude, peut perdre jusqu'à 20% de sa capacité de batterie en seulement un an. Les fabricants recommandent souvent de la laisser descendre puis remonter régulièrement plutôt que de la garder toujours pleine.
   </div>
 
   <div class="lesson-block">
@@ -1460,6 +1651,16 @@ MODULES.push(
 
   <div class="lesson-block">
     <h2><span class="tagnum">07</span>Références</h2>
+    <div class="cheat-box">
+      <h4>✅ Fiche mémo — Ce que vous devez retenir du Module 8</h4>
+      <ul>
+        <li>Dépoussiérer tous les 3-6 mois</li>
+        <li>Installer les mises à jour de sécurité rapidement</li>
+        <li>Antivirus actif + sauvegardes régulières (règle des 3 copies)</li>
+        <li>Ne jamais cliquer sur un lien suspect</li>
+        <li>Redémarrer au moins une fois par semaine</li>
+      </ul>
+    </div>
     <div class="ref-list">
       • Microsoft Support — « Conseils pour entretenir votre PC »<br>
       • GCFGlobal — « Basic Troubleshooting Techniques »<br>
@@ -1488,11 +1689,22 @@ MODULES.push(
   id:9,
   title:"Autres réglages importants de l'ordinateur",
   short:"Paramètres système, comptes utilisateurs, réseau, affichage et personnalisation.",
+  duration:"25-30 min",
+  objectives:["Naviguer dans les paramètres système en autonomie","Gérer comptes utilisateurs et confidentialité","Comprendre le formatage et les systèmes de fichiers"],
   lesson:`
   <div class="lesson-block">
     <h2><span class="tagnum">01</span>Explorer les paramètres système</h2>
     <p>Au-delà de l'entretien, il est essentiel de savoir régler son ordinateur : gérer les comptes utilisateurs, connecter un réseau Wi-Fi, ajuster l'affichage, gérer le volume sonore, ou encore formater une clé USB. Ces réglages se trouvent généralement dans le <b>Panneau de configuration</b> ou l'application <b>Paramètres</b> (Windows), ou dans les <b>Préférences Système</b> (macOS).</p>
     <p>Savoir naviguer dans ces réglages transforme un simple utilisateur en un utilisateur <b>autonome</b>, capable de résoudre lui-même de nombreux petits problèmes sans attendre l'aide d'un technicien.</p>
+  </div>
+
+  <div class="plain-box">
+    <div class="pb-label">🤓 En clair, pour les débutants</div>
+    Les Paramètres, c'est le tableau de bord de votre ordinateur — un peu comme celui d'une voiture. Vous n'avez pas besoin de savoir réparer le moteur, mais vous devez savoir où sont les phares, le klaxon et la jauge d'essence. Pareil ici : vous n'avez pas besoin d'être technicien, juste de savoir où chercher.
+  </div>
+  <div class="fact-box">
+    <div class="fb-label">💡 Le saviez-vous ?</div>
+    Le premier système à proposer des « Paramètres » sous forme d'icônes cliquables (plutôt que des lignes de commande à taper) est apparu avec les interfaces graphiques des années 1980 — avant cela, il fallait taper des commandes textuelles précises pour tout régler !
   </div>
 
   <div class="lesson-block">
@@ -1554,6 +1766,16 @@ MODULES.push(
 
   <div class="lesson-block">
     <h2><span class="tagnum">07</span>Références</h2>
+    <div class="cheat-box">
+      <h4>✅ Fiche mémo — Ce que vous devez retenir du Module 9</h4>
+      <ul>
+        <li>Un compte utilisateur par personne</li>
+        <li>Formater efface définitivement les données</li>
+        <li>Vérifier permissions caméra/micro régulièrement</li>
+        <li>Date/heure correctes = fichiers fiables</li>
+        <li>Paramètres = tableau de bord de l'ordinateur</li>
+      </ul>
+    </div>
     <div class="ref-list">
       • Microsoft Support — « Paramètres Windows »<br>
       • Apple Support — « Préférences Système macOS »<br>
@@ -1578,6 +1800,30 @@ MODULES.push(
     {q:"Ajuster les paramètres régionaux (langue, région) sert à :",options:["Adapter la langue, la devise et le format de date du système","Formater automatiquement tous les disques","Supprimer le compte utilisateur","Changer la carte mère"],correct:0}
   ]
 });
+/* ==================== PERSISTENCE (localStorage) ==================== */
+const STORAGE_KEY = "team21_academy_progress_v1";
+function saveState(){
+  try{
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({
+      userName: state.userName,
+      results: state.results,
+      lastModuleId: state.currentModuleId
+    }));
+  }catch(e){ /* localStorage unavailable (private browsing, sandboxed frame...) — app still works, just won't persist */ }
+}
+function loadState(){
+  try{
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if(!raw) return null;
+    const parsed = JSON.parse(raw);
+    // Dates were serialized as strings — restore them as Date objects
+    if(parsed.results){
+      Object.values(parsed.results).forEach(r=>{ if(r.date) r.date = new Date(r.date); });
+    }
+    return parsed;
+  }catch(e){ return null; }
+}
+
 /* ==================== STATE ==================== */
 const state = {
   userName: "",
@@ -1601,19 +1847,30 @@ document.querySelectorAll('[data-nav="dashboard"]').forEach(el=>{
 /* ==================== WELCOME ==================== */
 const nameInput = document.getElementById("nameInput");
 const startBtn = document.getElementById("startBtn");
+function applyUserChip(val){
+  document.getElementById("userChip").style.display="flex";
+  document.getElementById("userChipName").textContent = val;
+  document.getElementById("userAvatar").textContent = val.trim()[0].toUpperCase();
+}
 function tryStart(){
   const val = nameInput.value.trim();
   if(!val){ nameInput.focus(); nameInput.style.borderColor="var(--bad)"; return; }
   state.userName = val;
-  document.getElementById("userChip").style.display="flex";
-  document.getElementById("userChipName").textContent = val;
-  document.getElementById("userAvatar").textContent = val.trim()[0].toUpperCase();
+  applyUserChip(val);
+  saveState();
   renderDashboard();
   showScreen("dashboard");
 }
 startBtn.addEventListener("click", tryStart);
 nameInput.addEventListener("keydown", e=>{ if(e.key==="Enter") tryStart(); });
 nameInput.addEventListener("input", ()=>{ nameInput.style.borderColor=""; });
+
+document.getElementById("changeUserBtn").addEventListener("click", ()=>{
+  if(!confirm("Voulez-vous vous déconnecter ? Votre nom sera oublié sur cet ordinateur (votre progression reste enregistrée pour ce nom et sera restaurée si vous le retapez).")) return;
+  try{ localStorage.removeItem(STORAGE_KEY); }catch(e){}
+  location.reload();
+});
+
 
 /* ==================== DASHBOARD ==================== */
 function renderDashboard(){
@@ -1648,20 +1905,46 @@ function renderDashboard(){
     grid.appendChild(card);
   });
   document.getElementById("progressSummary").textContent = `${passedCount} / ${MODULES.length} modules réussis`;
+  renderResumeBanner();
   grid.querySelectorAll("[data-lesson]").forEach(b=>b.addEventListener("click", ()=>openLesson(parseInt(b.dataset.lesson))));
   grid.querySelectorAll("[data-quiz]").forEach(b=>b.addEventListener("click", ()=>openQuiz(parseInt(b.dataset.quiz))));
   grid.querySelectorAll("[data-cert]").forEach(b=>b.addEventListener("click", ()=>openCertificate(parseInt(b.dataset.cert))));
+}
+
+function renderResumeBanner(){
+  const banner = document.getElementById("resumeBanner");
+  const lastId = state.currentModuleId;
+  if(!lastId){ banner.style.display="none"; return; }
+  const mod = MODULES.find(m=>m.id===lastId);
+  if(!mod){ banner.style.display="none"; return; }
+  const res = state.results[lastId];
+  banner.style.display="block";
+  banner.innerHTML = `
+    <div class="resume-banner">
+      <div>
+        <div class="rb-text">👋 Content de vous revoir, <b>${state.userName}</b> ! Vous étiez sur <b>Module ${lastId} — ${mod.title}</b>.</div>
+        <div class="rb-sub">${res ? (res.passed ? "✓ Déjà réussi" : `Dernier score : ${res.score}/${res.total}`) : "Pas encore terminé"}</div>
+      </div>
+      <button class="btn accent" id="resumeBtn">Reprendre →</button>
+    </div>`;
+  document.getElementById("resumeBtn").addEventListener("click", ()=> openLesson(lastId));
 }
 
 /* ==================== LESSON ==================== */
 function openLesson(id){
   const mod = MODULES.find(m=>m.id===id);
   state.currentModuleId = id;
+  saveState();
   document.getElementById("lessonCrumb").textContent = `Module ${id} — ${mod.title}`;
   document.getElementById("lessonContent").innerHTML = `
     <div class="lesson-head">
       <div class="num">MODULE ${String(mod.id).padStart(2,"0")} / ${MODULES.length}</div>
       <h1>${mod.title}</h1>
+      <div class="lesson-meta"><span>⏱ ${mod.duration || "20 min"}</span><span>🎓 Team21 IT Academy</span></div>
+    </div>
+    <div class="objectives-box">
+      <h4>🎯 À la fin de ce module, vous saurez :</h4>
+      <ul>${(mod.objectives||[]).map(o=>`<li>${o}</li>`).join("")}</ul>
     </div>
     ${mod.lesson}
     <div class="lesson-footer-actions">
@@ -1785,6 +2068,7 @@ function submitQuiz(){
     certId: (state.results[mod.id] && state.results[mod.id].passed) ? state.results[mod.id].certId : certId
   };
   renderResult(mod, score, total, passed);
+  saveState();
   showScreen("result");
 }
 
@@ -2030,7 +2314,19 @@ function initKeyboardDiagram(rootId){
 }
 
 /* ==================== INIT ==================== */
-nameInput.focus();
+(function initApp(){
+  const saved = loadState();
+  if(saved && saved.userName){
+    state.userName = saved.userName;
+    state.results = saved.results || {};
+    state.currentModuleId = saved.lastModuleId || null;
+    applyUserChip(state.userName);
+    renderDashboard();
+    showScreen("dashboard");
+  } else {
+    nameInput.focus();
+  }
+})();
 
 </script>
 </body>
