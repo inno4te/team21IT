@@ -216,6 +216,76 @@ main{flex:1; width:100%; max-width:1000px; margin:0 auto; padding:32px 24px 60px
 .status-badge.locked{background:#EEF2F6; color:var(--gray);}
 .status-badge.available{background:#E8F1FC; color:var(--blue);}
 .status-badge.passed{background:#E7F6ED; color:var(--ok);}
+.level-divider{display:flex; align-items:center; gap:14px; margin:36px 0 20px;}
+.level-divider-line{flex:1; height:1px; background:var(--gray-light);}
+.level-divider-label{
+  font-family:'IBM Plex Mono',monospace; font-size:12.5px; letter-spacing:1.5px; color:var(--navy);
+  background:var(--white); border:1px solid var(--gray-light); padding:6px 16px; border-radius:20px; white-space:nowrap;
+}
+.mod-card.is-locked{opacity:0.6;}
+.mod-card.is-locked .win-bar span{background:rgba(255,255,255,0.15) !important;}
+.mod-card .level-tag{
+  position:absolute; top:10px; inset-inline-end:12px; font-family:'IBM Plex Mono',monospace; font-size:10px;
+  background:rgba(255,255,255,0.15); color:#fff; padding:2px 8px; border-radius:10px; letter-spacing:0.5px;
+}
+.mod-card .win-bar{position:relative;}
+.prereq-note{font-size:12px; color:var(--gray); margin-bottom:10px; font-family:'IBM Plex Mono',monospace;}
+
+/* ---------- Prompt Lab (LLM module) ---------- */
+.prompt-lab{background:#0D1B2E; border-radius:12px; padding:20px 22px 24px; margin:16px 0; color:#fff;}
+.prompt-lab textarea{
+  width:100%; min-height:90px; border-radius:8px; border:1px solid rgba(255,255,255,0.2);
+  background:rgba(255,255,255,0.06); color:#fff; padding:12px 14px; font-family:'Inter',sans-serif; font-size:14px;
+  resize:vertical; outline:none;
+}
+.prompt-lab textarea::placeholder{color:rgba(255,255,255,0.4);}
+.prompt-lab .pl-checklist{margin-top:14px; display:flex; flex-direction:column; gap:8px;}
+.pl-item{display:flex; align-items:center; gap:10px; font-size:13px; padding:8px 12px; border-radius:8px; background:rgba(255,255,255,0.05);}
+.pl-item .pl-icon{width:20px; height:20px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:12px; flex-shrink:0;}
+.pl-item.ok .pl-icon{background:#3FBF63; color:#0D1B2E;}
+.pl-item.warn .pl-icon{background:#E4B850; color:#0D1B2E;}
+.pl-score{margin-top:14px; font-family:'IBM Plex Mono',monospace; font-size:13px; color:#7EB8F2;}
+.provider-cards{display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:12px; margin:14px 0;}
+.provider-card{background:var(--white); border:1px solid var(--gray-light); border-radius:10px; padding:16px; text-align:center;}
+.provider-card h5{margin:0 0 6px; color:var(--navy); font-family:'Space Grotesk',sans-serif; font-size:15px;}
+.provider-card a{font-size:12.5px;}
+.acct-toggle{display:flex; align-items:center; gap:10px; background:var(--ice); border:1px solid var(--gray-light); border-radius:8px; padding:12px 16px; margin:12px 0; cursor:pointer;}
+.acct-toggle input{width:18px; height:18px;}
+
+/* ---------- Admin panel ---------- */
+.admin-link-wrap{text-align:center; padding-bottom:22px; margin-top:-14px;}
+.admin-link-wrap a{
+  font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:var(--gray); text-decoration:none;
+  border:1px solid var(--gray-light); padding:4px 12px; border-radius:14px;
+}
+.admin-link-wrap a:hover{color:var(--accent); border-color:var(--accent-light);}
+.admin-login-box{
+  max-width:560px; margin:40px auto; background:var(--white); border:1px solid var(--gray-light);
+  border-radius:var(--radius); padding:30px 34px; box-shadow:var(--shadow); text-align:center;
+}
+.admin-login-box input, .admin-login-box .btn{text-align:left;}
+.admin-login-box code{background:var(--ice); padding:2px 6px; border-radius:4px; font-size:12px;}
+.admin-table{width:100%; border-collapse:collapse; background:var(--white); border-radius:10px; overflow:hidden; box-shadow:var(--shadow);}
+.admin-table th{
+  background:var(--navy); color:#fff; text-align:left; padding:10px 14px; font-size:12.5px;
+  font-family:'IBM Plex Mono',monospace; letter-spacing:0.5px;
+}
+.admin-table td{padding:10px 14px; border-bottom:1px solid var(--gray-light); font-size:13.5px; vertical-align:top;}
+.admin-table tr:last-child td{border-bottom:none;}
+.admin-table tr.student-row{cursor:pointer;}
+.admin-table tr.student-row:hover{background:var(--ice);}
+.admin-progress-pill{
+  display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:11.5px; padding:3px 10px;
+  border-radius:12px; background:#E8F1FC; color:var(--blue);
+}
+.admin-detail-row td{background:var(--ice); padding:14px 20px;}
+.admin-mod-chip{
+  display:inline-flex; align-items:center; gap:6px; font-size:12px; padding:5px 10px; margin:3px 4px 3px 0;
+  border-radius:8px; background:var(--white); border:1px solid var(--gray-light);
+}
+.admin-mod-chip.passed{border-color:#9EE0BE; color:#1E7B4D;}
+.admin-mod-chip.failed{border-color:#F0C989; color:#8A6417;}
+.admin-mod-chip button{background:none; border:none; color:var(--accent); cursor:pointer; font-size:11.5px; padding:0; margin-inline-start:4px;}
 .mod-card .actions{display:flex; gap:8px;}
 .mod-card .actions .btn{flex:1; padding:10px 14px; font-size:13px; justify-content:center;}
 
@@ -574,6 +644,13 @@ kbd{
     </div>
     <div id="resumeBanner" style="display:none;"></div>
     <div class="module-grid" id="moduleGrid"></div>
+
+    <div class="level-divider" id="level2Divider" style="display:none;">
+      <span class="level-divider-line"></span>
+      <span class="level-divider-label" id="level2Label">NIVEAU 2 — COURS AVANCÉS</span>
+      <span class="level-divider-line"></span>
+    </div>
+    <div class="module-grid" id="moduleGridL2"></div>
   </section>
 
   <!-- SCREEN 2: Lesson -->
@@ -659,11 +736,45 @@ kbd{
     </div>
   </section>
 
+  <!-- SCREEN 6: Admin -->
+  <section class="screen" id="screen-admin">
+    <div class="crumb"><a data-nav="dashboard">← Retour au site</a></div>
+    <div id="adminLoginBox" class="admin-login-box">
+      <h1 style="font-size:22px;">⚙ Panneau administrateur — Team21 Academy</h1>
+      <p style="color:var(--gray); font-size:14px; max-width:520px;">Entrez la clé d'administration définie dans votre script Google Apps Script (propriété <code>ADMIN_KEY</code>) pour voir la progression de tous les étudiants.</p>
+      <div style="display:flex; gap:10px; max-width:420px; margin-top:14px;">
+        <input type="password" id="adminKeyInput" placeholder="Clé d'administration" style="flex:1; padding:12px 14px; border:1.5px solid var(--gray-light); border-radius:8px; font-family:'IBM Plex Mono',monospace;">
+        <button class="btn accent" id="adminLoginBtn">Se connecter</button>
+      </div>
+      <div id="adminLoginMsg" style="margin-top:10px; font-size:13px;"></div>
+      <div style="margin-top:20px; font-size:12.5px; color:var(--gray); max-width:520px; line-height:1.7;">
+        💡 Vous n'avez pas encore configuré le stockage central ? Ouvrez le fichier <code>team21-apps-script.gs.txt</code> fourni séparément : il contient un guide pas-à-pas pour créer votre base de données gratuite avec Google Sheets, en 5 minutes.
+      </div>
+    </div>
+    <div id="adminDashboard" style="display:none;">
+      <div class="dash-head">
+        <div>
+          <h1 style="font-size:22px;">⚙ Progression des étudiants</h1>
+          <div style="color:var(--gray); font-size:13px;" id="adminSummaryLine">—</div>
+        </div>
+        <div style="display:flex; gap:10px;">
+          <button class="btn ghost" id="adminRefreshBtn">↻ Actualiser</button>
+          <button class="btn accent" id="adminExportBtn">⬇ Exporter en CSV</button>
+        </div>
+      </div>
+      <div id="adminTableWrap"></div>
+    </div>
+  </section>
+
 </main>
 
+
 <footer class="site-footer" data-i18n="footerCopy">© Innocent Forteh — Team21 Academy — www.team21.help</footer>
+<div class="admin-link-wrap no-print"><a id="adminLink" href="javascript:void(0)">⚙ Admin</a></div>
 
 <script>
+/* ==================== DATA & LOGIC ==================== */
+
 /* ==================== DATA & LOGIC ==================== */
 const STRINGS = {
 fr:{
@@ -681,6 +792,10 @@ fr:{
   statusPassed:"✓ RÉUSSI",
   statusRetry:"✗ À REPASSER",
   statusAvailable:"○ DISPONIBLE",
+  statusLocked:"VERROUILLÉ",
+  prereqNote:"Terminez d'abord « {title} » pour débloquer ce cours.",
+  level2Tag:"NIVEAU 2",
+  level2DividerLabel:"NIVEAU 2 — COURS AVANCÉS",
   btnReviewLesson:"Revoir la leçon",
   btnCertificate:"Certificat 🎓",
   btnRetryQuiz:"Repasser le quiz",
@@ -760,6 +875,10 @@ en:{
   statusPassed:"✓ PASSED",
   statusRetry:"✗ RETRY NEEDED",
   statusAvailable:"○ AVAILABLE",
+  statusLocked:"LOCKED",
+  prereqNote:"Complete « {title} » first to unlock this course.",
+  level2Tag:"LEVEL 2",
+  level2DividerLabel:"LEVEL 2 — ADVANCED COURSES",
   btnReviewLesson:"Review lesson",
   btnCertificate:"Certificate 🎓",
   btnRetryQuiz:"Retake quiz",
@@ -839,6 +958,10 @@ ar:{
   statusPassed:"✓ ناجح",
   statusRetry:"✗ يحتاج إعادة المحاولة",
   statusAvailable:"○ متاح",
+  statusLocked:"مغلق",
+  prereqNote:"أكمل « {title} » أولاً لفتح هذه الدورة.",
+  level2Tag:"المستوى 2",
+  level2DividerLabel:"المستوى 2 — دورات متقدمة",
   btnReviewLesson:"مراجعة الدرس",
   btnCertificate:"الشهادة 🎓",
   btnRetryQuiz:"إعادة الاختبار",
@@ -4439,6 +4562,1470 @@ function loadState(){
   }catch(e){ return null; }
 }
 
+MODULES_FR.push(
+{
+  id:10,
+  title:"Introduction à l'Intelligence Artificielle",
+  short:"Découvrez ce qu'est l'IA, comment elle fonctionne et où vous la croisez déjà tous les jours.",
+  duration:"20-25 min",
+  level:1,
+  objectives:["Expliquer simplement ce qu'est l'intelligence artificielle","Distinguer IA, apprentissage automatique et apprentissage profond","Reconnaître l'IA dans des applications que vous utilisez déjà"],
+  lesson:`
+  <div class="lesson-block">
+    <h2><span class="tagnum">01</span>Qu'est-ce que l'intelligence artificielle ?</h2>
+    <p>L'<b>intelligence artificielle (IA)</b> désigne la capacité d'un ordinateur à réaliser des tâches qui nécessitaient auparavant l'intelligence humaine : reconnaître une image, comprendre une phrase, traduire une langue, recommander un film, ou même conduire une voiture. Contrairement à un logiciel classique qui suit des règles fixes écrites par un humain, un système d'IA <b>apprend</b> à partir d'exemples et de données pour améliorer ses performances.</p>
+    <p>On distingue généralement trois niveaux : l'<b>Intelligence Artificielle</b> (le domaine général), l'<b>Apprentissage Automatique</b> ou Machine Learning (des algorithmes qui apprennent des motifs à partir de données), et l'<b>Apprentissage Profond</b> ou Deep Learning (une famille de Machine Learning basée sur des réseaux de neurones artificiels, inspirés — de très loin — du cerveau humain).</p>
+  </div>
+
+  <div class="plain-box">
+    <div class="pb-label">🤓 En clair, pour les débutants</div>
+    Imaginez que vous appreniez à un enfant à reconnaître un chat en lui montrant 10 000 photos de chats et 10 000 photos d'autres animaux. Après un moment, l'enfant reconnaît un chat sans qu'on lui ait donné une règle écrite (« un chat a des moustaches, 4 pattes... »). C'est exactement ce que fait un système d'IA : il apprend des motifs à partir d'exemples, plutôt que de suivre des règles toutes faites.
+  </div>
+  <div class="fact-box">
+    <div class="fb-label">💡 Le saviez-vous ?</div>
+    Le terme « intelligence artificielle » a été inventé en 1956, lors d'une conférence à l'université de Dartmouth (États-Unis). À l'époque, les chercheurs pensaient qu'une machine capable de « penser » comme un humain serait créée en une seule génération — plus de 65 ans plus tard, nous y travaillons encore !
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">02</span>IA « faible » et IA « forte »</h2>
+    <ul>
+      <li><b>IA faible (ou étroite) :</b> conçue pour une tâche précise (reconnaître des visages, jouer aux échecs, recommander une musique). C'est le seul type d'IA qui existe réellement aujourd'hui, malgré ses capacités impressionnantes.</li>
+      <li><b>IA forte (ou générale) :</b> une IA hypothétique capable d'égaler l'intelligence humaine dans tous les domaines à la fois. Elle n'existe pas encore et reste un sujet de recherche et de science-fiction.</li>
+    </ul>
+    <p>Quand les médias parlent d'une IA « qui pense » ou « qui comprend », il s'agit presque toujours d'IA faible très perfectionnée — pas d'une conscience artificielle.</p>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">03</span>Exemples pratiques dans votre quotidien</h2>
+    <div class="example-box"><b>Exemple 1 :</b> quand votre téléphone déverrouille l'écran en reconnaissant votre visage, un modèle d'IA compare votre visage à celui enregistré en quelques centièmes de seconde.</div>
+    <div class="example-box"><b>Exemple 2 :</b> les recommandations Netflix ou YouTube (« parce que vous avez regardé... ») viennent d'un algorithme d'IA qui a appris vos préférences à partir de votre historique de visionnage.</div>
+    <div class="example-box"><b>Exemple 3 :</b> le correcteur orthographique intelligent de votre téléphone, qui propose le mot suivant pendant que vous tapez, utilise un modèle de langage entraîné sur des millions de phrases.</div>
+    <div class="example-box"><b>Exemple 4 :</b> les filtres anti-spam de votre boîte mail utilisent l'IA pour détecter automatiquement les messages indésirables, en apprenant continuellement de nouveaux types d'arnaques.</div>
+    <div class="example-box"><b>Exemple 5 :</b> les assistants vocaux (Siri, Google Assistant, Alexa) combinent reconnaissance vocale (IA), compréhension du langage (IA) et synthèse vocale (IA) pour vous répondre.</div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">04</span>Comment une IA « apprend »-t-elle ?</h2>
+    <ol>
+      <li><b>Collecte de données :</b> on rassemble un grand nombre d'exemples (photos, textes, sons).</li>
+      <li><b>Entraînement :</b> un algorithme analyse ces exemples et ajuste ses paramètres internes pour reconnaître des motifs (par exemple, ce qui distingue un chat d'un chien sur une photo).</li>
+      <li><b>Test :</b> on vérifie les performances du modèle sur de nouveaux exemples qu'il n'a jamais vus.</li>
+      <li><b>Déploiement :</b> le modèle entraîné est intégré dans une application que vous utilisez au quotidien.</li>
+    </ol>
+    <div class="quote-box">« L'intelligence artificielle est la nouvelle électricité. »<footer>— Andrew Ng, pionnier de l'IA et co-fondateur de Google Brain</footer></div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">05</span>Limites et questions éthiques à connaître</h2>
+    <ul>
+      <li><b>Biais :</b> une IA entraînée sur des données biaisées peut reproduire ou amplifier des discriminations (ex : embauche, reconnaissance faciale).</li>
+      <li><b>Erreurs :</b> une IA peut se tromper avec assurance sur des cas qu'elle n'a jamais rencontrés — elle n'a pas de « bon sens » comme un humain.</li>
+      <li><b>Vie privée :</b> l'entraînement de nombreux modèles nécessite d'énormes quantités de données, parfois personnelles, ce qui pose des questions de confidentialité.</li>
+      <li><b>Emploi :</b> l'automatisation par l'IA transforme certains métiers ; savoir l'utiliser devient une compétence recherchée plutôt qu'une menace directe pour qui s'y forme.</li>
+    </ul>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">06</span>Laboratoire pratique — Repérer l'IA autour de vous</h2>
+    <div class="exercise-box">
+      <h4>🖥️ Labo 1 — Chasse à l'IA dans vos applications</h4>
+      <ol class="step-list">
+        <li>Listez 5 applications sur votre téléphone ou ordinateur que vous utilisez régulièrement.</li>
+        <li>Pour chacune, identifiez si elle utilise probablement de l'IA (recommandations, reconnaissance, prédiction de texte, filtres photo...).</li>
+        <li>Ouvrez votre appareil photo et testez un filtre ou mode portrait qui floute l'arrière-plan — c'est de l'IA de vision par ordinateur en action.</li>
+        <li>Tapez le début d'une phrase dans votre clavier de smartphone et observez les suggestions de mots proposées : c'est un petit modèle de langage.</li>
+      </ol>
+    </div>
+    <div class="exercise-box">
+      <h4>🖥️ Labo 2 — IA faible vs IA forte</h4>
+      <ol class="step-list">
+        <li>Faites une liste de 3 tâches qu'une IA sait très bien faire aujourd'hui (ex : reconnaître un visage, traduire un texte).</li>
+        <li>Faites une liste de 3 tâches qu'une IA générale (IA forte) devrait savoir faire si elle existait (ex : comprendre l'humour, avoir une véritable intuition).</li>
+        <li>Discutez : pourquoi ces deux listes sont-elles différentes ?</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">07</span>Références</h2>
+    <div class="cheat-box">
+      <h4>✅ Fiche mémo — Ce que vous devez retenir du Module 10</h4>
+      <ul>
+        <li>IA ⊃ Machine Learning ⊃ Deep Learning</li>
+        <li>Une IA apprend à partir de données plutôt que de règles fixes</li>
+        <li>Seule l'IA faible (spécialisée) existe aujourd'hui</li>
+        <li>Biais, erreurs et vie privée sont des enjeux réels</li>
+        <li>L'IA est déjà partout dans vos applications quotidiennes</li>
+      </ul>
+    </div>
+    <div class="ref-list">
+      • Google — « Introduction à l'IA pour tous » (Google AI)<br>
+      • MIT — « Elements of AI »<br>
+      • UNESCO — « L'IA expliquée simplement »
+    </div>
+  </div>`,
+  quiz:[
+    {q:"L'intelligence artificielle désigne principalement :",options:["Un ordinateur plus rapide qu'un humain pour calculer","La capacité d'un système à réaliser des tâches nécessitant normalement l'intelligence humaine","Un robot avec un corps physique uniquement","Un logiciel qui suit uniquement des règles fixes"],correct:1},
+    {q:"Le Machine Learning (apprentissage automatique) est :",options:["Un synonyme exact d'intelligence artificielle","Un sous-domaine de l'IA où les systèmes apprennent à partir de données","Une IA qui n'existe pas encore","Un type de matériel informatique"],correct:1},
+    {q:"Le Deep Learning (apprentissage profond) repose sur :",options:["Des réseaux de neurones artificiels","Des règles écrites manuellement uniquement","Des cartes perforées","Aucune donnée d'entraînement"],correct:0},
+    {q:"L'IA qui existe réellement aujourd'hui est principalement :",options:["De l'IA forte (générale)","De l'IA faible (spécialisée)","Une conscience artificielle complète","Aucune des deux"],correct:1},
+    {q:"Quand un téléphone déverrouille l'écran en reconnaissant votre visage, il utilise :",options:["Un modèle d'IA de reconnaissance faciale","Un simple mot de passe caché","Une empreinte digitale uniquement","Aucune technologie particulière"],correct:0},
+    {q:"D'où viennent les recommandations Netflix ou YouTube ?",options:["D'un employé qui choisit manuellement pour chaque utilisateur","D'un algorithme d'IA qui apprend vos préférences","Du hasard total","D'une liste fixe identique pour tous"],correct:1},
+    {q:"Quelle est la première étape typique pour entraîner une IA ?",options:["Le déploiement immédiat sans données","La collecte d'un grand nombre d'exemples (données)","L'achat d'un robot physique","La suppression de toutes les données"],correct:1},
+    {q:"Un « biais » dans une IA signifie :",options:["Une erreur de câblage électrique","Une tendance reproduisant ou amplifiant des discriminations présentes dans les données d'entraînement","Un bug d'affichage uniquement","Une IA trop rapide"],correct:1},
+    {q:"Pourquoi une IA peut-elle se tromper avec assurance sur un cas inédit ?",options:["Parce qu'elle n'a pas de bon sens humain et se base uniquement sur ce qu'elle a appris","Parce qu'elle ment volontairement","Parce qu'elle est toujours débranchée","Parce qu'elle refuse de répondre"],correct:0},
+    {q:"Selon la citation d'Andrew Ng, l'IA est comparée à :",options:["Un jouet pour enfants","La nouvelle électricité","Une simple mode passagère","Un danger uniquement"],correct:1},
+    {q:"Les assistants vocaux comme Siri ou Alexa combinent :",options:["Reconnaissance vocale, compréhension du langage et synthèse vocale","Uniquement un microphone sans IA","Seulement une base de données statique","Aucune technologie d'IA"],correct:0},
+    {q:"L'IA forte (générale) aujourd'hui :",options:["Existe déjà dans plusieurs smartphones","N'existe pas encore et reste un sujet de recherche","A été abandonnée par tous les chercheurs","Est identique à l'IA faible"],correct:1},
+    {q:"Le filtre anti-spam d'une boîte mail utilise l'IA pour :",options:["Supprimer tous les emails automatiquement","Détecter et apprendre à reconnaître les messages indésirables","Envoyer des emails à votre place","Remplacer votre mot de passe"],correct:1},
+    {q:"Pourquoi la vie privée est-elle une question importante en IA ?",options:["Parce que l'entraînement de modèles nécessite souvent d'énormes quantités de données, parfois personnelles","Parce que l'IA n'utilise jamais de données","Parce que cela ne concerne que les gouvernements","Ce n'est pas un enjeu réel"],correct:0},
+    {q:"Un mode portrait qui floute l'arrière-plan sur une photo illustre :",options:["De la vision par ordinateur, une branche de l'IA","Un simple réglage manuel du zoom","Une technique sans rapport avec l'IA","Un défaut de l'appareil photo"],correct:0}
+  ]
+},
+{
+  id:11,
+  title:"Débloquer Word — Niveau Avancé",
+  short:"Objets, mise en forme experte, tableaux avancés et automatisation : devenez un utilisateur confirmé de Word.",
+  duration:"70-90 min (16 laboratoires)",
+  level:2,
+  prereq:5,
+  objectives:["Insérer et manipuler des objets complexes (SmartArt, graphiques, formes)","Construire des tableaux avancés et des listes à plusieurs niveaux","Automatiser un document avec styles, publipostage et protection"],
+  lesson:`
+  <div class="lesson-block">
+    <h2><span class="tagnum">01</span>Pourquoi aller plus loin que les bases ?</h2>
+    <p>Vous savez déjà taper, mettre en forme et enregistrer un document (Module 5). Ce cours de <b>Niveau 2</b> vous transforme en utilisateur confirmé : celui qu'on appelle au bureau pour préparer un rapport professionnel, fusionner 200 lettres personnalisées, ou construire un formulaire réutilisable. Ce sont exactement les compétences qu'un(e) opérateur(-trice) informatique expérimenté(e) utilise chaque semaine.</p>
+    <p>Ce module est structuré en <b>16 laboratoires pratiques</b>, regroupés en 4 grandes familles de compétences. Faites-les dans l'ordre : chacun s'appuie sur des réflexes acquis au précédent.</p>
+  </div>
+
+  <div class="plain-box">
+    <div class="pb-label">🤓 En clair</div>
+    Si le Module 5 vous a appris à écrire une lettre, ce module vous apprend à construire un rapport d'entreprise complet : images bien placées, tableaux de données, table des matières automatique, et un document qui reste propre même après 50 pages.
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">02</span>Famille 1 — Objets et éléments graphiques</h2>
+    <div class="exercise-box">
+      <h4>🖥️ Laboratoires 1 à 5</h4>
+      <ol class="step-list">
+        <li><b>Labo 1 — Habillage d'image :</b> insérez une image (Insertion → Images), puis testez les différentes options d'habillage du texte (clic droit sur l'image → Habillage du texte → Carré, Rapproché, Devant le texte). Observez comment le texte réagit autour de l'image dans chaque mode.</li>
+        <li><b>Labo 2 — Formes et icônes groupées :</b> insérez 3 formes (Insertion → Formes) pour créer un petit schéma simple (par exemple 3 rectangles reliés par des flèches), puis sélectionnez-les toutes (Ctrl+clic) et groupez-les (clic droit → Grouper) pour les déplacer comme un seul objet.</li>
+        <li><b>Labo 3 — SmartArt :</b> insérez un SmartArt de type organigramme (Insertion → SmartArt → Hiérarchie) et créez une structure simple à 3 niveaux (par exemple : Directeur → 2 responsables → 4 employés).</li>
+        <li><b>Labo 4 — Graphique lié aux données :</b> insérez un graphique (Insertion → Graphique → Histogramme), modifiez les données dans la mini-feuille de calcul qui s'ouvre, et observez le graphique se mettre à jour automatiquement.</li>
+        <li><b>Labo 5 — Zone de texte et WordArt :</b> créez le titre d'une affiche fictive en utilisant WordArt (Insertion → WordArt) et positionnez une zone de texte libre à côté pour un sous-titre.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">03</span>Famille 2 — Listes et tableaux avancés</h2>
+    <div class="exercise-box">
+      <h4>🖥️ Laboratoires 6 à 9</h4>
+      <ol class="step-list">
+        <li><b>Labo 6 — Liste à plusieurs niveaux :</b> créez un plan de document avec une numérotation hiérarchique automatique (1, puis 1.1, puis 1.1.1) via Accueil → Liste à plusieurs niveaux.</li>
+        <li><b>Labo 7 — Puces personnalisées :</b> créez une liste avec une puce personnalisée (une image ou un symbole de votre choix, via Accueil → Puces → Définir une puce), puis pratiquez le redémarrage de numérotation sur une deuxième liste.</li>
+        <li><b>Labo 8 — Tableau avancé :</b> créez un tableau de 5×5, fusionnez deux cellules d'en-tête (sélectionnez-les → clic droit → Fusionner les cellules), appliquez un style de tableau prédéfini (onglet Création du tableau), puis triez les données d'une colonne (clic dans le tableau → onglet Disposition → Trier).</li>
+        <li><b>Labo 9 — Formule dans un tableau Word :</b> dans la dernière ligne d'une colonne de nombres, utilisez Disposition → Formule et entrez <span class="mono">=SUM(ABOVE)</span> pour additionner automatiquement les cellules au-dessus.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">04</span>Famille 3 — Mise en page et structure de document</h2>
+    <div class="exercise-box">
+      <h4>🖥️ Laboratoires 10 à 13</h4>
+      <ol class="step-list">
+        <li><b>Labo 10 — Colonnes et lettrine :</b> transformez un paragraphe en mise en page « journal » à deux colonnes (Mise en page → Colonnes) et ajoutez une lettrine sur le premier paragraphe (Insertion → Lettrine).</li>
+        <li><b>Labo 11 — Styles et thèmes :</b> appliquez un jeu de styles cohérent à tout un document (Création → Jeux de styles) puis personnalisez la couleur du thème (Création → Couleurs).</li>
+        <li><b>Labo 12 — Table des matières et notes de bas de page :</b> sur un document de 3 sections utilisant des styles de titre, générez une table des matières automatique (Références → Table des matières), puis ajoutez une note de bas de page (Références → Insérer une note de bas de page).</li>
+        <li><b>Labo 13 — En-têtes/pieds de page avancés :</b> activez « Première page différente » pour qu'une page de garde n'affiche pas d'en-tête, puis testez « Pages paires et impaires différentes » (Mise en page → Mise en page → Disposition).</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">05</span>Famille 4 — Automatisation, collaboration et sécurité</h2>
+    <div class="exercise-box">
+      <h4>🖥️ Laboratoires 14 à 16</h4>
+      <ol class="step-list">
+        <li><b>Labo 14 — Publipostage (Mail Merge) :</b> créez une liste de 5 destinataires fictifs dans un petit tableau Excel (Nom, Adresse), puis utilisez Publipostage → Démarrer la fusion et le publipostage → Lettres pour générer une lettre personnalisée pour chacun.</li>
+        <li><b>Labo 15 — Suivi des modifications et commentaires :</b> activez Révision → Suivi des modifications, modifiez un paragraphe, puis ajoutez un commentaire sur une phrase (Révision → Nouveau commentaire). Acceptez ou rejetez ensuite les modifications une par une.</li>
+        <li><b>Labo 16 — Protection du document :</b> restreignez la modification d'un document (Révision → Restreindre la modification) et/ou protégez-le par mot de passe à l'ouverture (Fichier → Informations → Protéger le document → Chiffrer avec mot de passe).</li>
+      </ol>
+    </div>
+    <div class="quote-box">« La maîtrise n'est pas de connaître tous les outils, mais de savoir lequel utiliser au bon moment. »<footer>— Innocent Forteh, Directeur du Programme, Team21 Academy</footer></div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">06</span>Entraînez-vous dans le mini-éditeur</h2>
+    <div class="demo-widget">
+      <div class="demo-label">Rappel des formats de base avant l'examen</div>
+      <div id="wordDemo2"></div>
+    </div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">07</span>Références</h2>
+    <div class="cheat-box">
+      <h4>✅ Fiche mémo — Compétences validées par ce cours</h4>
+      <ul>
+        <li>Insertion d'objets : images, formes, SmartArt, graphiques</li>
+        <li>Listes à plusieurs niveaux et tableaux avec formules</li>
+        <li>Styles, thèmes, table des matières automatique</li>
+        <li>Publipostage vers plusieurs destinataires</li>
+        <li>Suivi des modifications et protection de document</li>
+      </ul>
+    </div>
+    <div class="ref-list">
+      • Microsoft Support — « Formation avancée Word »<br>
+      • GCFGlobal — « Word Advanced Formatting »<br>
+      • Microsoft — « Guide du publipostage »
+    </div>
+  </div>`,
+  quiz:[
+    {q:"Pour qu'un texte s'enroule autour d'une image, on utilise :",options:["L'option Habillage du texte","La touche Suppr","Le correcteur orthographique","Le mode Lecture"],correct:0},
+    {q:"Pour déplacer plusieurs formes comme un seul objet, on utilise :",options:["Fusionner les cellules","Grouper les formes","Le publipostage","La table des matières"],correct:1},
+    {q:"Un SmartArt de type organigramme sert principalement à :",options:["Calculer une moyenne","Représenter une hiérarchie ou une structure","Corriger l'orthographe","Compresser un fichier"],correct:1},
+    {q:"Quand on modifie les données d'un graphique inséré dans Word, le graphique :",options:["Reste identique","Se met à jour automatiquement","Disparaît","Se transforme en tableau"],correct:1},
+    {q:"Une liste à plusieurs niveaux permet de créer :",options:["Une numérotation hiérarchique (1, 1.1, 1.1.1)","Un tableau sans bordures","Un graphique en secteurs","Une seule ligne de texte"],correct:0},
+    {q:"Pour fusionner deux cellules d'un tableau, on utilise :",options:["Clic droit → Fusionner les cellules","Le publipostage","Les notes de bas de page","La lettrine"],correct:0},
+    {q:"La formule =SUM(ABOVE) dans un tableau Word permet de :",options:["Trier les données","Additionner les cellules situées au-dessus","Supprimer une ligne","Insérer une image"],correct:1},
+    {q:"Une mise en page « façon journal » avec plusieurs colonnes se configure via :",options:["Mise en page → Colonnes","Insertion → Tableau","Révision → Commentaires","Fichier → Imprimer"],correct:0},
+    {q:"Les Jeux de styles permettent de :",options:["Appliquer une apparence cohérente à tout un document","Supprimer tous les styles","Changer la langue du document","Insérer un graphique"],correct:0},
+    {q:"Une table des matières automatique se génère à partir :",options:["Des styles de titre appliqués dans le document","Du nombre de pages uniquement","D'une liste tapée manuellement","Des images insérées"],correct:0},
+    {q:"L'option « Première page différente » sert à :",options:["Empêcher l'impression du document","Avoir un en-tête/pied de page différent (ou absent) sur la première page","Changer la langue de la première page uniquement","Supprimer la première page"],correct:1},
+    {q:"Le publipostage (Mail Merge) est utile pour :",options:["Créer plusieurs lettres personnalisées à partir d'une liste de destinataires","Compresser un document","Insérer un SmartArt","Changer l'orientation de la page"],correct:0},
+    {q:"Le Suivi des modifications permet de :",options:["Voir les modifications apportées à un document, avec possibilité de les accepter ou refuser","Empêcher toute modification","Supprimer l'historique du document","Traduire automatiquement le texte"],correct:0},
+    {q:"Pour empêcher l'ouverture d'un document sans mot de passe, on utilise :",options:["Fichier → Informations → Protéger le document → Chiffrer avec mot de passe","Le correcteur orthographique","Le mode Brouillon","L'option Zoom"],correct:0},
+    {q:"Quelle est la meilleure raison d'utiliser des styles de titre plutôt que du gras manuel ?",options:["Cela permet de générer automatiquement une table des matières et de garder une structure cohérente","Cela n'a aucun avantage particulier","Cela ralentit le document","Cela empêche l'impression"],correct:0}
+  ]
+});
+MODULES_FR.push(
+{
+  id:12,
+  title:"Débloquer Excel — Niveau Avancé",
+  short:"Formules avancées, tableaux croisés dynamiques, validation de données : devenez un utilisateur confirmé d'Excel.",
+  duration:"70-90 min (16 laboratoires)",
+  level:2,
+  prereq:6,
+  objectives:["Maîtriser les formules avancées (recherche, conditions, texte, dates)","Construire des tableaux Excel structurés et des tableaux croisés dynamiques","Analyser et protéger des données comme un professionnel"],
+  lesson:`
+  <div class="lesson-block">
+    <h2><span class="tagnum">01</span>Du calcul simple à l'analyse de données</h2>
+    <p>Le Module 6 vous a appris les bases : cellules, =SOMME(), =MOYENNE(), un premier graphique. Ce cours de <b>Niveau 2</b> vous emmène là où travaillent les professionnels de la donnée : recherche d'informations dans de grandes tables, tableaux croisés dynamiques, mise en forme intelligente, et automatisation de l'analyse. Ce sont les compétences qu'un(e) opérateur(-trice) Excel expérimenté(e) utilise pour transformer des milliers de lignes de données en décisions claires.</p>
+    <p>Ce module comprend <b>16 laboratoires pratiques</b>, répartis en 4 familles de compétences. Travaillez avec un jeu de données fictif (par exemple une liste de ventes) tout au long des exercices pour rester cohérent.</p>
+  </div>
+
+  <div class="plain-box">
+    <div class="pb-label">🤓 En clair</div>
+    Si le Module 6 vous a appris à faire une addition automatique, ce module vous apprend à poser une vraie question à vos données — « Quel vendeur a le mieux performé en mars ? » — et obtenir la réponse en quelques clics, plutôt qu'en lisant des milliers de lignes une par une.
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">02</span>Famille 1 — Formules avancées</h2>
+    <div class="exercise-box">
+      <h4>🖥️ Laboratoires 1 à 6</h4>
+      <ol class="step-list">
+        <li><b>Labo 1 — SI imbriqué :</b> créez une colonne « Mention » qui affiche « Excellent » si la note ≥ 16, « Bien » si ≥ 12, sinon « À améliorer », avec <span class="mono">=SI(A2>=16,"Excellent",SI(A2>=12,"Bien","À améliorer"))</span>.</li>
+        <li><b>Labo 2 — RECHERCHEV / RECHERCHEX :</b> créez une table de prix par produit, puis dans une autre zone utilisez <span class="mono">=RECHERCHEV(nom_produit; table_prix; 2; FAUX)</span> pour retrouver automatiquement un prix.</li>
+        <li><b>Labo 3 — INDEX et EQUIV :</b> reproduisez le même résultat que RECHERCHEV en combinant <span class="mono">=INDEX(plage; EQUIV(critère; plage_recherche; 0))</span> — plus flexible pour rechercher vers la gauche.</li>
+        <li><b>Labo 4 — SOMME.SI / NB.SI / MOYENNE.SI :</b> à partir d'une liste de ventes par région, calculez le total des ventes pour une seule région avec <span class="mono">=SOMME.SI(plage_région; "Nord"; plage_ventes)</span>.</li>
+        <li><b>Labo 5 — Fonctions de texte :</b> utilisez <span class="mono">=CONCATENER()</span> ou <span class="mono">&</span> pour fusionner un prénom et un nom, puis <span class="mono">=GAUCHE()</span>, <span class="mono">=DROITE()</span> et <span class="mono">=NBCAR()</span> pour extraire des parties de texte.</li>
+        <li><b>Labo 6 — Fonctions de date :</b> utilisez <span class="mono">=AUJOURDHUI()</span>, puis calculez un nombre de jours entre deux dates avec une simple soustraction, et testez <span class="mono">=NB.JOURS.OUVRES()</span> pour compter les jours ouvrés entre deux dates.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">03</span>Famille 2 — Tableaux et organisation des données</h2>
+    <div class="exercise-box">
+      <h4>🖥️ Laboratoires 7 à 9, 12</h4>
+      <ol class="step-list">
+        <li><b>Labo 7 — Tableau Excel structuré :</b> sélectionnez votre plage de données et convertissez-la en tableau officiel (Insertion → Tableau, ou Ctrl+T). Observez comment les références deviennent des noms de colonnes lisibles dans les formules.</li>
+        <li><b>Labo 8 — Tableau croisé dynamique :</b> à partir de vos données de ventes, créez un tableau croisé dynamique (Insertion → Tableau croisé dynamique) qui résume le total des ventes par région et par mois en quelques glisser-déposer.</li>
+        <li><b>Labo 9 — Plage nommée :</b> sélectionnez une plage de cellules et donnez-lui un nom (zone Nom en haut à gauche, ou Formules → Définir un nom), puis utilisez ce nom directement dans une formule au lieu des références de cellules.</li>
+        <li><b>Labo 12 — Validation de données :</b> créez une liste déroulante dans une cellule (Données → Validation des données → Liste) pour n'autoriser que certaines valeurs, par exemple des noms de régions prédéfinis.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">04</span>Famille 3 — Visualisation intelligente</h2>
+    <div class="exercise-box">
+      <h4>🖥️ Laboratoires 10 à 11</h4>
+      <ol class="step-list">
+        <li><b>Labo 10 — Mise en forme conditionnelle avancée :</b> appliquez des barres de données ou des jeux d'icônes (Accueil → Mise en forme conditionnelle) sur une colonne de chiffres, puis créez une règle personnalisée basée sur une formule (par exemple, colorer en rouge toute vente inférieure à un objectif).</li>
+        <li><b>Labo 11 — Graphique combiné et mini-graphiques (Sparklines) :</b> créez un graphique combiné (barres + ligne) pour comparer deux séries de données à des échelles différentes, puis insérez un mini-graphique Sparkline dans une cellule (Insertion → Sparkline) pour visualiser une tendance directement dans le tableau.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">05</span>Famille 4 — Analyse, collaboration et impression</h2>
+    <div class="exercise-box">
+      <h4>🖥️ Laboratoires 13 à 16</h4>
+      <ol class="step-list">
+        <li><b>Labo 13 — Valeur cible (Goal Seek) :</b> utilisez Données → Analyse de scénarios → Valeur cible pour trouver automatiquement quelle quantité vendre pour atteindre un objectif de revenu précis.</li>
+        <li><b>Labo 14 — Figer les volets et formules 3D :</b> figez la première ligne et la première colonne (Affichage → Figer les volets) sur un grand tableau, puis créez une formule qui additionne la même cellule sur plusieurs feuilles à la fois, par exemple <span class="mono">=SOMME(Janvier:Mars!B2)</span>.</li>
+        <li><b>Labo 15 — Tri et filtre avancés :</b> triez vos données selon plusieurs critères à la fois (Données → Trier → Ajouter un niveau), puis utilisez un Filtre avancé pour extraire uniquement les lignes répondant à plusieurs conditions complexes.</li>
+        <li><b>Labo 16 — Protection et impression :</b> protégez une feuille contre la modification (Révision → Protéger la feuille), puis configurez une zone d'impression avec des lignes d'en-tête répétées sur chaque page (Mise en page → Zone d'impression / Imprimer les titres).</li>
+      </ol>
+    </div>
+    <div class="quote-box">« Un tableau bien construit répond à une question avant même qu'on ne la pose. »<footer>— Innocent Forteh, Directeur du Programme, Team21 Academy</footer></div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">06</span>Entraînez-vous dans le mini-tableur</h2>
+    <div class="demo-widget">
+      <div class="demo-label">Rappel des formules de base avant l'examen</div>
+      <div id="excelDemo2"></div>
+    </div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">07</span>Références</h2>
+    <div class="cheat-box">
+      <h4>✅ Fiche mémo — Compétences validées par ce cours</h4>
+      <ul>
+        <li>SI imbriqué, RECHERCHEV/X, INDEX+EQUIV</li>
+        <li>SOMME.SI, fonctions de texte et de date</li>
+        <li>Tableaux structurés et tableaux croisés dynamiques</li>
+        <li>Mise en forme conditionnelle avancée et graphiques combinés</li>
+        <li>Valeur cible, tri/filtre avancé, protection et impression</li>
+      </ul>
+    </div>
+    <div class="ref-list">
+      • Microsoft Support — « Formation avancée Excel »<br>
+      • GCFGlobal — « Excel Formulas »<br>
+      • Microsoft — « Créer un tableau croisé dynamique »
+    </div>
+  </div>`,
+  quiz:[
+    {q:"Une formule SI imbriquée sert à :",options:["Tester plusieurs conditions successives dans une seule formule","Supprimer une cellule","Trier une colonne","Créer un graphique"],correct:0},
+    {q:"RECHERCHEV permet de :",options:["Rechercher une valeur dans une table et retourner une information associée","Compresser un fichier","Insérer une image","Protéger une feuille"],correct:0},
+    {q:"Un avantage d'INDEX+EQUIV par rapport à RECHERCHEV est :",options:["Il peut rechercher vers la gauche, contrairement à RECHERCHEV classique","Il est toujours plus lent","Il ne fonctionne qu'avec du texte","Il supprime les doublons automatiquement"],correct:0},
+    {q:"=SOMME.SI(plage_critère; \'Nord\'; plage_ventes) permet de :",options:["Additionner uniquement les ventes correspondant au critère « Nord »","Compter toutes les cellules","Trier les ventes par ordre croissant","Supprimer les ventes du Nord"],correct:0},
+    {q:"La fonction =GAUCHE() sert à :",options:["Extraire les premiers caractères d'un texte","Aligner une cellule à gauche","Supprimer un texte","Trier une colonne"],correct:0},
+    {q:"=AUJOURDHUI() affiche :",options:["La date actuelle, mise à jour automatiquement","Une date fixe qui ne change jamais","L'heure uniquement","Un nombre aléatoire"],correct:0},
+    {q:"Convertir une plage en tableau Excel structuré (Ctrl+T) permet notamment de :",options:["Utiliser des noms de colonnes lisibles dans les formules","Supprimer toutes les données","Empêcher tout tri","Cacher automatiquement les colonnes"],correct:0},
+    {q:"Un tableau croisé dynamique sert principalement à :",options:["Résumer et croiser de grandes quantités de données rapidement","Insérer une image","Protéger un mot de passe","Ralentir le calcul"],correct:0},
+    {q:"Une plage nommée permet de :",options:["Utiliser un nom clair dans une formule au lieu d'une référence de cellule","Supprimer une plage de cellules","Changer la couleur d'une feuille","Fusionner deux fichiers"],correct:0},
+    {q:"La validation de données avec une liste déroulante sert à :",options:["Limiter la saisie à des valeurs prédéfinies","Créer un graphique automatiquement","Trier les données","Protéger tout le classeur"],correct:0},
+    {q:"Les barres de données et jeux d'icônes font partie de :",options:["La mise en forme conditionnelle","Le publipostage","La validation de données","Le tableau croisé dynamique"],correct:0},
+    {q:"Un Sparkline est :",options:["Un mini-graphique inséré directement dans une cellule","Une formule de calcul","Un type de protection de feuille","Un raccourci clavier"],correct:0},
+    {q:"La Valeur cible (Goal Seek) permet de :",options:["Trouver automatiquement quelle entrée produit un résultat cible souhaité","Trier des données par couleur","Créer un tableau croisé dynamique","Insérer un graphique"],correct:0},
+    {q:"Figer les volets sert à :",options:["Garder certaines lignes/colonnes visibles en faisant défiler un grand tableau","Empêcher toute modification du fichier","Supprimer les formules","Changer la langue du logiciel"],correct:0},
+    {q:"Protéger une feuille (Révision → Protéger la feuille) permet de :",options:["Empêcher des modifications non autorisées sur cette feuille","Supprimer définitivement la feuille","Créer un mot de passe pour tout l'ordinateur","Formater automatiquement les cellules"],correct:0}
+  ]
+},
+{
+  id:13,
+  title:"Comprendre les Grands Modèles de Langage (LLM)",
+  short:"Plongez dans le fonctionnement de ChatGPT, Gemini et Claude, et apprenez à créer un compte et à formuler des prompts efficaces.",
+  duration:"40-50 min",
+  level:2,
+  prereq:10,
+  objectives:["Expliquer ce qu'est un grand modèle de langage (LLM) et comment il fonctionne","Comparer ChatGPT, Gemini et Claude selon leurs points forts","Créer un compte auprès d'un fournisseur d'IA et rédiger des prompts efficaces"],
+  lesson:`
+  <div class="lesson-block">
+    <h2><span class="tagnum">01</span>Qu'est-ce qu'un grand modèle de langage ?</h2>
+    <p>Un <b>grand modèle de langage</b> (LLM, pour <i>Large Language Model</i>) est un type d'intelligence artificielle entraîné sur d'immenses quantités de texte (livres, articles, sites web, code) pour apprendre à prédire quel mot devrait suivre un autre. À force d'entraînement sur des milliards de phrases, le modèle développe une capacité impressionnante à comprendre le contexte, répondre à des questions, résumer, traduire, rédiger et même programmer.</p>
+    <p>Un LLM ne « pense » pas comme un humain et n'a pas de conscience : il prédit statistiquement la suite la plus probable d'un texte, à partir de ce qu'il a appris pendant son entraînement. C'est pourquoi il peut parfois produire des réponses qui semblent sûres d'elles mais sont en réalité incorrectes — un phénomène appelé « hallucination ».</p>
+  </div>
+
+  <div class="plain-box">
+    <div class="pb-label">🤓 En clair</div>
+    Imaginez le correcteur de texte prédictif de votre téléphone, mais démultiplié un million de fois : au lieu de proposer juste le mot suivant, un LLM peut prédire une réponse entière, cohérente et souvent utile, parce qu'il a « lu » une quantité de texte qu'aucun humain ne pourrait lire en plusieurs vies.
+  </div>
+  <div class="fact-box">
+    <div class="fb-label">💡 Le saviez-vous ?</div>
+    Le "T" de ChatGPT signifie "Transformer" — une architecture d'IA publiée par des chercheurs de Google en 2017 dans un article intitulé « Attention is All You Need ». Ironiquement, Google a inventé la technologie qui allait ensuite propulser les modèles concurrents comme ChatGPT !
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">02</span>Comment fonctionne un LLM, en pratique ?</h2>
+    <ol>
+      <li><b>Tokenisation :</b> votre texte est découpé en petits morceaux appelés « tokens » (souvent des fragments de mots).</li>
+      <li><b>Traitement :</b> le modèle analyse ces tokens à travers un réseau de neurones (l'architecture Transformer) pour comprendre le contexte de chaque mot par rapport aux autres.</li>
+      <li><b>Génération :</b> le modèle prédit le token suivant le plus probable, un par un, jusqu'à former une réponse complète.</li>
+      <li><b>Affinage (Fine-tuning / RLHF) :</b> après l'entraînement initial sur du texte brut, les modèles sont affinés grâce à des retours humains pour être plus utiles, honnêtes et sûrs.</li>
+    </ol>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">03</span>Comparer les principaux LLM</h2>
+    <ul>
+      <li><b>ChatGPT (OpenAI) :</b> l'un des LLM les plus connus du grand public ; excellent pour la conversation générale, la rédaction et le brainstorming ; propose une version gratuite et des abonnements payants pour des capacités avancées.</li>
+      <li><b>Gemini (Google) :</b> profondément intégré aux outils Google (Gmail, Docs, Recherche) ; pratique pour ceux qui utilisent déjà l'écosystème Google au quotidien.</li>
+      <li><b>Claude (Anthropic) :</b> reconnu pour la qualité de sa rédaction, sa capacité à traiter de longs documents, et une attention particulière portée à la sécurité et à l'honnêteté des réponses.</li>
+    </ul>
+    <p>Il n'existe pas de « meilleur » modèle universel : le bon choix dépend de la tâche, de la langue, du budget et des habitudes de chacun. Beaucoup de professionnels utilisent d'ailleurs plusieurs LLM selon le contexte.</p>
+    <div class="quote-box">« Le prompt n'est pas une simple question — c'est une instruction. Plus elle est claire, meilleure est la réponse. »<footer>— Innocent Forteh, Directeur du Programme, Team21 Academy</footer></div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">04</span>Créer votre compte</h2>
+    <p>Pour pratiquer ce module, créez un compte gratuit auprès d'un ou plusieurs fournisseurs. Vous aurez besoin d'une adresse email valide. Ne partagez jamais d'informations personnelles sensibles dans vos conversations avec une IA.</p>
+    <div class="provider-cards">
+      <div class="provider-card"><h5>ChatGPT</h5><p style="font-size:12.5px;color:var(--gray);">chat.openai.com</p><a href="https://chat.openai.com" target="_blank" rel="noopener">Créer un compte →</a></div>
+      <div class="provider-card"><h5>Gemini</h5><p style="font-size:12.5px;color:var(--gray);">gemini.google.com</p><a href="https://gemini.google.com" target="_blank" rel="noopener">Créer un compte →</a></div>
+      <div class="provider-card"><h5>Claude</h5><p style="font-size:12.5px;color:var(--gray);">claude.ai</p><a href="https://claude.ai" target="_blank" rel="noopener">Créer un compte →</a></div>
+    </div>
+    <label class="acct-toggle"><input type="checkbox" id="acctCheck13"> <span id="acctCheckLabel13">J'ai créé un compte sur au moins un de ces services.</span></label>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">05</span>Anatomie d'un bon prompt</h2>
+    <ul>
+      <li><b>Contexte / rôle :</b> précisez qui doit répondre et dans quel cadre (« Tu es un professeur de mathématiques pour débutants »).</li>
+      <li><b>Tâche claire :</b> dites exactement ce que vous voulez, sans ambiguïté.</li>
+      <li><b>Format attendu :</b> précisez la longueur, le style, la structure (« en 3 points », « sous forme de tableau », « en 100 mots maximum »).</li>
+      <li><b>Exemple ou contrainte :</b> donnez un exemple du résultat souhaité, ou une contrainte précise, pour guider davantage le modèle.</li>
+    </ul>
+    <div class="example-box"><b>Prompt faible :</b> « Parle-moi du marketing. »</div>
+    <div class="example-box"><b>Prompt fort :</b> « Tu es un consultant en marketing pour petites entreprises. Explique-moi, en 5 points courts et concrets, comment une boutique locale peut attirer plus de clients sur les réseaux sociaux avec un budget limité. »</div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">06</span>Laboratoire pratique — Écrivez et testez vos prompts</h2>
+    <div class="demo-widget">
+      <div class="demo-label">Atelier interactif — analysez la qualité de votre prompt</div>
+      <div id="promptLab1"></div>
+    </div>
+    <div class="exercise-box">
+      <h4>🖥️ Labo — À faire avec un vrai compte IA (ChatGPT, Gemini ou Claude)</h4>
+      <ol class="step-list">
+        <li>Rédigez un prompt demandant un résumé d'un sujet que vous connaissez, en 3 phrases maximum, et comparez la réponse à ce que vous attendiez.</li>
+        <li>Demandez à l'IA de reformuler un texte que vous avez écrit dans un style plus formel.</li>
+        <li>Testez un prompt avec un rôle précis (« Tu es un recruteur ») pour obtenir des conseils sur votre CV.</li>
+        <li>Posez la même question à deux LLM différents et comparez les réponses : ton, longueur, précision.</li>
+        <li>Essayez un prompt où vous demandez explicitement un format (tableau, liste à puces, ou étapes numérotées) et vérifiez que l'IA le respecte.</li>
+        <li>Vérifiez une information factuelle donnée par l'IA à l'aide d'une source fiable — bon réflexe pour repérer une éventuelle « hallucination ».</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">07</span>Utiliser l'IA de façon responsable</h2>
+    <ul>
+      <li>Vérifiez toujours les faits importants avant de vous y fier (rapport, décision, examen).</li>
+      <li>Ne partagez jamais de mots de passe, données médicales ou informations confidentielles dans un prompt.</li>
+      <li>Précisez la source de votre travail si vous utilisez l'IA pour un devoir ou un rapport professionnel, selon les règles de votre établissement ou employeur.</li>
+      <li>Gardez un esprit critique : l'IA est un outil puissant, pas une autorité infaillible.</li>
+    </ul>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">08</span>Références</h2>
+    <div class="cheat-box">
+      <h4>✅ Fiche mémo — Compétences validées par ce cours</h4>
+      <ul>
+        <li>Un LLM prédit du texte, il ne « pense » pas comme un humain</li>
+        <li>Tokenisation → traitement → génération → affinage humain</li>
+        <li>ChatGPT, Gemini, Claude : chacun a ses forces</li>
+        <li>Un bon prompt = contexte + tâche claire + format + exemple</li>
+        <li>Toujours vérifier les faits importants donnés par une IA</li>
+      </ul>
+    </div>
+    <div class="ref-list">
+      • OpenAI — « Prompt engineering guide »<br>
+      • Google — « Introduction à Gemini »<br>
+      • Anthropic — « Prompting guide »
+    </div>
+  </div>`,
+  quiz:[
+    {q:"Un grand modèle de langage (LLM) est entraîné principalement pour :",options:["Prédire quel mot ou token devrait suivre un texte donné","Réparer le matériel informatique","Remplacer complètement les humains","Uniquement traduire des langues"],correct:0},
+    {q:"Une « hallucination » d'un LLM désigne :",options:["Une réponse produite avec assurance mais factuellement incorrecte","Un bug d'affichage à l'écran","Un problème de connexion internet","Une panne matérielle"],correct:0},
+    {q:"La tokenisation consiste à :",options:["Découper le texte en petits morceaux appelés tokens","Supprimer tout le texte","Traduire automatiquement le texte","Compresser un fichier"],correct:0},
+    {q:"L'architecture « Transformer », à la base des LLM modernes, a été publiée par des chercheurs de :",options:["Google","Une entreprise inconnue","Aucune entreprise, c'est une légende","Microsoft uniquement"],correct:0},
+    {q:"Gemini est particulièrement intégré à :",options:["L'écosystème Google (Gmail, Docs, Recherche)","Uniquement les jeux vidéo","Les imprimantes 3D","Aucun autre outil"],correct:0},
+    {q:"Claude (Anthropic) est notamment reconnu pour :",options:["La qualité rédactionnelle et l'attention portée à la sécurité des réponses","Être uniquement un moteur de recherche","Ne fonctionner que hors ligne","Ne traiter que des images"],correct:0},
+    {q:"Existe-t-il un « meilleur » LLM universel pour toutes les tâches ?",options:["Oui, un seul modèle est toujours meilleur que les autres","Non, le bon choix dépend de la tâche, la langue et le contexte","Non, aucun LLM n'est jamais utile","Oui, mais seulement pour le calcul mathématique"],correct:1},
+    {q:"Un prompt efficace devrait généralement inclure :",options:["Un contexte, une tâche claire, un format attendu, et si possible un exemple","Uniquement un seul mot","Aucune précision, pour laisser l'IA deviner","Toujours une question fermée oui/non"],correct:0},
+    {q:"Pourquoi ne faut-il jamais partager de mots de passe dans un prompt ?",options:["Pour protéger vos informations personnelles et sensibles","Parce que cela ralentit l'IA","Parce que c'est interdit par la loi dans tous les pays sans exception","Cela n'a aucune importance"],correct:0},
+    {q:"Que faut-il faire face à une information factuelle importante donnée par une IA ?",options:["La vérifier à l'aide d'une source fiable avant de s'y fier","L'accepter automatiquement sans vérification","L'ignorer systématiquement","La partager immédiatement sans relecture"],correct:0},
+    {q:"Le processus RLHF (retours humains) sert à :",options:["Rendre le modèle plus utile, honnête et sûr après son entraînement initial","Supprimer toutes les données d'entraînement","Ralentir délibérément le modèle","Remplacer la tokenisation"],correct:0},
+    {q:"« Tu es un professeur de mathématiques pour débutants » est un exemple de :",options:["Contexte / rôle donné à l'IA dans un prompt","Une erreur de syntaxe","Un mot de passe","Une donnée personnelle sensible"],correct:0},
+    {q:"Demander une réponse « en 3 points, 100 mots maximum » illustre :",options:["La précision du format attendu dans un prompt","Une hallucination de l'IA","Un bug du modèle","Une tokenisation incorrecte"],correct:0},
+    {q:"Pourquoi est-il utile de poser la même question à deux LLM différents ?",options:["Pour comparer le ton, la longueur et la précision des réponses","Cela n'apporte jamais rien","Pour surcharger volontairement les serveurs","Parce qu'un seul LLM ne peut jamais répondre"],correct:0},
+    {q:"Utiliser l'IA de façon responsable implique notamment de :",options:["Garder un esprit critique et vérifier les faits importants","Croire aveuglément toutes les réponses","Ne jamais utiliser l'IA pour quoi que ce soit","Partager systématiquement des données confidentielles"],correct:0}
+  ]
+});
+MODULES_EN.push(
+{
+  id:10,
+  title:"Introduction to Artificial Intelligence",
+  short:"Discover what AI is, how it works, and where you already encounter it every day.",
+  duration:"20-25 min",
+  level:1,
+  objectives:["Explain in simple terms what artificial intelligence is","Distinguish AI, machine learning, and deep learning","Recognize AI in apps you already use"],
+  lesson:`
+  <div class="lesson-block">
+    <h2><span class="tagnum">01</span>What is artificial intelligence?</h2>
+    <p><b>Artificial Intelligence (AI)</b> refers to a computer's ability to perform tasks that used to require human intelligence: recognizing an image, understanding a sentence, translating a language, recommending a movie, or even driving a car. Unlike classic software that follows fixed rules written by a human, an AI system <b>learns</b> from examples and data to improve its performance.</p>
+    <p>There are generally three levels: <b>Artificial Intelligence</b> (the broad field), <b>Machine Learning</b> (algorithms that learn patterns from data), and <b>Deep Learning</b> (a family of Machine Learning based on artificial neural networks, loosely inspired by the human brain).</p>
+  </div>
+
+  <div class="plain-box">
+    <div class="pb-label">🤓 In plain terms, for beginners</div>
+    Imagine teaching a child to recognize a cat by showing them 10,000 photos of cats and 10,000 photos of other animals. After a while, the child recognizes a cat without ever being given a written rule ("a cat has whiskers, 4 legs..."). That's exactly what an AI system does: it learns patterns from examples, rather than following ready-made rules.
+  </div>
+  <div class="fact-box">
+    <div class="fb-label">💡 Did you know?</div>
+    The term "artificial intelligence" was coined in 1956 at a conference at Dartmouth College (USA). At the time, researchers believed a machine capable of "thinking" like a human would be built within a single generation — over 65 years later, we're still working on it!
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">02</span>"Narrow" AI and "General" AI</h2>
+    <ul>
+      <li><b>Narrow (or weak) AI:</b> built for one specific task (recognizing faces, playing chess, recommending music). This is the only type of AI that actually exists today, despite its impressive capabilities.</li>
+      <li><b>General (or strong) AI:</b> a hypothetical AI capable of matching human intelligence across every domain at once. It doesn't exist yet and remains a topic of research and science fiction.</li>
+    </ul>
+    <p>When the media talks about an AI that "thinks" or "understands," it's almost always highly advanced narrow AI — not artificial consciousness.</p>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">03</span>Practical examples in your daily life</h2>
+    <div class="example-box"><b>Example 1:</b> when your phone unlocks by recognizing your face, an AI model compares your face to the stored one in a fraction of a second.</div>
+    <div class="example-box"><b>Example 2:</b> Netflix or YouTube recommendations ("because you watched...") come from an AI algorithm that learned your preferences from your viewing history.</div>
+    <div class="example-box"><b>Example 3:</b> your phone's smart autocorrect, suggesting the next word as you type, uses a language model trained on millions of sentences.</div>
+    <div class="example-box"><b>Example 4:</b> your email's spam filters use AI to automatically detect unwanted messages, continually learning new types of scams.</div>
+    <div class="example-box"><b>Example 5:</b> voice assistants (Siri, Google Assistant, Alexa) combine speech recognition (AI), language understanding (AI), and speech synthesis (AI) to respond to you.</div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">04</span>How does an AI "learn"?</h2>
+    <ol>
+      <li><b>Data collection:</b> a large number of examples (photos, text, sounds) are gathered.</li>
+      <li><b>Training:</b> an algorithm analyzes these examples and adjusts its internal parameters to recognize patterns (e.g., what distinguishes a cat from a dog in a photo).</li>
+      <li><b>Testing:</b> the model's performance is checked on new examples it has never seen.</li>
+      <li><b>Deployment:</b> the trained model is built into an app you use every day.</li>
+    </ol>
+    <div class="quote-box">"Artificial intelligence is the new electricity."<footer>— Andrew Ng, AI pioneer and co-founder of Google Brain</footer></div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">05</span>Limitations and ethical questions to know</h2>
+    <ul>
+      <li><b>Bias:</b> an AI trained on biased data can reproduce or amplify discrimination (e.g. hiring, facial recognition).</li>
+      <li><b>Errors:</b> an AI can confidently get things wrong on cases it has never encountered — it has no "common sense" the way a human does.</li>
+      <li><b>Privacy:</b> training many models requires huge amounts of data, sometimes personal, raising real privacy concerns.</li>
+      <li><b>Employment:</b> AI-driven automation is reshaping certain jobs; learning to use it is becoming a sought-after skill rather than a direct threat to those who train in it.</li>
+    </ul>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">06</span>Hands-on lab — Spotting AI around you</h2>
+    <div class="exercise-box">
+      <h4>🖥️ Lab 1 — AI scavenger hunt in your apps</h4>
+      <ol class="step-list">
+        <li>List 5 apps on your phone or computer that you use regularly.</li>
+        <li>For each one, identify whether it likely uses AI (recommendations, recognition, text prediction, photo filters...).</li>
+        <li>Open your camera app and try a portrait mode that blurs the background — that's computer-vision AI in action.</li>
+        <li>Start typing a sentence on your smartphone keyboard and watch the word suggestions appear: that's a small language model.</li>
+      </ol>
+    </div>
+    <div class="exercise-box">
+      <h4>🖥️ Lab 2 — Narrow AI vs General AI</h4>
+      <ol class="step-list">
+        <li>List 3 tasks an AI is very good at today (e.g. recognizing a face, translating text).</li>
+        <li>List 3 tasks a general (strong) AI should be able to do if it existed (e.g. understanding humor, having true intuition).</li>
+        <li>Discuss: why are these two lists so different?</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">07</span>References</h2>
+    <div class="cheat-box">
+      <h4>✅ Cheat sheet — What to remember from Module 10</h4>
+      <ul>
+        <li>AI ⊃ Machine Learning ⊃ Deep Learning</li>
+        <li>AI learns from data rather than fixed rules</li>
+        <li>Only narrow (specialized) AI exists today</li>
+        <li>Bias, errors, and privacy are real concerns</li>
+        <li>AI is already everywhere in your everyday apps</li>
+      </ul>
+    </div>
+    <div class="ref-list">
+      • Google — "AI for Everyone" (Google AI)<br>
+      • MIT — "Elements of AI"<br>
+      • UNESCO — "AI explained simply"
+    </div>
+  </div>`,
+  quiz:[
+    {q:"Artificial intelligence mainly refers to:",options:["A computer that's faster than a human at math","A system's ability to perform tasks that normally require human intelligence","A robot with a physical body only","Software that only follows fixed rules"],correct:1},
+    {q:"Machine Learning is:",options:["An exact synonym for artificial intelligence","A subfield of AI where systems learn from data","An AI that doesn't exist yet","A type of computer hardware"],correct:1},
+    {q:"Deep Learning relies on:",options:["Artificial neural networks","Only manually written rules","Punch cards","No training data at all"],correct:0},
+    {q:"The AI that actually exists today is mostly:",options:["General (strong) AI","Narrow (specialized) AI","A complete artificial consciousness","Neither of these"],correct:1},
+    {q:"When a phone unlocks by recognizing your face, it uses:",options:["A facial recognition AI model","A simple hidden password","Only a fingerprint","No particular technology"],correct:0},
+    {q:"Where do Netflix or YouTube recommendations come from?",options:["An employee manually choosing for each user","An AI algorithm that learns your preferences","Pure random chance","A fixed list identical for everyone"],correct:1},
+    {q:"What's the typical first step in training an AI?",options:["Immediate deployment with no data","Collecting a large number of examples (data)","Buying a physical robot","Deleting all data"],correct:1},
+    {q:"A 'bias' in AI means:",options:["An electrical wiring error","A tendency to reproduce or amplify discrimination present in the training data","A display bug only","An AI that's too fast"],correct:1},
+    {q:"Why can an AI confidently get something wrong on a case it's never seen?",options:["Because it has no human common sense and only relies on what it learned","Because it lies on purpose","Because it's always unplugged","Because it refuses to answer"],correct:0},
+    {q:"According to Andrew Ng's quote, AI is compared to:",options:["A toy for children","The new electricity","A passing fad","Only a danger"],correct:1},
+    {q:"Voice assistants like Siri or Alexa combine:",options:["Speech recognition, language understanding, and speech synthesis","Only a microphone with no AI","Just a static database","No AI technology at all"],correct:0},
+    {q:"General (strong) AI today:",options:["Already exists in several smartphones","Doesn't exist yet and remains a research topic","Has been abandoned by all researchers","Is identical to narrow AI"],correct:1},
+    {q:"An email's spam filter uses AI to:",options:["Automatically delete every email","Detect and learn to recognize unwanted messages","Send emails on your behalf","Replace your password"],correct:1},
+    {q:"Why is privacy an important issue in AI?",options:["Because training models often requires huge amounts of data, sometimes personal","Because AI never uses data","Because it only concerns governments","It's not a real issue"],correct:0},
+    {q:"A portrait mode that blurs the background in a photo illustrates:",options:["Computer vision, a branch of AI","A simple manual zoom setting","A technique unrelated to AI","A camera defect"],correct:0}
+  ]
+},
+{
+  id:11,
+  title:"Unlocking Word — Advanced Level",
+  short:"Objects, expert formatting, advanced tables, and automation: become a confident power user of Word.",
+  duration:"70-90 min (16 labs)",
+  level:2,
+  prereq:5,
+  objectives:["Insert and manipulate complex objects (SmartArt, charts, shapes)","Build advanced tables and multilevel lists","Automate a document with styles, mail merge, and protection"],
+  lesson:`
+  <div class="lesson-block">
+    <h2><span class="tagnum">01</span>Why go beyond the basics?</h2>
+    <p>You already know how to type, format, and save a document (Module 5). This <b>Level 2</b> course turns you into a power user: the person colleagues call on to prepare a professional report, merge 200 personalized letters, or build a reusable form. These are exactly the skills an experienced computer operator uses every week.</p>
+    <p>This module is structured into <b>16 hands-on labs</b>, grouped into 4 major skill families. Work through them in order — each one builds on habits formed in the previous one.</p>
+  </div>
+
+  <div class="plain-box">
+    <div class="pb-label">🤓 In plain terms</div>
+    If Module 5 taught you to write a letter, this module teaches you to build a full company report: well-placed images, data tables, an automatic table of contents, and a document that stays clean even after 50 pages.
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">02</span>Family 1 — Objects and graphic elements</h2>
+    <div class="exercise-box">
+      <h4>🖥️ Labs 1 to 5</h4>
+      <ol class="step-list">
+        <li><b>Lab 1 — Text wrapping around an image:</b> insert an image (Insert → Pictures), then try the different text wrapping options (right-click the image → Wrap Text → Square, Tight, In Front of Text). Observe how the text reacts around the image in each mode.</li>
+        <li><b>Lab 2 — Grouped shapes and icons:</b> insert 3 shapes (Insert → Shapes) to build a simple diagram (e.g. 3 rectangles linked by arrows), then select them all (Ctrl+click) and group them (right-click → Group) to move them as a single object.</li>
+        <li><b>Lab 3 — SmartArt:</b> insert an organizational-chart SmartArt (Insert → SmartArt → Hierarchy) and build a simple 3-level structure (e.g. Director → 2 managers → 4 employees).</li>
+        <li><b>Lab 4 — Chart linked to data:</b> insert a chart (Insert → Chart → Bar Chart), edit the data in the mini spreadsheet that opens, and watch the chart update automatically.</li>
+        <li><b>Lab 5 — Text box and WordArt:</b> create a mock flyer title using WordArt (Insert → WordArt) and place a free-floating text box next to it for a subtitle.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">03</span>Family 2 — Advanced lists and tables</h2>
+    <div class="exercise-box">
+      <h4>🖥️ Labs 6 to 9</h4>
+      <ol class="step-list">
+        <li><b>Lab 6 — Multilevel list:</b> build a document outline with automatic hierarchical numbering (1, then 1.1, then 1.1.1) via Home → Multilevel List.</li>
+        <li><b>Lab 7 — Custom bullets:</b> create a list with a custom bullet (an image or symbol of your choice, via Home → Bullets → Define New Bullet), then practice restarting numbering on a second list.</li>
+        <li><b>Lab 8 — Advanced table:</b> create a 5×5 table, merge two header cells (select them → right-click → Merge Cells), apply a built-in table style (Table Design tab), then sort a column's data (click in the table → Layout tab → Sort).</li>
+        <li><b>Lab 9 — Formula in a Word table:</b> in the last row of a column of numbers, use Layout → Formula and enter <span class="mono">=SUM(ABOVE)</span> to automatically add up the cells above.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">04</span>Family 3 — Layout and document structure</h2>
+    <div class="exercise-box">
+      <h4>🖥️ Labs 10 to 13</h4>
+      <ol class="step-list">
+        <li><b>Lab 10 — Columns and drop cap:</b> turn a paragraph into a "newspaper-style" two-column layout (Layout → Columns) and add a drop cap to the first paragraph (Insert → Drop Cap).</li>
+        <li><b>Lab 11 — Styles and themes:</b> apply a consistent style set to an entire document (Design → Style Set), then customize the theme color (Design → Colors).</li>
+        <li><b>Lab 12 — Table of contents and footnotes:</b> on a 3-section document using heading styles, generate an automatic table of contents (References → Table of Contents), then add a footnote (References → Insert Footnote).</li>
+        <li><b>Lab 13 — Advanced headers/footers:</b> turn on "Different First Page" so a cover page shows no header, then try "Different Odd & Even Pages" (Layout → Page Setup → Layout).</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">05</span>Family 4 — Automation, collaboration, and security</h2>
+    <div class="exercise-box">
+      <h4>🖥️ Labs 14 to 16</h4>
+      <ol class="step-list">
+        <li><b>Lab 14 — Mail Merge:</b> create a list of 5 fake recipients in a small Excel table (Name, Address), then use Mailings → Start Mail Merge → Letters to generate a personalized letter for each one.</li>
+        <li><b>Lab 15 — Track Changes and comments:</b> turn on Review → Track Changes, edit a paragraph, then add a comment on a sentence (Review → New Comment). Then accept or reject the changes one by one.</li>
+        <li><b>Lab 16 — Document protection:</b> restrict editing on a document (Review → Restrict Editing) and/or protect it with a password on opening (File → Info → Protect Document → Encrypt with Password).</li>
+      </ol>
+    </div>
+    <div class="quote-box">"Mastery isn't knowing every tool — it's knowing which one to use at the right moment."<footer>— Innocent Forteh, Program Director, Team21 Academy</footer></div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">06</span>Practice in the mini-editor</h2>
+    <div class="demo-widget">
+      <div class="demo-label">Quick refresher on basic formatting before the exam</div>
+      <div id="wordDemo2"></div>
+    </div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">07</span>References</h2>
+    <div class="cheat-box">
+      <h4>✅ Cheat sheet — Skills validated by this course</h4>
+      <ul>
+        <li>Inserting objects: images, shapes, SmartArt, charts</li>
+        <li>Multilevel lists and tables with formulas</li>
+        <li>Styles, themes, automatic table of contents</li>
+        <li>Mail merge to multiple recipients</li>
+        <li>Track changes and document protection</li>
+      </ul>
+    </div>
+    <div class="ref-list">
+      • Microsoft Support — "Advanced Word Training"<br>
+      • GCFGlobal — "Word Advanced Formatting"<br>
+      • Microsoft — "Mail Merge Guide"
+    </div>
+  </div>`,
+  quiz:[
+    {q:"To make text wrap around an image, you use:",options:["The Wrap Text option","The Delete key","The spell checker","Read Mode"],correct:0},
+    {q:"To move several shapes as a single object, you use:",options:["Merge Cells","Group the shapes","Mail Merge","Table of Contents"],correct:1},
+    {q:"An organizational-chart SmartArt is mainly used to:",options:["Calculate an average","Represent a hierarchy or structure","Fix spelling","Compress a file"],correct:1},
+    {q:"When you edit the data of a chart inserted in Word, the chart:",options:["Stays the same","Updates automatically","Disappears","Turns into a table"],correct:1},
+    {q:"A multilevel list lets you create:",options:["Hierarchical numbering (1, 1.1, 1.1.1)","A borderless table","A pie chart","A single line of text"],correct:0},
+    {q:"To merge two table cells, you use:",options:["Right-click → Merge Cells","Mail Merge","Footnotes","Drop Cap"],correct:0},
+    {q:"The formula =SUM(ABOVE) in a Word table:",options:["Sorts the data","Adds up the cells located above","Deletes a row","Inserts an image"],correct:1},
+    {q:"A 'newspaper-style' layout with multiple columns is set up via:",options:["Layout → Columns","Insert → Table","Review → Comments","File → Print"],correct:0},
+    {q:"Style Sets let you:",options:["Apply a consistent look to an entire document","Delete all styles","Change the document's language","Insert a chart"],correct:0},
+    {q:"An automatic table of contents is generated from:",options:["The heading styles applied in the document","The number of pages only","A manually typed list","The inserted images"],correct:0},
+    {q:"The 'Different First Page' option is used to:",options:["Prevent the document from being printed","Have a different (or blank) header/footer on the first page","Only change the language of the first page","Delete the first page"],correct:1},
+    {q:"Mail Merge is useful for:",options:["Creating multiple personalized letters from a recipient list","Compressing a document","Inserting a SmartArt","Changing page orientation"],correct:0},
+    {q:"Track Changes lets you:",options:["See edits made to a document, with the option to accept or reject them","Prevent any editing","Delete the document's history","Automatically translate the text"],correct:0},
+    {q:"To prevent a document from opening without a password, you use:",options:["File → Info → Protect Document → Encrypt with Password","The spell checker","Draft mode","The Zoom option"],correct:0},
+    {q:"What's the best reason to use heading styles instead of manual bold?",options:["It lets you generate a table of contents automatically and keep a consistent structure","It has no particular advantage","It slows down the document","It prevents printing"],correct:0}
+  ]
+});
+MODULES_EN.push(
+{
+  id:12,
+  title:"Unlocking Excel — Advanced Level",
+  short:"Advanced formulas, pivot tables, data validation: become a confident power user of Excel.",
+  duration:"70-90 min (16 labs)",
+  level:2,
+  prereq:6,
+  objectives:["Master advanced formulas (lookup, conditions, text, dates)","Build structured Excel tables and pivot tables","Analyze and protect data like a professional"],
+  lesson:`
+  <div class="lesson-block">
+    <h2><span class="tagnum">01</span>From simple calculation to data analysis</h2>
+    <p>Module 6 taught you the basics: cells, =SUM(), =AVERAGE(), a first chart. This <b>Level 2</b> course takes you where data professionals work: looking up information in large tables, pivot tables, smart formatting, and automated analysis. These are the skills an experienced Excel operator uses to turn thousands of rows of data into clear decisions.</p>
+    <p>This module includes <b>16 hands-on labs</b>, split into 4 skill families. Work with a fictional dataset (e.g. a sales list) throughout the exercises to stay consistent.</p>
+  </div>
+
+  <div class="plain-box">
+    <div class="pb-label">🤓 In plain terms</div>
+    If Module 6 taught you to do an automatic addition, this module teaches you to ask your data a real question — "Which salesperson performed best in March?" — and get the answer in a few clicks, instead of reading thousands of rows one by one.
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">02</span>Family 1 — Advanced formulas</h2>
+    <div class="exercise-box">
+      <h4>🖥️ Labs 1 to 6</h4>
+      <ol class="step-list">
+        <li><b>Lab 1 — Nested IF:</b> create a "Grade" column showing "Excellent" if the score ≥ 16, "Good" if ≥ 12, otherwise "Needs Improvement," with <span class="mono">=IF(A2>=16,"Excellent",IF(A2>=12,"Good","Needs Improvement"))</span>.</li>
+        <li><b>Lab 2 — VLOOKUP / XLOOKUP:</b> build a price table by product, then in another area use <span class="mono">=VLOOKUP(product_name, price_table, 2, FALSE)</span> to automatically retrieve a price.</li>
+        <li><b>Lab 3 — INDEX and MATCH:</b> reproduce the same result as VLOOKUP by combining <span class="mono">=INDEX(range, MATCH(criteria, lookup_range, 0))</span> — more flexible when searching to the left.</li>
+        <li><b>Lab 4 — SUMIF / COUNTIF / AVERAGEIF:</b> from a sales-by-region list, calculate the total sales for a single region with <span class="mono">=SUMIF(region_range, "North", sales_range)</span>.</li>
+        <li><b>Lab 5 — Text functions:</b> use <span class="mono">=CONCATENATE()</span> or <span class="mono">&</span> to merge a first and last name, then <span class="mono">=LEFT()</span>, <span class="mono">=RIGHT()</span>, and <span class="mono">=LEN()</span> to extract parts of text.</li>
+        <li><b>Lab 6 — Date functions:</b> use <span class="mono">=TODAY()</span>, then calculate a number of days between two dates with simple subtraction, and try <span class="mono">=NETWORKDAYS()</span> to count business days between two dates.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">03</span>Family 2 — Tables and data organization</h2>
+    <div class="exercise-box">
+      <h4>🖥️ Labs 7 to 9, 12</h4>
+      <ol class="step-list">
+        <li><b>Lab 7 — Structured Excel Table:</b> select your data range and convert it into an official table (Insert → Table, or Ctrl+T). Notice how references become readable column names in formulas.</li>
+        <li><b>Lab 8 — Pivot Table:</b> from your sales data, build a pivot table (Insert → PivotTable) that summarizes total sales by region and by month with a few drag-and-drops.</li>
+        <li><b>Lab 9 — Named range:</b> select a range of cells and give it a name (the Name Box top-left, or Formulas → Define Name), then use that name directly in a formula instead of cell references.</li>
+        <li><b>Lab 12 — Data validation:</b> create a drop-down list in a cell (Data → Data Validation → List) to only allow certain values, e.g. predefined region names.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">04</span>Family 3 — Smart visualization</h2>
+    <div class="exercise-box">
+      <h4>🖥️ Labs 10 to 11</h4>
+      <ol class="step-list">
+        <li><b>Lab 10 — Advanced conditional formatting:</b> apply data bars or icon sets (Home → Conditional Formatting) on a column of numbers, then create a custom rule based on a formula (e.g. highlighting in red any sale below a target).</li>
+        <li><b>Lab 11 — Combo chart and Sparklines:</b> create a combo chart (bars + line) to compare two data series on different scales, then insert a Sparkline mini-chart in a cell (Insert → Sparkline) to visualize a trend right inside the table.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">05</span>Family 4 — Analysis, collaboration, and printing</h2>
+    <div class="exercise-box">
+      <h4>🖥️ Labs 13 to 16</h4>
+      <ol class="step-list">
+        <li><b>Lab 13 — Goal Seek:</b> use Data → What-If Analysis → Goal Seek to automatically find how much quantity to sell to reach a specific revenue target.</li>
+        <li><b>Lab 14 — Freeze panes and 3D formulas:</b> freeze the top row and left column (View → Freeze Panes) on a large table, then create a formula that adds the same cell across several sheets at once, e.g. <span class="mono">=SUM(January:March!B2)</span>.</li>
+        <li><b>Lab 15 — Advanced sort and filter:</b> sort your data by several criteria at once (Data → Sort → Add Level), then use an Advanced Filter to extract only rows matching several complex conditions.</li>
+        <li><b>Lab 16 — Protection and printing:</b> protect a sheet from editing (Review → Protect Sheet), then set up a print area with repeated header rows on every page (Page Layout → Print Area / Print Titles).</li>
+      </ol>
+    </div>
+    <div class="quote-box">"A well-built spreadsheet answers a question before it's even asked."<footer>— Innocent Forteh, Program Director, Team21 Academy</footer></div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">06</span>Practice in the mini-spreadsheet</h2>
+    <div class="demo-widget">
+      <div class="demo-label">Quick refresher on basic formulas before the exam</div>
+      <div id="excelDemo2"></div>
+    </div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">07</span>References</h2>
+    <div class="cheat-box">
+      <h4>✅ Cheat sheet — Skills validated by this course</h4>
+      <ul>
+        <li>Nested IF, VLOOKUP/XLOOKUP, INDEX+MATCH</li>
+        <li>SUMIF, text and date functions</li>
+        <li>Structured tables and pivot tables</li>
+        <li>Advanced conditional formatting and combo charts</li>
+        <li>Goal Seek, advanced sort/filter, protection, printing</li>
+      </ul>
+    </div>
+    <div class="ref-list">
+      • Microsoft Support — "Advanced Excel Training"<br>
+      • GCFGlobal — "Excel Formulas"<br>
+      • Microsoft — "Create a PivotTable"
+    </div>
+  </div>`,
+  quiz:[
+    {q:"A nested IF formula is used to:",options:["Test several successive conditions in one formula","Delete a cell","Sort a column","Create a chart"],correct:0},
+    {q:"VLOOKUP lets you:",options:["Search for a value in a table and return related information","Compress a file","Insert an image","Protect a sheet"],correct:0},
+    {q:"An advantage of INDEX+MATCH over VLOOKUP is:",options:["It can search to the left, unlike classic VLOOKUP","It's always slower","It only works with text","It removes duplicates automatically"],correct:0},
+    {q:"=SUMIF(criteria_range, 'North', sales_range) lets you:",options:["Add up only the sales matching the 'North' criterion","Count every cell","Sort sales in ascending order","Delete the North sales"],correct:0},
+    {q:"The =LEFT() function is used to:",options:["Extract the first characters of a text","Left-align a cell","Delete text","Sort a column"],correct:0},
+    {q:"=TODAY() displays:",options:["The current date, updated automatically","A fixed date that never changes","Only the time","A random number"],correct:0},
+    {q:"Converting a range into a structured Excel Table (Ctrl+T) notably lets you:",options:["Use readable column names in formulas","Delete all the data","Prevent any sorting","Automatically hide columns"],correct:0},
+    {q:"A PivotTable is mainly used to:",options:["Quickly summarize and cross large amounts of data","Insert an image","Protect a password","Slow down calculation"],correct:0},
+    {q:"A named range lets you:",options:["Use a clear name in a formula instead of a cell reference","Delete a range of cells","Change a sheet's color","Merge two files"],correct:0},
+    {q:"Data validation with a drop-down list is used to:",options:["Limit entries to predefined values","Automatically create a chart","Sort the data","Protect the entire workbook"],correct:0},
+    {q:"Data bars and icon sets are part of:",options:["Conditional formatting","Mail merge","Data validation","Pivot tables"],correct:0},
+    {q:"A Sparkline is:",options:["A mini-chart inserted directly inside a cell","A calculation formula","A type of sheet protection","A keyboard shortcut"],correct:0},
+    {q:"Goal Seek lets you:",options:["Automatically find which input produces a desired target result","Sort data by color","Create a pivot table","Insert a chart"],correct:0},
+    {q:"Freezing panes is used to:",options:["Keep certain rows/columns visible while scrolling through a large table","Prevent any changes to the file","Delete formulas","Change the software's language"],correct:0},
+    {q:"Protecting a sheet (Review → Protect Sheet) lets you:",options:["Prevent unauthorized changes to that sheet","Permanently delete the sheet","Create a password for the whole computer","Automatically format cells"],correct:0}
+  ]
+},
+{
+  id:13,
+  title:"Understanding Large Language Models (LLMs)",
+  short:"Dive into how ChatGPT, Gemini, and Claude work, and learn to create an account and write effective prompts.",
+  duration:"40-50 min",
+  level:2,
+  prereq:10,
+  objectives:["Explain what a Large Language Model (LLM) is and how it works","Compare ChatGPT, Gemini, and Claude by their strengths","Create an account with an AI provider and write effective prompts"],
+  lesson:`
+  <div class="lesson-block">
+    <h2><span class="tagnum">01</span>What is a large language model?</h2>
+    <p>A <b>Large Language Model</b> (LLM) is a type of artificial intelligence trained on huge amounts of text (books, articles, websites, code) to learn how to predict which word should come next. Through training on billions of sentences, the model develops an impressive ability to understand context, answer questions, summarize, translate, write, and even code.</p>
+    <p>An LLM doesn't "think" like a human and has no consciousness: it statistically predicts the most likely continuation of a text, based on what it learned during training. That's why it can sometimes produce answers that sound confident but are actually incorrect — a phenomenon called "hallucination."</p>
+  </div>
+
+  <div class="plain-box">
+    <div class="pb-label">🤓 In plain terms</div>
+    Imagine your phone's predictive text, but scaled up a million times: instead of just suggesting the next word, an LLM can predict an entire coherent, often useful reply, because it has "read" more text than any human could read in several lifetimes.
+  </div>
+  <div class="fact-box">
+    <div class="fb-label">💡 Did you know?</div>
+    The "T" in ChatGPT stands for "Transformer" — an AI architecture published by Google researchers in 2017 in a paper titled "Attention is All You Need." Ironically, Google invented the technology that later powered competing models like ChatGPT!
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">02</span>How does an LLM actually work?</h2>
+    <ol>
+      <li><b>Tokenization:</b> your text is broken into small pieces called "tokens" (often word fragments).</li>
+      <li><b>Processing:</b> the model analyzes these tokens through a neural network (the Transformer architecture) to understand each word's context relative to the others.</li>
+      <li><b>Generation:</b> the model predicts the most likely next token, one at a time, until it forms a complete response.</li>
+      <li><b>Fine-tuning (RLHF):</b> after initial training on raw text, models are refined using human feedback to be more helpful, honest, and safe.</li>
+    </ol>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">03</span>Comparing the major LLMs</h2>
+    <ul>
+      <li><b>ChatGPT (OpenAI):</b> one of the most widely known LLMs; excellent for general conversation, writing, and brainstorming; offers a free tier and paid plans for advanced capabilities.</li>
+      <li><b>Gemini (Google):</b> deeply integrated into Google's tools (Gmail, Docs, Search); convenient for those already living in the Google ecosystem.</li>
+      <li><b>Claude (Anthropic):</b> known for writing quality, its ability to handle long documents, and particular attention to safety and honesty in its responses.</li>
+    </ul>
+    <p>There is no single "best" model for everything: the right choice depends on the task, the language, the budget, and personal habits. Many professionals actually use several LLMs depending on the context.</p>
+    <div class="quote-box">"A prompt isn't just a question — it's an instruction. The clearer it is, the better the answer."<footer>— Innocent Forteh, Program Director, Team21 Academy</footer></div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">04</span>Create your account</h2>
+    <p>To practice this module, create a free account with one or more providers. You'll need a valid email address. Never share sensitive personal information in your conversations with an AI.</p>
+    <div class="provider-cards">
+      <div class="provider-card"><h5>ChatGPT</h5><p style="font-size:12.5px;color:var(--gray);">chat.openai.com</p><a href="https://chat.openai.com" target="_blank" rel="noopener">Create an account →</a></div>
+      <div class="provider-card"><h5>Gemini</h5><p style="font-size:12.5px;color:var(--gray);">gemini.google.com</p><a href="https://gemini.google.com" target="_blank" rel="noopener">Create an account →</a></div>
+      <div class="provider-card"><h5>Claude</h5><p style="font-size:12.5px;color:var(--gray);">claude.ai</p><a href="https://claude.ai" target="_blank" rel="noopener">Create an account →</a></div>
+    </div>
+    <label class="acct-toggle"><input type="checkbox" id="acctCheck13"> <span id="acctCheckLabel13">I've created an account with at least one of these services.</span></label>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">05</span>Anatomy of a good prompt</h2>
+    <ul>
+      <li><b>Context / role:</b> specify who should answer and in what capacity ("You are a math teacher for beginners").</li>
+      <li><b>Clear task:</b> say exactly what you want, without ambiguity.</li>
+      <li><b>Expected format:</b> specify the length, style, structure ("in 3 bullet points," "as a table," "100 words max").</li>
+      <li><b>Example or constraint:</b> give an example of the desired output, or a precise constraint, to further guide the model.</li>
+    </ul>
+    <div class="example-box"><b>Weak prompt:</b> "Tell me about marketing."</div>
+    <div class="example-box"><b>Strong prompt:</b> "You're a marketing consultant for small businesses. In 5 short, concrete bullet points, explain how a local shop can attract more customers on social media with a limited budget."</div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">06</span>Hands-on lab — Write and test your prompts</h2>
+    <div class="demo-widget">
+      <div class="demo-label">Interactive workshop — analyze your prompt's quality</div>
+      <div id="promptLab1"></div>
+    </div>
+    <div class="exercise-box">
+      <h4>🖥️ Lab — To do with a real AI account (ChatGPT, Gemini, or Claude)</h4>
+      <ol class="step-list">
+        <li>Write a prompt asking for a summary of a topic you know, in 3 sentences max, and compare the answer to what you expected.</li>
+        <li>Ask the AI to rewrite a text you wrote in a more formal style.</li>
+        <li>Try a prompt with a specific role ("You are a recruiter") to get feedback on your resume.</li>
+        <li>Ask the same question to two different LLMs and compare the answers: tone, length, accuracy.</li>
+        <li>Try a prompt where you explicitly request a format (table, bullet list, or numbered steps) and check that the AI follows it.</li>
+        <li>Verify a factual claim made by the AI using a reliable source — a good habit for spotting a possible "hallucination."</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">07</span>Using AI responsibly</h2>
+    <ul>
+      <li>Always verify important facts before relying on them (a report, decision, exam).</li>
+      <li>Never share passwords, medical data, or confidential information in a prompt.</li>
+      <li>Disclose the source of your work if you use AI for an assignment or professional report, following your school's or employer's rules.</li>
+      <li>Keep a critical mindset: AI is a powerful tool, not an infallible authority.</li>
+    </ul>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">08</span>References</h2>
+    <div class="cheat-box">
+      <h4>✅ Cheat sheet — Skills validated by this course</h4>
+      <ul>
+        <li>An LLM predicts text, it doesn't "think" like a human</li>
+        <li>Tokenization → processing → generation → human fine-tuning</li>
+        <li>ChatGPT, Gemini, Claude: each has its strengths</li>
+        <li>A good prompt = context + clear task + format + example</li>
+        <li>Always verify important facts given by an AI</li>
+      </ul>
+    </div>
+    <div class="ref-list">
+      • OpenAI — "Prompt engineering guide"<br>
+      • Google — "Introduction to Gemini"<br>
+      • Anthropic — "Prompting guide"
+    </div>
+  </div>`,
+  quiz:[
+    {q:"A Large Language Model (LLM) is mainly trained to:",options:["Predict which word or token should follow a given text","Repair computer hardware","Completely replace humans","Only translate languages"],correct:0},
+    {q:"An LLM 'hallucination' refers to:",options:["A confidently produced but factually incorrect answer","A screen display bug","An internet connection issue","A hardware failure"],correct:0},
+    {q:"Tokenization consists of:",options:["Breaking text into small pieces called tokens","Deleting all the text","Automatically translating the text","Compressing a file"],correct:0},
+    {q:"The 'Transformer' architecture, underlying modern LLMs, was published by researchers at:",options:["Google","An unknown company","No company, it's a legend","Microsoft only"],correct:0},
+    {q:"Gemini is particularly integrated with:",options:["The Google ecosystem (Gmail, Docs, Search)","Only video games","3D printers","No other tool"],correct:0},
+    {q:"Claude (Anthropic) is notably known for:",options:["Writing quality and a strong focus on response safety","Being only a search engine","Only working offline","Only processing images"],correct:0},
+    {q:"Is there a universal 'best' LLM for every task?",options:["Yes, one model is always better than the others","No, the right choice depends on the task, language, and context","No, no LLM is ever useful","Yes, but only for math calculations"],correct:1},
+    {q:"An effective prompt should generally include:",options:["Context, a clear task, an expected format, and if possible an example","Only a single word","No detail at all, letting the AI guess","Always a closed yes/no question"],correct:0},
+    {q:"Why should you never share passwords in a prompt?",options:["To protect your personal and sensitive information","Because it slows down the AI","Because it's illegal everywhere without exception","It doesn't matter at all"],correct:0},
+    {q:"What should you do with an important factual claim made by an AI?",options:["Verify it using a reliable source before relying on it","Automatically accept it without checking","Always ignore it","Share it immediately without review"],correct:0},
+    {q:"The RLHF process (human feedback) is used to:",options:["Make the model more helpful, honest, and safe after its initial training","Delete all training data","Deliberately slow down the model","Replace tokenization"],correct:0},
+    {q:"'You are a math teacher for beginners' is an example of:",options:["Context / role given to the AI in a prompt","A syntax error","A password","Sensitive personal data"],correct:0},
+    {q:"Asking for an answer 'in 3 bullet points, 100 words max' illustrates:",options:["Specifying the expected format in a prompt","An AI hallucination","A model bug","Incorrect tokenization"],correct:0},
+    {q:"Why is it useful to ask the same question to two different LLMs?",options:["To compare the tone, length, and accuracy of the answers","It never helps at all","To deliberately overload the servers","Because a single LLM can never answer"],correct:0},
+    {q:"Using AI responsibly notably means:",options:["Keeping a critical mindset and verifying important facts","Blindly believing every answer","Never using AI for anything","Always sharing confidential data"],correct:0}
+  ]
+});
+MODULES_AR.push(
+{
+  id:10,
+  title:"مقدمة في الذكاء الاصطناعي",
+  short:"تعرّف على ماهية الذكاء الاصطناعي وكيفية عمله وأين تصادفه بالفعل كل يوم.",
+  duration:"20-25 دقيقة",
+  level:1,
+  objectives:["شرح مفهوم الذكاء الاصطناعي ببساطة","التمييز بين الذكاء الاصطناعي والتعلم الآلي والتعلم العميق","التعرف على الذكاء الاصطناعي في التطبيقات التي تستخدمها بالفعل"],
+  lesson:`
+  <div class="lesson-block">
+    <h2><span class="tagnum">01</span>ما هو الذكاء الاصطناعي؟</h2>
+    <p>يشير <b>الذكاء الاصطناعي (AI)</b> إلى قدرة الحاسوب على أداء مهام كانت تتطلب سابقًا ذكاءً بشريًا: التعرف على صورة، فهم جملة، ترجمة لغة، اقتراح فيلم، أو حتى قيادة سيارة. على عكس البرمجيات التقليدية التي تتبع قواعد ثابتة كتبها إنسان، يتعلم نظام الذكاء الاصطناعي من الأمثلة والبيانات لتحسين أدائه.</p>
+    <p>نميّز عمومًا بين ثلاثة مستويات: <b>الذكاء الاصطناعي</b> (المجال العام)، و<b>التعلم الآلي</b> أو Machine Learning (خوارزميات تتعلم الأنماط من البيانات)، و<b>التعلم العميق</b> أو Deep Learning (فرع من التعلم الآلي يعتمد على شبكات عصبية اصطناعية، مستوحاة — من بعيد جدًا — من الدماغ البشري).</p>
+  </div>
+
+  <div class="plain-box">
+    <div class="pb-label">🤓 بكل بساطة، للمبتدئين</div>
+    تخيّل أنك تعلّم طفلًا التعرف على قطة بعرض 10,000 صورة لقطط و10,000 صورة لحيوانات أخرى عليه. بعد فترة، يتعرف الطفل على قطة دون أن تُعطى له قاعدة مكتوبة ("للقطة شوارب و4 أرجل..."). هذا بالضبط ما يفعله نظام الذكاء الاصطناعي: يتعلم الأنماط من الأمثلة، بدلًا من اتباع قواعد جاهزة.
+  </div>
+  <div class="fact-box">
+    <div class="fb-label">💡 هل تعلم؟</div>
+    صُكّ مصطلح "الذكاء الاصطناعي" عام 1956 خلال مؤتمر في جامعة دارتموث (الولايات المتحدة). في ذلك الوقت، اعتقد الباحثون أن آلة قادرة على "التفكير" كإنسان ستُبنى خلال جيل واحد فقط — بعد أكثر من 65 عامًا، ما زلنا نعمل على ذلك!
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">02</span>الذكاء الاصطناعي "الضيق" والذكاء الاصطناعي "العام"</h2>
+    <ul>
+      <li><b>الذكاء الاصطناعي الضيق (أو الضعيف):</b> مصمم لمهمة محددة (التعرف على الوجوه، لعب الشطرنج، اقتراح الموسيقى). هذا هو النوع الوحيد الموجود فعليًا اليوم، رغم قدراته المذهلة.</li>
+      <li><b>الذكاء الاصطناعي العام (أو القوي):</b> ذكاء اصطناعي افتراضي قادر على مضاهاة الذكاء البشري في جميع المجالات في آن واحد. لا يوجد بعد ويبقى موضوع بحث وخيال علمي.</li>
+    </ul>
+    <p>عندما تتحدث وسائل الإعلام عن ذكاء اصطناعي "يفكر" أو "يفهم"، فالأمر يتعلق دائمًا تقريبًا بذكاء اصطناعي ضيق متطور جدًا — وليس وعيًا اصطناعيًا.</p>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">03</span>أمثلة عملية في حياتك اليومية</h2>
+    <div class="example-box"><b>مثال 1:</b> عندما يفتح هاتفك قفل الشاشة بالتعرف على وجهك، يقارن نموذج ذكاء اصطناعي وجهك بالوجه المسجّل في جزء من الثانية.</div>
+    <div class="example-box"><b>مثال 2:</b> توصيات Netflix أو YouTube ("لأنك شاهدت...") تأتي من خوارزمية ذكاء اصطناعي تعلّمت تفضيلاتك من سجل مشاهداتك.</div>
+    <div class="example-box"><b>مثال 3:</b> التصحيح الإملائي الذكي في هاتفك، الذي يقترح الكلمة التالية أثناء الكتابة، يستخدم نموذج لغة مدرّبًا على ملايين الجمل.</div>
+    <div class="example-box"><b>مثال 4:</b> تستخدم مرشحات البريد المزعج في بريدك الإلكتروني الذكاء الاصطناعي للكشف تلقائيًا عن الرسائل غير المرغوبة، مع التعلم المستمر لأنواع جديدة من الاحتيال.</div>
+    <div class="example-box"><b>مثال 5:</b> تجمع المساعدات الصوتية (سيري، مساعد جوجل، أليكسا) بين التعرف على الصوت (ذكاء اصطناعي)، وفهم اللغة (ذكاء اصطناعي)، وتوليف الصوت (ذكاء اصطناعي) للرد عليك.</div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">04</span>كيف "يتعلم" الذكاء الاصطناعي؟</h2>
+    <ol>
+      <li><b>جمع البيانات:</b> يُجمع عدد كبير من الأمثلة (صور، نصوص، أصوات).</li>
+      <li><b>التدريب:</b> تحلّل خوارزمية هذه الأمثلة وتضبط معاييرها الداخلية للتعرف على الأنماط (مثل ما يميّز القطة عن الكلب في صورة).</li>
+      <li><b>الاختبار:</b> يُتحقق من أداء النموذج على أمثلة جديدة لم يرها من قبل.</li>
+      <li><b>النشر:</b> يُدمج النموذج المدرَّب في تطبيق تستخدمه يوميًا.</li>
+    </ol>
+    <div class="quote-box">"الذكاء الاصطناعي هو الكهرباء الجديدة."<footer>— أندرو نغ، رائد الذكاء الاصطناعي والمؤسس المشارك لـ Google Brain</footer></div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">05</span>حدود وقضايا أخلاقية يجب معرفتها</h2>
+    <ul>
+      <li><b>التحيّز:</b> يمكن لذكاء اصطناعي مدرَّب على بيانات متحيّزة أن يكرر أو يضخّم التمييز (مثل التوظيف، التعرف على الوجوه).</li>
+      <li><b>الأخطاء:</b> يمكن للذكاء الاصطناعي أن يخطئ بثقة في حالات لم يواجهها من قبل — فهو لا يملك "حسًا سليمًا" كالإنسان.</li>
+      <li><b>الخصوصية:</b> يتطلب تدريب العديد من النماذج كميات هائلة من البيانات، أحيانًا شخصية، مما يثير تساؤلات حول الخصوصية.</li>
+      <li><b>التوظيف:</b> تُغيّر الأتمتة بالذكاء الاصطناعي بعض المهن؛ ومعرفة استخدامه تصبح مهارة مطلوبة أكثر من كونها تهديدًا مباشرًا لمن يتدرب عليها.</li>
+    </ul>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">06</span>تمرين عملي — اكتشف الذكاء الاصطناعي من حولك</h2>
+    <div class="exercise-box">
+      <h4>🖥️ التمرين 1 — البحث عن الذكاء الاصطناعي في تطبيقاتك</h4>
+      <ol class="step-list">
+        <li>اذكر 5 تطبيقات على هاتفك أو حاسوبك تستخدمها بانتظام.</li>
+        <li>لكل تطبيق، حدّد ما إذا كان يستخدم على الأرجح الذكاء الاصطناعي (توصيات، تعرف، تنبؤ نصي، مرشحات صور...).</li>
+        <li>افتح تطبيق الكاميرا وجرّب وضع بورتريه يطمس الخلفية — هذا ذكاء اصطناعي للرؤية الحاسوبية في العمل.</li>
+        <li>ابدأ كتابة جملة على لوحة مفاتيح هاتفك الذكي ولاحظ اقتراحات الكلمات: هذا نموذج لغة صغير.</li>
+      </ol>
+    </div>
+    <div class="exercise-box">
+      <h4>🖥️ التمرين 2 — الذكاء الاصطناعي الضيق مقابل العام</h4>
+      <ol class="step-list">
+        <li>اذكر 3 مهام يتقنها الذكاء الاصطناعي جيدًا اليوم (مثل التعرف على وجه، ترجمة نص).</li>
+        <li>اذكر 3 مهام ينبغي أن يقدر عليها ذكاء اصطناعي عام (قوي) لو وُجد (مثل فهم الفكاهة، امتلاك حدس حقيقي).</li>
+        <li>ناقش: لماذا تختلف هاتان القائمتان بهذا الشكل؟</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">07</span>مراجع</h2>
+    <div class="cheat-box">
+      <h4>✅ بطاقة تلخيص — ما يجب أن تتذكره من الوحدة 10</h4>
+      <ul>
+        <li>الذكاء الاصطناعي ⊃ التعلم الآلي ⊃ التعلم العميق</li>
+        <li>يتعلم الذكاء الاصطناعي من البيانات وليس من قواعد ثابتة</li>
+        <li>الذكاء الاصطناعي الضيق (المتخصص) فقط موجود اليوم</li>
+        <li>التحيّز والأخطاء والخصوصية قضايا حقيقية</li>
+        <li>الذكاء الاصطناعي موجود بالفعل في كل تطبيقاتك اليومية</li>
+      </ul>
+    </div>
+    <div class="ref-list">
+      • Google — "الذكاء الاصطناعي للجميع" (Google AI)<br>
+      • MIT — "Elements of AI"<br>
+      • اليونسكو — "الذكاء الاصطناعي ببساطة"
+    </div>
+  </div>`,
+  quiz:[
+    {q:"يشير الذكاء الاصطناعي أساسًا إلى:",options:["حاسوب أسرع من الإنسان في الحساب","قدرة نظام على أداء مهام تتطلب عادةً ذكاءً بشريًا","روبوت بجسم مادي فقط","برنامج يتبع قواعد ثابتة فقط"],correct:1},
+    {q:"التعلم الآلي (Machine Learning) هو:",options:["مرادف دقيق للذكاء الاصطناعي","فرع من الذكاء الاصطناعي تتعلم فيه الأنظمة من البيانات","ذكاء اصطناعي لا يوجد بعد","نوع من عتاد الحاسوب"],correct:1},
+    {q:"يعتمد التعلم العميق (Deep Learning) على:",options:["شبكات عصبية اصطناعية","قواعد مكتوبة يدويًا فقط","بطاقات مثقوبة","لا يعتمد على أي بيانات تدريب"],correct:0},
+    {q:"الذكاء الاصطناعي الموجود فعليًا اليوم هو أساسًا:",options:["ذكاء اصطناعي عام (قوي)","ذكاء اصطناعي ضيق (متخصص)","وعي اصطناعي كامل","لا هذا ولا ذاك"],correct:1},
+    {q:"عندما يفتح هاتف قفل الشاشة بالتعرف على وجهك، فإنه يستخدم:",options:["نموذج ذكاء اصطناعي للتعرف على الوجه","كلمة مرور بسيطة مخفية","بصمة الإصبع فقط","لا تقنية خاصة"],correct:0},
+    {q:"من أين تأتي توصيات Netflix أو YouTube؟",options:["من موظف يختار يدويًا لكل مستخدم","من خوارزمية ذكاء اصطناعي تتعلم تفضيلاتك","من الصدفة البحتة","من قائمة ثابتة متطابقة للجميع"],correct:1},
+    {q:"ما هي الخطوة الأولى النموذجية لتدريب ذكاء اصطناعي؟",options:["النشر الفوري بلا بيانات","جمع عدد كبير من الأمثلة (بيانات)","شراء روبوت مادي","حذف جميع البيانات"],correct:1},
+    {q:"يعني التحيّز في الذكاء الاصطناعي:",options:["خطأ في التوصيلات الكهربائية","نزعة لتكرار أو تضخيم تمييز موجود في بيانات التدريب","خطأ عرض فقط","ذكاء اصطناعي سريع جدًا"],correct:1},
+    {q:"لماذا يمكن للذكاء الاصطناعي أن يخطئ بثقة في حالة غير مسبوقة؟",options:["لأنه لا يملك حسًا سليمًا بشريًا ويعتمد فقط على ما تعلّمه","لأنه يكذب عمدًا","لأنه دائمًا غير موصول","لأنه يرفض الإجابة"],correct:0},
+    {q:"وفق مقولة أندرو نغ، يُقارَن الذكاء الاصطناعي بـ:",options:["لعبة للأطفال","الكهرباء الجديدة","مجرد موضة عابرة","خطر فقط"],correct:1},
+    {q:"تجمع المساعدات الصوتية مثل سيري أو أليكسا بين:",options:["التعرف على الصوت، وفهم اللغة، وتوليف الصوت","ميكروفون فقط بلا ذكاء اصطناعي","قاعدة بيانات ثابتة فقط","لا تقنية ذكاء اصطناعي إطلاقًا"],correct:0},
+    {q:"الذكاء الاصطناعي العام (القوي) اليوم:",options:["موجود بالفعل في عدة هواتف ذكية","لا يوجد بعد ويبقى موضوع بحث","تخلى عنه جميع الباحثين","مطابق للذكاء الاصطناعي الضيق"],correct:1},
+    {q:"يستخدم مرشح البريد المزعج الذكاء الاصطناعي من أجل:",options:["حذف جميع الرسائل تلقائيًا","الكشف عن الرسائل غير المرغوبة وتعلم التعرف عليها","إرسال رسائل بدلًا عنك","استبدال كلمة مرورك"],correct:1},
+    {q:"لماذا تُعتبر الخصوصية قضية مهمة في الذكاء الاصطناعي؟",options:["لأن تدريب النماذج غالبًا ما يتطلب كميات هائلة من البيانات، أحيانًا شخصية","لأن الذكاء الاصطناعي لا يستخدم بيانات أبدًا","لأنها تخص الحكومات فقط","ليست قضية حقيقية"],correct:0},
+    {q:"وضع البورتريه الذي يطمس الخلفية في صورة يوضح:",options:["الرؤية الحاسوبية، أحد فروع الذكاء الاصطناعي","إعداد تكبير يدوي بسيط","تقنية لا علاقة لها بالذكاء الاصطناعي","عيبًا في الكاميرا"],correct:0}
+  ]
+},
+{
+  id:11,
+  title:"إتقان Word — المستوى المتقدم",
+  short:"الكائنات، التنسيق الاحترافي، الجداول المتقدمة، والأتمتة: كن مستخدمًا محترفًا لبرنامج Word.",
+  duration:"70-90 دقيقة (16 تمرينًا)",
+  level:2,
+  prereq:5,
+  objectives:["إدراج ومعالجة كائنات معقدة (SmartArt، رسوم بيانية، أشكال)","بناء جداول متقدمة وقوائم متعددة المستويات","أتمتة مستند باستخدام الأنماط والمراسلات والحماية"],
+  lesson:`
+  <div class="lesson-block">
+    <h2><span class="tagnum">01</span>لماذا نتجاوز الأساسيات؟</h2>
+    <p>تعرف بالفعل الكتابة والتنسيق والحفظ في مستند (الوحدة 5). يحوّلك هذا الكورس من <b>المستوى 2</b> إلى مستخدم محترف: الشخص الذي يُستدعى في المكتب لإعداد تقرير احترافي، أو دمج 200 رسالة مخصصة، أو بناء نموذج قابل لإعادة الاستخدام. هذه بالضبط المهارات التي يستخدمها مشغّل حاسوب متمرّس كل أسبوع.</p>
+    <p>هذه الوحدة منظّمة في <b>16 تمرينًا عمليًا</b>، مجمّعة في 4 عائلات كبرى من المهارات. أنجزها بالترتيب: كل تمرين يبني على عادات اكتسبتها في التمرين السابق.</p>
+  </div>
+
+  <div class="plain-box">
+    <div class="pb-label">🤓 بكل بساطة</div>
+    إذا علّمتك الوحدة 5 كتابة رسالة، فهذه الوحدة تعلّمك بناء تقرير شركة كامل: صور موضوعة جيدًا، جداول بيانات، جدول محتويات تلقائي، ومستند يبقى منظمًا حتى بعد 50 صفحة.
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">02</span>العائلة 1 — الكائنات والعناصر الرسومية</h2>
+    <div class="exercise-box">
+      <h4>🖥️ التمارين 1 إلى 5</h4>
+      <ol class="step-list">
+        <li><b>التمرين 1 — التفاف الصورة:</b> أدرج صورة (إدراج ← صور)، ثم جرّب خيارات التفاف النص المختلفة (زر أيمن على الصورة ← التفاف النص ← مربع، محكم، أمام النص). لاحظ كيف يتفاعل النص حول الصورة في كل وضع.</li>
+        <li><b>التمرين 2 — أشكال وأيقونات مجمّعة:</b> أدرج 3 أشكال (إدراج ← أشكال) لبناء مخطط بسيط (مثلًا 3 مستطيلات متصلة بأسهم)، ثم حدّدها كلها (Ctrl+نقر) وجمّعها (زر أيمن ← تجميع) لتحريكها ككائن واحد.</li>
+        <li><b>التمرين 3 — SmartArt:</b> أدرج SmartArt من نوع مخطط تنظيمي (إدراج ← SmartArt ← تسلسل هرمي) وأنشئ بنية بسيطة من 3 مستويات (مثلًا: مدير ← 2 مسؤولين ← 4 موظفين).</li>
+        <li><b>التمرين 4 — رسم بياني مرتبط ببيانات:</b> أدرج رسمًا بيانيًا (إدراج ← رسم بياني ← أعمدة)، عدّل البيانات في الجدول المصغّر الذي يفتح، ولاحظ تحديث الرسم البياني تلقائيًا.</li>
+        <li><b>التمرين 5 — مربع نص وWordArt:</b> أنشئ عنوان منشور وهمي باستخدام WordArt (إدراج ← WordArt) وضع مربع نص حر بجانبه لعنوان فرعي.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">03</span>العائلة 2 — القوائم والجداول المتقدمة</h2>
+    <div class="exercise-box">
+      <h4>🖥️ التمارين 6 إلى 9</h4>
+      <ol class="step-list">
+        <li><b>التمرين 6 — قائمة متعددة المستويات:</b> أنشئ مخططًا لمستند بترقيم هرمي تلقائي (1، ثم 1.1، ثم 1.1.1) عبر الصفحة الرئيسية ← قائمة متعددة المستويات.</li>
+        <li><b>التمرين 7 — تعداد نقطي مخصص:</b> أنشئ قائمة بتعداد نقطي مخصص (صورة أو رمز من اختيارك، عبر الصفحة الرئيسية ← تعداد نقطي ← تعريف تعداد نقطي جديد)، ثم تدرّب على إعادة بدء الترقيم في قائمة ثانية.</li>
+        <li><b>التمرين 8 — جدول متقدم:</b> أنشئ جدولًا 5×5، ادمج خليتي عنوان (حدّدهما ← زر أيمن ← دمج الخلايا)، طبّق نمط جدول جاهزًا (تبويب تصميم الجدول)، ثم افرز بيانات عمود (انقر في الجدول ← تبويب تخطيط ← فرز).</li>
+        <li><b>التمرين 9 — صيغة في جدول Word:</b> في السطر الأخير من عمود أرقام، استخدم تخطيط ← صيغة وأدخل <span class="mono">=SUM(ABOVE)</span> لجمع الخلايا أعلاه تلقائيًا.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">04</span>العائلة 3 — التخطيط وبنية المستند</h2>
+    <div class="exercise-box">
+      <h4>🖥️ التمارين 10 إلى 13</h4>
+      <ol class="step-list">
+        <li><b>التمرين 10 — أعمدة ولترينة:</b> حوّل فقرة إلى تخطيط "صحفي" بعمودين (تخطيط ← أعمدة) وأضف لترينة على الفقرة الأولى (إدراج ← لترينة).</li>
+        <li><b>التمرين 11 — الأنماط والقوالب:</b> طبّق مجموعة أنماط متسقة على مستند كامل (تصميم ← مجموعات الأنماط) ثم خصّص لون القالب (تصميم ← ألوان).</li>
+        <li><b>التمرين 12 — جدول المحتويات والحواشي:</b> على مستند من 3 أقسام يستخدم أنماط عناوين، أنشئ جدول محتويات تلقائيًا (مراجع ← جدول المحتويات)، ثم أضف حاشية سفلية (مراجع ← إدراج حاشية سفلية).</li>
+        <li><b>التمرين 13 — رؤوس/تذييلات متقدمة:</b> فعّل "صفحة أولى مختلفة" كي لا تعرض صفحة الغلاف رأس صفحة، ثم جرّب "صفحات زوجية وفردية مختلفة" (تخطيط ← إعداد الصفحة ← تخطيط).</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">05</span>العائلة 4 — الأتمتة والتعاون والأمان</h2>
+    <div class="exercise-box">
+      <h4>🖥️ التمارين 14 إلى 16</h4>
+      <ol class="step-list">
+        <li><b>التمرين 14 — دمج المراسلات:</b> أنشئ قائمة من 5 مستلمين وهميين في جدول إكسل صغير (الاسم، العنوان)، ثم استخدم المراسلات ← بدء دمج المراسلات ← رسائل لتوليد رسالة مخصصة لكل واحد.</li>
+        <li><b>التمرين 15 — تتبع التغييرات والتعليقات:</b> فعّل مراجعة ← تتبع التغييرات، عدّل فقرة، ثم أضف تعليقًا على جملة (مراجعة ← تعليق جديد). اقبل أو ارفض التغييرات واحدًا تلو الآخر بعد ذلك.</li>
+        <li><b>التمرين 16 — حماية المستند:</b> قيّد تعديل مستند (مراجعة ← تقييد التحرير) و/أو احمه بكلمة مرور عند الفتح (ملف ← معلومات ← حماية المستند ← التشفير بكلمة مرور).</li>
+      </ol>
+    </div>
+    <div class="quote-box">"الإتقان ليس معرفة كل الأدوات، بل معرفة أيها تستخدم في اللحظة المناسبة."<footer>— إنوسنت فورته، مدير البرنامج، أكاديمية Team21</footer></div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">06</span>تدرّب في المحرر المصغّر</h2>
+    <div class="demo-widget">
+      <div class="demo-label">مراجعة سريعة للتنسيقات الأساسية قبل الامتحان</div>
+      <div id="wordDemo2"></div>
+    </div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">07</span>مراجع</h2>
+    <div class="cheat-box">
+      <h4>✅ بطاقة تلخيص — المهارات المعتمدة في هذا الكورس</h4>
+      <ul>
+        <li>إدراج الكائنات: صور، أشكال، SmartArt، رسوم بيانية</li>
+        <li>قوائم متعددة المستويات وجداول بصيغ</li>
+        <li>أنماط، قوالب، جدول محتويات تلقائي</li>
+        <li>دمج المراسلات لعدة مستلمين</li>
+        <li>تتبع التغييرات وحماية المستند</li>
+      </ul>
+    </div>
+    <div class="ref-list">
+      • Microsoft Support — "تدريب Word المتقدم"<br>
+      • GCFGlobal — "Word Advanced Formatting"<br>
+      • Microsoft — "دليل دمج المراسلات"
+    </div>
+  </div>`,
+  quiz:[
+    {q:"لجعل النص يلتف حول صورة، تستخدم:",options:["خيار التفاف النص","مفتاح Delete","المدقق الإملائي","وضع القراءة"],correct:0},
+    {q:"لتحريك عدة أشكال ككائن واحد، تستخدم:",options:["دمج الخلايا","تجميع الأشكال","دمج المراسلات","جدول المحتويات"],correct:1},
+    {q:"يُستخدم SmartArt من نوع مخطط تنظيمي أساسًا من أجل:",options:["حساب متوسط","تمثيل تسلسل هرمي أو بنية","تصحيح الإملاء","ضغط ملف"],correct:1},
+    {q:"عندما تعدّل بيانات رسم بياني مُدرج في Word، فإن الرسم البياني:",options:["يبقى كما هو","يتحدث تلقائيًا","يختفي","يتحول إلى جدول"],correct:1},
+    {q:"تتيح القائمة متعددة المستويات إنشاء:",options:["ترقيم هرمي (1، 1.1، 1.1.1)","جدول بلا حدود","رسم بياني دائري","سطر نص واحد"],correct:0},
+    {q:"لدمج خليتين في جدول، تستخدم:",options:["زر أيمن ← دمج الخلايا","دمج المراسلات","الحواشي السفلية","اللترينة"],correct:0},
+    {q:"الصيغة =SUM(ABOVE) في جدول Word تتيح:",options:["فرز البيانات","جمع الخلايا الموجودة أعلاه","حذف صف","إدراج صورة"],correct:1},
+    {q:"يُهيّأ تخطيط صحفي بعدة أعمدة عبر:",options:["تخطيط ← أعمدة","إدراج ← جدول","مراجعة ← تعليقات","ملف ← طباعة"],correct:0},
+    {q:"تتيح مجموعات الأنماط:",options:["تطبيق مظهر متسق على مستند كامل","حذف جميع الأنماط","تغيير لغة المستند","إدراج رسم بياني"],correct:0},
+    {q:"يُنشأ جدول محتويات تلقائي بناءً على:",options:["أنماط العناوين المطبّقة في المستند","عدد الصفحات فقط","قائمة مكتوبة يدويًا","الصور المُدرجة"],correct:0},
+    {q:"يُستخدم خيار صفحة أولى مختلفة من أجل:",options:["منع طباعة المستند","الحصول على رأس/تذييل صفحة مختلف (أو غائب) في الصفحة الأولى","تغيير لغة الصفحة الأولى فقط","حذف الصفحة الأولى"],correct:1},
+    {q:"دمج المراسلات (Mail Merge) مفيد من أجل:",options:["إنشاء عدة رسائل مخصصة من قائمة مستلمين","ضغط مستند","إدراج SmartArt","تغيير اتجاه الصفحة"],correct:0},
+    {q:"يتيح تتبع التغييرات:",options:["رؤية التعديلات على مستند مع إمكانية قبولها أو رفضها","منع أي تعديل","حذف سجل المستند","ترجمة النص تلقائيًا"],correct:0},
+    {q:"لمنع فتح مستند دون كلمة مرور، تستخدم:",options:["ملف ← معلومات ← حماية المستند ← التشفير بكلمة مرور","المدقق الإملائي","وضع المسودة","خيار التكبير"],correct:0},
+    {q:"ما أفضل سبب لاستخدام أنماط العناوين بدلًا من التعريض اليدوي؟",options:["يتيح إنشاء جدول محتويات تلقائيًا والحفاظ على بنية متسقة","لا فائدة خاصة له","يبطئ المستند","يمنع الطباعة"],correct:0}
+  ]
+});
+MODULES_AR.push(
+{
+  id:12,
+  title:"إتقان Excel — المستوى المتقدم",
+  short:"صيغ متقدمة، جداول محورية، التحقق من صحة البيانات: كن مستخدمًا محترفًا لبرنامج Excel.",
+  duration:"70-90 دقيقة (16 تمرينًا)",
+  level:2,
+  prereq:6,
+  objectives:["إتقان الصيغ المتقدمة (البحث، الشروط، النصوص، التواريخ)","بناء جداول Excel منظمة وجداول محورية","تحليل وحماية البيانات كمحترف"],
+  lesson:`
+  <div class="lesson-block">
+    <h2><span class="tagnum">01</span>من الحساب البسيط إلى تحليل البيانات</h2>
+    <p>علّمتك الوحدة 6 الأساسيات: الخلايا، =SUM()، =AVERAGE()، أول رسم بياني. يأخذك هذا الكورس من <b>المستوى 2</b> إلى حيث يعمل محترفو البيانات: البحث عن معلومات في جداول كبيرة، الجداول المحورية، التنسيق الذكي، والتحليل الآلي. هذه هي المهارات التي يستخدمها مستخدم Excel المتمرّس لتحويل آلاف الصفوف من البيانات إلى قرارات واضحة.</p>
+    <p>تتضمن هذه الوحدة <b>16 تمرينًا عمليًا</b>، موزّعة على 4 عائلات من المهارات. اعمل بمجموعة بيانات وهمية (مثل قائمة مبيعات) طوال التمارين للحفاظ على الاتساق.</p>
+  </div>
+
+  <div class="plain-box">
+    <div class="pb-label">🤓 بكل بساطة</div>
+    إذا علّمتك الوحدة 6 إجراء جمع تلقائي، فهذه الوحدة تعلّمك طرح سؤال حقيقي على بياناتك — "أي بائع كان أداؤه الأفضل في مارس؟" — والحصول على الإجابة بنقرات قليلة، بدلًا من قراءة آلاف الصفوف واحدًا تلو الآخر.
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">02</span>العائلة 1 — الصيغ المتقدمة</h2>
+    <div class="exercise-box">
+      <h4>🖥️ التمارين 1 إلى 6</h4>
+      <ol class="step-list">
+        <li><b>التمرين 1 — SI متداخلة:</b> أنشئ عمود "التقدير" الذي يعرض "ممتاز" إذا كانت الدرجة ≥ 16، "جيد" إذا ≥ 12، وإلا "بحاجة لتحسين"، باستخدام <span class="mono">=IF(A2>=16,"ممتاز",IF(A2>=12,"جيد","بحاجة لتحسين"))</span>.</li>
+        <li><b>التمرين 2 — VLOOKUP / XLOOKUP:</b> أنشئ جدول أسعار حسب المنتج، ثم في منطقة أخرى استخدم <span class="mono">=VLOOKUP(اسم_المنتج, جدول_الأسعار, 2, FALSE)</span> لاسترجاع سعر تلقائيًا.</li>
+        <li><b>التمرين 3 — INDEX وMATCH:</b> كرّر نفس نتيجة VLOOKUP بدمج <span class="mono">=INDEX(نطاق, MATCH(معيار, نطاق_البحث, 0))</span> — أكثر مرونة للبحث نحو اليسار.</li>
+        <li><b>التمرين 4 — SUMIF / COUNTIF / AVERAGEIF:</b> من قائمة مبيعات حسب المنطقة، احسب إجمالي المبيعات لمنطقة واحدة باستخدام <span class="mono">=SUMIF(نطاق_المنطقة, "الشمال", نطاق_المبيعات)</span>.</li>
+        <li><b>التمرين 5 — دوال النصوص:</b> استخدم <span class="mono">=CONCATENATE()</span> أو <span class="mono">&</span> لدمج الاسم الأول واسم العائلة، ثم <span class="mono">=LEFT()</span> و<span class="mono">=RIGHT()</span> و<span class="mono">=LEN()</span> لاستخراج أجزاء من النص.</li>
+        <li><b>التمرين 6 — دوال التاريخ:</b> استخدم <span class="mono">=TODAY()</span>، ثم احسب عدد الأيام بين تاريخين بطرح بسيط، وجرّب <span class="mono">=NETWORKDAYS()</span> لحساب أيام العمل بين تاريخين.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">03</span>العائلة 2 — الجداول وتنظيم البيانات</h2>
+    <div class="exercise-box">
+      <h4>🖥️ التمارين 7 إلى 9، و12</h4>
+      <ol class="step-list">
+        <li><b>التمرين 7 — جدول Excel منظّم:</b> حدّد نطاق بياناتك وحوّله إلى جدول رسمي (إدراج ← جدول، أو Ctrl+T). لاحظ كيف تصبح المراجع أسماء أعمدة مقروءة في الصيغ.</li>
+        <li><b>التمرين 8 — جدول محوري:</b> من بيانات مبيعاتك، أنشئ جدولًا محوريًا (إدراج ← جدول محوري) يلخّص إجمالي المبيعات حسب المنطقة والشهر بسحب وإفلات بسيط.</li>
+        <li><b>التمرين 9 — نطاق مسمّى:</b> حدّد نطاق خلايا وامنحه اسمًا (مربع الاسم أعلى اليسار، أو الصيغ ← تعريف اسم)، ثم استخدم هذا الاسم مباشرة في صيغة بدلًا من مراجع الخلايا.</li>
+        <li><b>التمرين 12 — التحقق من صحة البيانات:</b> أنشئ قائمة منسدلة في خلية (البيانات ← التحقق من صحة البيانات ← قائمة) للسماح فقط بقيم محددة، مثل أسماء مناطق محدّدة مسبقًا.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">04</span>العائلة 3 — التصور الذكي</h2>
+    <div class="exercise-box">
+      <h4>🖥️ التمارين 10 إلى 11</h4>
+      <ol class="step-list">
+        <li><b>التمرين 10 — تنسيق شرطي متقدم:</b> طبّق أشرطة بيانات أو مجموعات أيقونات (الصفحة الرئيسية ← التنسيق الشرطي) على عمود أرقام، ثم أنشئ قاعدة مخصصة مبنية على صيغة (مثل تلوين أي مبيعة أقل من هدف باللون الأحمر).</li>
+        <li><b>التمرين 11 — رسم بياني مركب ومخططات مصغّرة (Sparklines):</b> أنشئ رسمًا بيانيًا مركبًا (أعمدة + خط) لمقارنة سلسلتي بيانات بمقاييس مختلفة، ثم أدرج مخططًا مصغّرًا Sparkline في خلية (إدراج ← Sparkline) لتصور اتجاه مباشرة داخل الجدول.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">05</span>العائلة 4 — التحليل والتعاون والطباعة</h2>
+    <div class="exercise-box">
+      <h4>🖥️ التمارين 13 إلى 16</h4>
+      <ol class="step-list">
+        <li><b>التمرين 13 — البحث عن هدف (Goal Seek):</b> استخدم البيانات ← تحليل ماذا لو ← البحث عن هدف لإيجاد الكمية اللازم بيعها تلقائيًا لتحقيق هدف إيرادات محدد.</li>
+        <li><b>التمرين 14 — تجميد الأجزاء وصيغ ثلاثية الأبعاد:</b> جمّد الصف العلوي والعمود الأيسر (عرض ← تجميد الأجزاء) على جدول كبير، ثم أنشئ صيغة تجمع نفس الخلية عبر عدة أوراق في آن واحد، مثل <span class="mono">=SUM(يناير:مارس!B2)</span>.</li>
+        <li><b>التمرين 15 — فرز وتصفية متقدمان:</b> افرز بياناتك حسب عدة معايير في آن واحد (البيانات ← فرز ← إضافة مستوى)، ثم استخدم تصفية متقدمة لاستخراج فقط الصفوف المطابقة لعدة شروط معقدة.</li>
+        <li><b>التمرين 16 — الحماية والطباعة:</b> احمِ ورقة من التعديل (مراجعة ← حماية الورقة)، ثم اضبط منطقة طباعة بصفوف عناوين متكررة على كل صفحة (تخطيط الصفحة ← منطقة الطباعة / طباعة العناوين).</li>
+      </ol>
+    </div>
+    <div class="quote-box">"الجدول المبني جيدًا يجيب على سؤال قبل أن يُطرح."<footer>— إنوسنت فورته، مدير البرنامج، أكاديمية Team21</footer></div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">06</span>تدرّب في الجدول المصغّر</h2>
+    <div class="demo-widget">
+      <div class="demo-label">مراجعة سريعة للصيغ الأساسية قبل الامتحان</div>
+      <div id="excelDemo2"></div>
+    </div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">07</span>مراجع</h2>
+    <div class="cheat-box">
+      <h4>✅ بطاقة تلخيص — المهارات المعتمدة في هذا الكورس</h4>
+      <ul>
+        <li>SI متداخلة، VLOOKUP/XLOOKUP، INDEX+MATCH</li>
+        <li>SUMIF، دوال النصوص والتواريخ</li>
+        <li>جداول منظمة وجداول محورية</li>
+        <li>تنسيق شرطي متقدم ورسوم بيانية مركبة</li>
+        <li>البحث عن هدف، فرز/تصفية متقدمة، حماية وطباعة</li>
+      </ul>
+    </div>
+    <div class="ref-list">
+      • Microsoft Support — "تدريب Excel المتقدم"<br>
+      • GCFGlobal — "Excel Formulas"<br>
+      • Microsoft — "إنشاء جدول محوري"
+    </div>
+  </div>`,
+  quiz:[
+    {q:"تُستخدم صيغة SI المتداخلة من أجل:",options:["اختبار عدة شروط متتالية في صيغة واحدة","حذف خلية","فرز عمود","إنشاء رسم بياني"],correct:0},
+    {q:"يتيح VLOOKUP:",options:["البحث عن قيمة في جدول وإرجاع معلومة مرتبطة بها","ضغط ملف","إدراج صورة","حماية ورقة"],correct:0},
+    {q:"من مزايا INDEX+MATCH مقارنة بـ VLOOKUP:",options:["يمكنه البحث نحو اليسار، على عكس VLOOKUP التقليدي","أبطأ دائمًا","يعمل فقط مع النصوص","يحذف التكرارات تلقائيًا"],correct:0},
+    {q:"=SUMIF(نطاق_المعيار, الشمال, نطاق_المبيعات) تتيح:",options:["جمع المبيعات المطابقة لمعيار الشمال فقط","عد جميع الخلايا","فرز المبيعات تصاعديًا","حذف مبيعات الشمال"],correct:0},
+    {q:"تُستخدم دالة =LEFT() من أجل:",options:["استخراج الأحرف الأولى من نص","محاذاة خلية لليسار","حذف نص","فرز عمود"],correct:0},
+    {q:"تعرض =TODAY():",options:["التاريخ الحالي، محدَّث تلقائيًا","تاريخًا ثابتًا لا يتغير أبدًا","الوقت فقط","رقمًا عشوائيًا"],correct:0},
+    {q:"تحويل نطاق إلى جدول Excel منظّم (Ctrl+T) يتيح خصوصًا:",options:["استخدام أسماء أعمدة مقروءة في الصيغ","حذف كل البيانات","منع أي فرز","إخفاء الأعمدة تلقائيًا"],correct:0},
+    {q:"يُستخدم الجدول المحوري أساسًا من أجل:",options:["تلخيص وتقاطع كميات كبيرة من البيانات بسرعة","إدراج صورة","حماية كلمة مرور","إبطاء الحساب"],correct:0},
+    {q:"يتيح النطاق المسمّى:",options:["استخدام اسم واضح في صيغة بدلًا من مرجع خلية","حذف نطاق خلايا","تغيير لون ورقة","دمج ملفين"],correct:0},
+    {q:"يُستخدم التحقق من صحة البيانات بقائمة منسدلة من أجل:",options:["تقييد الإدخال بقيم محددة مسبقًا","إنشاء رسم بياني تلقائيًا","فرز البيانات","حماية المصنف بالكامل"],correct:0},
+    {q:"أشرطة البيانات ومجموعات الأيقونات جزء من:",options:["التنسيق الشرطي","دمج المراسلات","التحقق من صحة البيانات","الجدول المحوري"],correct:0},
+    {q:"Sparkline هو:",options:["مخطط مصغّر يُدرج مباشرة داخل خلية","صيغة حسابية","نوع من حماية الورقة","اختصار لوحة مفاتيح"],correct:0},
+    {q:"يتيح البحث عن هدف (Goal Seek):",options:["إيجاد أي مدخل ينتج النتيجة المستهدفة المرغوبة تلقائيًا","فرز البيانات حسب اللون","إنشاء جدول محوري","إدراج رسم بياني"],correct:0},
+    {q:"يُستخدم تجميد الأجزاء من أجل:",options:["إبقاء صفوف/أعمدة معينة مرئية أثناء التمرير عبر جدول كبير","منع أي تعديل على الملف","حذف الصيغ","تغيير لغة البرنامج"],correct:0},
+    {q:"حماية ورقة (مراجعة ← حماية الورقة) تتيح:",options:["منع التعديلات غير المصرح بها على تلك الورقة","حذف الورقة نهائيًا","إنشاء كلمة مرور للحاسوب بأكمله","تنسيق الخلايا تلقائيًا"],correct:0}
+  ]
+},
+{
+  id:13,
+  title:"فهم النماذج اللغوية الكبيرة (LLM)",
+  short:"تعمّق في كيفية عمل ChatGPT وGemini وClaude، وتعلّم إنشاء حساب وكتابة أوامر (Prompts) فعّالة.",
+  duration:"40-50 دقيقة",
+  level:2,
+  prereq:10,
+  objectives:["شرح ماهية النموذج اللغوي الكبير (LLM) وكيفية عمله","مقارنة ChatGPT وGemini وClaude حسب نقاط قوة كل منها","إنشاء حساب لدى مزوّد ذكاء اصطناعي وكتابة أوامر فعّالة"],
+  lesson:`
+  <div class="lesson-block">
+    <h2><span class="tagnum">01</span>ما هو النموذج اللغوي الكبير؟</h2>
+    <p><b>النموذج اللغوي الكبير</b> (LLM، اختصار Large Language Model) هو نوع من الذكاء الاصطناعي مدرَّب على كميات هائلة من النصوص (كتب، مقالات، مواقع ويب، شيفرة برمجية) ليتعلم التنبؤ بالكلمة التي يجب أن تأتي بعد أخرى. من خلال التدريب على مليارات الجمل، يطوّر النموذج قدرة مذهلة على فهم السياق، والإجابة عن الأسئلة، والتلخيص، والترجمة، والكتابة، بل وحتى البرمجة.</p>
+    <p>لا "يفكر" LLM كإنسان ولا يملك وعيًا: فهو يتنبأ إحصائيًا بالاستمرار الأكثر احتمالًا لنص ما، بناءً على ما تعلّمه أثناء التدريب. لهذا قد ينتج أحيانًا إجابات تبدو واثقة لكنها في الواقع غير صحيحة — ظاهرة تُسمى "الهلوسة" (Hallucination).</p>
+  </div>
+
+  <div class="plain-box">
+    <div class="pb-label">🤓 بكل بساطة</div>
+    تخيّل التصحيح التنبؤي لهاتفك، لكن مضاعفًا مليون مرة: بدلًا من اقتراح الكلمة التالية فقط، يمكن لـ LLM التنبؤ برد كامل ومترابط ومفيد غالبًا، لأنه "قرأ" كمية من النصوص لا يستطيع أي إنسان قراءتها في عدة حيوات.
+  </div>
+  <div class="fact-box">
+    <div class="fb-label">💡 هل تعلم؟</div>
+    حرف "T" في ChatGPT يعني "Transformer" — بنية ذكاء اصطناعي نشرها باحثون من Google عام 2017 في ورقة بحثية بعنوان «Attention is All You Need». من المفارقات أن Google هي من اخترعت التقنية التي دفعت لاحقًا نماذج منافسة مثل ChatGPT!
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">02</span>كيف يعمل LLM فعليًا؟</h2>
+    <ol>
+      <li><b>التجزئة (Tokenization):</b> يُقسَّم نصك إلى أجزاء صغيرة تُسمى "tokens" (غالبًا أجزاء من كلمات).</li>
+      <li><b>المعالجة:</b> يحلّل النموذج هذه الأجزاء عبر شبكة عصبية (بنية Transformer) لفهم سياق كل كلمة بالنسبة للأخرى.</li>
+      <li><b>التوليد:</b> يتنبأ النموذج بالجزء التالي الأكثر احتمالًا، واحدًا تلو الآخر، حتى يشكّل ردًا كاملًا.</li>
+      <li><b>الضبط الدقيق (Fine-tuning / RLHF):</b> بعد التدريب الأولي على نص خام، تُضبط النماذج بدقة عبر تغذية راجعة بشرية لتصبح أكثر فائدة وصدقًا وأمانًا.</li>
+    </ol>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">03</span>مقارنة أهم النماذج اللغوية الكبيرة</h2>
+    <ul>
+      <li><b>ChatGPT (OpenAI):</b> أحد أشهر النماذج اللغوية الكبيرة لدى الجمهور؛ ممتاز للمحادثة العامة والكتابة والعصف الذهني؛ يقدّم نسخة مجانية واشتراكات مدفوعة لقدرات متقدمة.</li>
+      <li><b>Gemini (Google):</b> مدمج بعمق في أدوات Google (Gmail، Docs، البحث)؛ عملي لمن يستخدم بالفعل منظومة Google يوميًا.</li>
+      <li><b>Claude (Anthropic):</b> معروف بجودة الكتابة، وقدرته على معالجة المستندات الطويلة، واهتمام خاص بأمان وصدق الإجابات.</li>
+    </ul>
+    <p>لا يوجد نموذج "أفضل" عالميًا لكل شيء: يعتمد الاختيار الصحيح على المهمة واللغة والميزانية وعادات كل شخص. يستخدم كثير من المحترفين في الواقع عدة نماذج لغوية حسب السياق.</p>
+    <div class="quote-box">"الأمر (Prompt) ليس مجرد سؤال — إنه تعليمة. كلما كان أوضح، كانت الإجابة أفضل."<footer>— إنوسنت فورته، مدير البرنامج، أكاديمية Team21</footer></div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">04</span>إنشاء حسابك</h2>
+    <p>لممارسة هذه الوحدة، أنشئ حسابًا مجانيًا لدى مزوّد واحد أو أكثر. ستحتاج إلى عنوان بريد إلكتروني صالح. لا تشارك أبدًا معلومات شخصية حساسة في محادثاتك مع ذكاء اصطناعي.</p>
+    <div class="provider-cards">
+      <div class="provider-card"><h5>ChatGPT</h5><p style="font-size:12.5px;color:var(--gray);">chat.openai.com</p><a href="https://chat.openai.com" target="_blank" rel="noopener">إنشاء حساب ←</a></div>
+      <div class="provider-card"><h5>Gemini</h5><p style="font-size:12.5px;color:var(--gray);">gemini.google.com</p><a href="https://gemini.google.com" target="_blank" rel="noopener">إنشاء حساب ←</a></div>
+      <div class="provider-card"><h5>Claude</h5><p style="font-size:12.5px;color:var(--gray);">claude.ai</p><a href="https://claude.ai" target="_blank" rel="noopener">إنشاء حساب ←</a></div>
+    </div>
+    <label class="acct-toggle"><input type="checkbox" id="acctCheck13"> <span id="acctCheckLabel13">لقد أنشأت حسابًا في واحدة على الأقل من هذه الخدمات.</span></label>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">05</span>تشريح أمر (Prompt) جيد</h2>
+    <ul>
+      <li><b>السياق / الدور:</b> حدّد من يجب أن يجيب وفي أي إطار ("أنت معلم رياضيات للمبتدئين").</li>
+      <li><b>مهمة واضحة:</b> قل بالضبط ما تريده، دون غموض.</li>
+      <li><b>الصيغة المتوقعة:</b> حدّد الطول والأسلوب والبنية ("في 3 نقاط"، "على شكل جدول"، "في 100 كلمة كحد أقصى").</li>
+      <li><b>مثال أو قيد:</b> أعطِ مثالًا عن النتيجة المرغوبة، أو قيدًا دقيقًا، لتوجيه النموذج أكثر.</li>
+    </ul>
+    <div class="example-box"><b>أمر ضعيف:</b> "حدّثني عن التسويق."</div>
+    <div class="example-box"><b>أمر قوي:</b> "أنت مستشار تسويق للشركات الصغيرة. اشرح لي، في 5 نقاط قصيرة وملموسة، كيف يمكن لمتجر محلي جذب المزيد من العملاء على وسائل التواصل الاجتماعي بميزانية محدودة."</div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">06</span>تمرين عملي — اكتب واختبر أوامرك</h2>
+    <div class="demo-widget">
+      <div class="demo-label">ورشة تفاعلية — حلّل جودة أمرك</div>
+      <div id="promptLab1"></div>
+    </div>
+    <div class="exercise-box">
+      <h4>🖥️ تمرين — للقيام به بحساب ذكاء اصطناعي حقيقي (ChatGPT أو Gemini أو Claude)</h4>
+      <ol class="step-list">
+        <li>اكتب أمرًا يطلب ملخصًا لموضوع تعرفه، في 3 جمل كحد أقصى، وقارن الإجابة بما توقعته.</li>
+        <li>اطلب من الذكاء الاصطناعي إعادة صياغة نص كتبته بأسلوب أكثر رسمية.</li>
+        <li>جرّب أمرًا بدور محدد ("أنت مسؤول توظيف") للحصول على نصائح حول سيرتك الذاتية.</li>
+        <li>اطرح نفس السؤال على نموذجين لغويين مختلفين وقارن الإجابات: النبرة، الطول، الدقة.</li>
+        <li>جرّب أمرًا تطلب فيه صراحة صيغة معينة (جدول، قائمة نقطية، أو خطوات مرقّمة) وتحقق من التزام الذكاء الاصطناعي بها.</li>
+        <li>تحقق من معلومة واقعية أعطاها الذكاء الاصطناعي باستخدام مصدر موثوق — عادة جيدة لرصد "هلوسة" محتملة.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">07</span>استخدام الذكاء الاصطناعي بمسؤولية</h2>
+    <ul>
+      <li>تحقق دائمًا من الحقائق المهمة قبل الاعتماد عليها (تقرير، قرار، امتحان).</li>
+      <li>لا تشارك أبدًا كلمات مرور أو بيانات طبية أو معلومات سرية في أمر (Prompt).</li>
+      <li>وضّح مصدر عملك إذا استخدمت الذكاء الاصطناعي لواجب أو تقرير مهني، وفق قواعد مؤسستك أو صاحب العمل.</li>
+      <li>حافظ على تفكير نقدي: الذكاء الاصطناعي أداة قوية، وليس سلطة معصومة من الخطأ.</li>
+    </ul>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">08</span>مراجع</h2>
+    <div class="cheat-box">
+      <h4>✅ بطاقة تلخيص — المهارات المعتمدة في هذا الكورس</h4>
+      <ul>
+        <li>يتنبأ LLM بالنص، ولا "يفكر" كإنسان</li>
+        <li>تجزئة ← معالجة ← توليد ← ضبط بشري دقيق</li>
+        <li>ChatGPT، Gemini، Claude: لكل منها نقاط قوته</li>
+        <li>الأمر الجيد = سياق + مهمة واضحة + صيغة + مثال</li>
+        <li>تحقق دائمًا من الحقائق المهمة التي يقدمها الذكاء الاصطناعي</li>
+      </ul>
+    </div>
+    <div class="ref-list">
+      • OpenAI — "دليل هندسة الأوامر"<br>
+      • Google — "مقدمة إلى Gemini"<br>
+      • Anthropic — "دليل كتابة الأوامر"
+    </div>
+  </div>`,
+  quiz:[
+    {q:"يُدرَّب النموذج اللغوي الكبير (LLM) أساسًا من أجل:",options:["التنبؤ بالكلمة أو الرمز الذي يجب أن يتبع نصًا معينًا","إصلاح عتاد الحاسوب","استبدال البشر كليًا","الترجمة فقط بين اللغات"],correct:0},
+    {q:"تشير هلوسة LLM إلى:",options:["إجابة منتجة بثقة لكنها غير صحيحة واقعيًا","خطأ في عرض الشاشة","مشكلة في اتصال الإنترنت","عطل في العتاد"],correct:0},
+    {q:"تتمثل التجزئة (Tokenization) في:",options:["تقسيم النص إلى أجزاء صغيرة تُسمى tokens","حذف كل النص","ترجمة النص تلقائيًا","ضغط ملف"],correct:0},
+    {q:"بنية Transformer، الأساس في النماذج اللغوية الكبيرة الحديثة، نشرها باحثون من:",options:["Google","شركة مجهولة","لا شركة، إنها أسطورة","Microsoft فقط"],correct:0},
+    {q:"يتكامل Gemini بشكل خاص مع:",options:["منظومة Google (Gmail، Docs، البحث)","ألعاب الفيديو فقط","الطابعات ثلاثية الأبعاد","لا أداة أخرى"],correct:0},
+    {q:"يُعرف Claude (Anthropic) خصوصًا بـ:",options:["جودة الكتابة والاهتمام الكبير بأمان الإجابات","كونه محرك بحث فقط","العمل فقط دون اتصال","معالجة الصور فقط"],correct:0},
+    {q:"هل يوجد نموذج LLM أفضل عالميًا لكل المهام؟",options:["نعم، نموذج واحد دائمًا أفضل من البقية","لا، يعتمد الاختيار الصحيح على المهمة واللغة والسياق","لا، لا يوجد LLM مفيد أبدًا","نعم، لكن فقط للحساب الرياضي"],correct:1},
+    {q:"يجب أن يتضمن الأمر (Prompt) الفعّال عمومًا:",options:["سياقًا، مهمة واضحة، صيغة متوقعة، ومثالًا إن أمكن","كلمة واحدة فقط","لا تفاصيل إطلاقًا، لترك الذكاء الاصطناعي يخمّن","سؤالًا مغلقًا بنعم/لا دائمًا"],correct:0},
+    {q:"لماذا يجب ألا تشارك كلمات مرور أبدًا في أمر؟",options:["لحماية معلوماتك الشخصية والحساسة","لأن ذلك يبطئ الذكاء الاصطناعي","لأنه محظور قانونيًا في كل الدول دون استثناء","لا أهمية لذلك"],correct:0},
+    {q:"ماذا يجب فعله أمام معلومة واقعية مهمة يقدمها ذكاء اصطناعي؟",options:["التحقق منها باستخدام مصدر موثوق قبل الاعتماد عليها","قبولها تلقائيًا دون تحقق","تجاهلها دائمًا","مشاركتها فورًا دون مراجعة"],correct:0},
+    {q:"تُستخدم عملية RLHF (التغذية الراجعة البشرية) من أجل:",options:["جعل النموذج أكثر فائدة وصدقًا وأمانًا بعد تدريبه الأولي","حذف جميع بيانات التدريب","إبطاء النموذج عمدًا","استبدال التجزئة"],correct:0},
+    {q:"أنت معلم رياضيات للمبتدئين مثال على:",options:["سياق / دور مُعطى للذكاء الاصطناعي في أمر","خطأ نحوي","كلمة مرور","بيانات شخصية حساسة"],correct:0},
+    {q:"طلب إجابة في 3 نقاط، 100 كلمة كحد أقصى يوضح:",options:["تحديد الصيغة المتوقعة في أمر","هلوسة من الذكاء الاصطناعي","خطأ في النموذج","تجزئة غير صحيحة"],correct:0},
+    {q:"لماذا من المفيد طرح نفس السؤال على نموذجين لغويين مختلفين؟",options:["لمقارنة النبرة والطول ودقة الإجابات","لا يفيد أبدًا","لإثقال الخوادم عمدًا","لأن نموذجًا واحدًا لا يمكنه الإجابة أبدًا"],correct:0},
+    {q:"يعني استخدام الذكاء الاصطناعي بمسؤولية خصوصًا:",options:["الحفاظ على تفكير نقدي والتحقق من الحقائق المهمة","تصديق كل إجابة بشكل أعمى","عدم استخدام الذكاء الاصطناعي إطلاقًا لأي شيء","مشاركة بيانات سرية بشكل منهجي"],correct:0}
+  ]
+});
 /* ==================== LANGUAGE ==================== */
 let LANG = "fr";
 function getModules(){
@@ -4485,7 +6072,7 @@ const state = {
   results: {},           // moduleId -> {score, total, passed, date, certId}
 };
 
-const screens = ["welcome","dashboard","lesson","quiz","result","cert"];
+const screens = ["welcome","dashboard","lesson","quiz","result","cert","admin"];
 function showScreen(name){
   screens.forEach(s=>{
     document.getElementById("screen-"+s).classList.toggle("active", s===name);
@@ -4510,6 +6097,7 @@ function tryStart(){
   state.userName = val;
   applyUserChip(val);
   saveState();
+  pullResultsForName(val);
   renderDashboard();
   showScreen("dashboard");
 }
@@ -4526,43 +6114,71 @@ document.getElementById("changeUserBtn").addEventListener("click", ()=>{
 
 /* ==================== DASHBOARD ==================== */
 function renderDashboard(){
-  const grid = document.getElementById("moduleGrid");
-  grid.innerHTML = "";
-  let passedCount = 0;
   document.getElementById("dashboardTitle").textContent = t("dashboardTitle");
   document.getElementById("dashboardSub").textContent = t("dashboardSub");
-  getModules().forEach(mod=>{
+  const allMods = getModules();
+  const level1 = allMods.filter(m=>(m.level||1)===1);
+  const level2 = allMods.filter(m=>(m.level||1)===2);
+  let passedCount = 0;
+  allMods.forEach(m=>{ const r=state.results[m.id]; if(r&&r.passed) passedCount++; });
+
+  function buildCard(mod){
     const res = state.results[mod.id];
-    if(res && res.passed) passedCount++;
+    const prereqMod = mod.prereq ? allMods.find(m=>m.id===mod.prereq) : null;
+    const prereqOk = !prereqMod || (state.results[prereqMod.id] && state.results[prereqMod.id].passed);
     const card = document.createElement("div");
-    card.className = "mod-card";
-    let statusHtml, actionsHtml;
-    if(res && res.passed){
-      statusHtml = `<div class="status-badge passed">${t("statusPassed")} — ${res.score}/15</div>`;
+    card.className = "mod-card" + (!prereqOk ? " is-locked" : "");
+    let statusHtml, actionsHtml, prereqHtml = "";
+    if(!prereqOk){
+      statusHtml = `<div class="status-badge locked">🔒 ${t("statusLocked")}</div>`;
+      prereqHtml = `<div class="prereq-note">${tpl(t("prereqNote"),{title:prereqMod.title})}</div>`;
+      actionsHtml = `<button class="btn ghost block" disabled>${t("statusLocked")}</button>`;
+    } else if(res && res.passed){
+      statusHtml = `<div class="status-badge passed">${t("statusPassed")} — ${res.score}/${mod.quiz.length}</div>`;
       actionsHtml = `<button class="btn ghost" data-lesson="${mod.id}">${t("btnReviewLesson")}</button><button class="btn accent" data-cert="${mod.id}">${t("btnCertificate")}</button>`;
     } else if(res && !res.passed){
-      statusHtml = `<div class="status-badge available">${t("statusRetry")} — ${res.score}/15</div>`;
+      statusHtml = `<div class="status-badge available">${t("statusRetry")} — ${res.score}/${mod.quiz.length}</div>`;
       actionsHtml = `<button class="btn ghost" data-lesson="${mod.id}">${t("btnReviewLesson")}</button><button class="btn accent" data-quiz="${mod.id}">${t("btnRetryQuiz")}</button>`;
     } else {
       statusHtml = `<div class="status-badge available">${t("statusAvailable")}</div>`;
       actionsHtml = `<button class="btn accent block" data-lesson="${mod.id}">${t("btnStartLesson")}</button>`;
     }
+    const levelTag = (mod.level===2) ? `<span class="level-tag">${t("level2Tag")}</span>` : "";
     card.innerHTML = `
-      <div class="win-bar"><span></span><span></span><span></span></div>
+      <div class="win-bar"><span></span><span></span><span></span>${levelTag}</div>
       <div class="body">
         <div class="num">${t("moduleWord")} ${String(mod.id).padStart(2,"0")}</div>
         <h3>${mod.title}</h3>
         ${statusHtml}
         <p>${mod.short}</p>
+        ${prereqHtml}
         <div class="actions">${actionsHtml}</div>
       </div>`;
-    grid.appendChild(card);
-  });
-  document.getElementById("progressSummary").textContent = `${passedCount} / ${getModules().length} ${t("progressOf")}`;
+    return card;
+  }
+
+  const grid = document.getElementById("moduleGrid");
+  grid.innerHTML = "";
+  level1.forEach(mod=> grid.appendChild(buildCard(mod)));
+
+  const grid2 = document.getElementById("moduleGridL2");
+  const divider2 = document.getElementById("level2Divider");
+  grid2.innerHTML = "";
+  if(level2.length){
+    divider2.style.display = "flex";
+    document.getElementById("level2Label").textContent = t("level2DividerLabel");
+    level2.forEach(mod=> grid2.appendChild(buildCard(mod)));
+  } else {
+    divider2.style.display = "none";
+  }
+
+  document.getElementById("progressSummary").textContent = `${passedCount} / ${allMods.length} ${t("progressOf")}`;
   renderResumeBanner();
-  grid.querySelectorAll("[data-lesson]").forEach(b=>b.addEventListener("click", ()=>openLesson(parseInt(b.dataset.lesson))));
-  grid.querySelectorAll("[data-quiz]").forEach(b=>b.addEventListener("click", ()=>openQuiz(parseInt(b.dataset.quiz))));
-  grid.querySelectorAll("[data-cert]").forEach(b=>b.addEventListener("click", ()=>openCertificate(parseInt(b.dataset.cert))));
+  [grid, grid2].forEach(g=>{
+    g.querySelectorAll("[data-lesson]").forEach(b=>b.addEventListener("click", ()=>openLesson(parseInt(b.dataset.lesson))));
+    g.querySelectorAll("[data-quiz]").forEach(b=>b.addEventListener("click", ()=>openQuiz(parseInt(b.dataset.quiz))));
+    g.querySelectorAll("[data-cert]").forEach(b=>b.addEventListener("click", ()=>openCertificate(parseInt(b.dataset.cert))));
+  });
 }
 
 function renderResumeBanner(){
@@ -4684,6 +6300,56 @@ function initModuleWidgets(id){
   if(id===5){ initWordDemo("wordDemo1"); initKeyboardDiagram("keyboardDemo5"); }
   if(id===6){ initExcelDemo("excelDemo1"); }
   if(id===7){ initSlideDemo("slideDemo1"); }
+  if(id===11){ initWordDemo("wordDemo2"); }
+  if(id===12){ initExcelDemo("excelDemo2"); }
+  if(id===13){ initPromptLab("promptLab1"); }
+}
+
+function initPromptLab(rootId){
+  const root = document.getElementById(rootId);
+  if(!root) return;
+  const L = {
+    fr:{title:"Laboratoire de prompts — entraînez-vous ici",ph:"Écrivez votre prompt ici... ex : « Explique-moi la photosynthèse comme si j'avais 10 ans, en 3 phrases maximum. »",
+        c1:"Contexte ou rôle donné à l'IA",c2:"Tâche claire et précise",c3:"Format ou longueur demandée",c4:"Exemple ou contrainte ajoutée",
+        scoreLabel:"Qualité du prompt :",levels:["Faible — ajoutez plus de détails","Correct — peut être amélioré","Bon prompt !","Excellent prompt professionnel !"]},
+    en:{title:"Prompt Lab — practice here",ph:"Write your prompt here... e.g. \"Explain photosynthesis like I'm 10 years old, in 3 sentences max.\"",
+        c1:"Context or role given to the AI",c2:"Clear, specific task",c3:"Requested format or length",c4:"Example or constraint added",
+        scoreLabel:"Prompt quality:",levels:["Weak — add more detail","OK — could be improved","Good prompt!","Excellent, professional-grade prompt!"]},
+    ar:{title:"مختبر الأوامر (Prompts) — تدرّب هنا",ph:"اكتب أمرك هنا... مثال: «اشرح لي عملية التمثيل الضوئي وكأني بعمر 10 سنوات، في 3 جمل كحد أقصى.»",
+        c1:"سياق أو دور مُعطى للذكاء الاصطناعي",c2:"مهمة واضحة ومحددة",c3:"صيغة أو طول مطلوب",c4:"مثال أو قيد مضاف",
+        scoreLabel:"جودة الأمر:",levels:["ضعيف — أضف مزيدًا من التفاصيل","مقبول — يمكن تحسينه","أمر جيد!","أمر احترافي ممتاز!"]}
+  };
+  const S = L[LANG] || L.fr;
+  root.innerHTML = `
+    <div class="prompt-lab">
+      <div class="demo-label" style="color:#7EB8F2;">${S.title}</div>
+      <textarea id="${rootId}_input" placeholder="${S.ph}"></textarea>
+      <div class="pl-checklist" id="${rootId}_checks">
+        <div class="pl-item" data-c="1"><span class="pl-icon">?</span><span>${S.c1}</span></div>
+        <div class="pl-item" data-c="2"><span class="pl-icon">?</span><span>${S.c2}</span></div>
+        <div class="pl-item" data-c="3"><span class="pl-icon">?</span><span>${S.c3}</span></div>
+        <div class="pl-item" data-c="4"><span class="pl-icon">?</span><span>${S.c4}</span></div>
+      </div>
+      <div class="pl-score" id="${rootId}_score">${S.scoreLabel} —</div>
+    </div>`;
+  const input = root.querySelector(`#${rootId}_input`);
+  const scoreEl = root.querySelector(`#${rootId}_score`);
+  input.addEventListener("input", ()=>{
+    const val = input.value.trim();
+    const lower = val.toLowerCase();
+    const hasContext = /(comme si|as if|imagine|role|rôle|تخيل|بصفتك|كأن|context|contexte|سياق)/i.test(lower) || val.length>40;
+    const hasTask = val.length>15;
+    const hasFormat = /(phrase|mot|word|liste|list|table|جملة|كلمة|قائمة|paragraph|paragraphe|فقرة|ligne|line|سطر|court|short|قصير)/i.test(lower) || /\d/.test(val);
+    const hasExtra = val.length>80 || /(exemple|example|مثال|par exemple|for example|style|ton|tone|نبرة)/i.test(lower);
+    const checks = [hasContext, hasTask, hasFormat, hasExtra];
+    root.querySelectorAll(".pl-item").forEach((el,i)=>{
+      el.classList.toggle("ok", checks[i]);
+      el.classList.toggle("warn", !checks[i]);
+      el.querySelector(".pl-icon").textContent = checks[i] ? "✓" : "!";
+    });
+    const score = checks.filter(Boolean).length;
+    scoreEl.textContent = `${S.scoreLabel} ${S.levels[Math.max(0,score-1)] || S.levels[0]}`;
+  });
 }
 
 /* ==================== QUIZ ==================== */
@@ -4769,6 +6435,7 @@ function submitQuiz(){
   };
   renderResult(mod, score, total, passed);
   saveState();
+  pushResultToCloud(mod, state.results[mod.id]);
   showScreen("result");
 }
 
@@ -5015,6 +6682,222 @@ function initKeyboardDiagram(rootId){
   </div>`;
 }
 
+/* ==================== CLOUD SYNC (Google Apps Script) ==================== */
+// Paste the URL you get after deploying the provided Google Apps Script
+// as a Web App (it ends in /exec). Leave empty to run in local-only mode.
+const GS_SCRIPT_URL = "";
+
+let _jsonpCounter = 0;
+function jsonpRequest(url, params){
+  return new Promise((resolve, reject)=>{
+    const cbName = "_t21cb_" + (_jsonpCounter++) + "_" + Date.now();
+    const script = document.createElement("script");
+    const qs = Object.keys(params).map(k=>`${encodeURIComponent(k)}=${encodeURIComponent(params[k])}`).join("&");
+    window[cbName] = (data)=>{
+      resolve(data);
+      delete window[cbName];
+      script.remove();
+    };
+    script.onerror = ()=>{ reject(new Error("network")); delete window[cbName]; script.remove(); };
+    script.src = `${url}?${qs}&callback=${cbName}`;
+    document.body.appendChild(script);
+    setTimeout(()=>{ if(window[cbName]){ reject(new Error("timeout")); delete window[cbName]; script.remove(); } }, 10000);
+  });
+}
+
+function pushResultToCloud(mod, res){
+  if(!GS_SCRIPT_URL) return;
+  const payload = {
+    action:"saveResult", name:state.userName, lang:LANG,
+    moduleId:mod.id, moduleTitle:mod.title, score:res.score, total:res.total,
+    passed:res.passed, certId:res.certId||"", date: (res.date instanceof Date ? res.date.toISOString() : String(res.date))
+  };
+  try{
+    fetch(GS_SCRIPT_URL, {
+      method:"POST", mode:"no-cors",
+      headers:{"Content-Type":"text/plain;charset=utf-8"},
+      body: JSON.stringify(payload)
+    }).catch(()=>{});
+  }catch(e){}
+}
+
+function pullResultsForName(name){
+  if(!GS_SCRIPT_URL || !name) return;
+  jsonpRequest(GS_SCRIPT_URL, {action:"getUser", name}).then(res=>{
+    if(!res || !res.ok || !Array.isArray(res.data)) return;
+    let changed = false;
+    res.data.forEach(row=>{
+      const id = parseInt(row.moduleId);
+      if(!id) return;
+      const existing = state.results[id];
+      const remoteDate = row.date ? new Date(row.date) : new Date(row.timestamp);
+      if(!existing || (row.passed && !existing.passed) || (remoteDate > (existing.date||0))){
+        state.results[id] = {
+          score: Number(row.score), total: Number(row.total), passed: !!row.passed,
+          date: remoteDate, certId: row.certId || (existing && existing.certId) || ""
+        };
+        changed = true;
+      }
+    });
+    if(changed){
+      saveState();
+      const active = screens.find(s=>document.getElementById("screen-"+s).classList.contains("active"));
+      if(active==="dashboard") renderDashboard();
+    }
+  }).catch(()=>{});
+}
+
+/* ==================== ADMIN PANEL ==================== */
+let _adminKey = "";
+let _adminRows = [];
+
+document.getElementById("adminLink").addEventListener("click", ()=>{
+  document.getElementById("adminLoginBox").style.display = "block";
+  document.getElementById("adminDashboard").style.display = "none";
+  document.getElementById("adminLoginMsg").textContent = "";
+  showScreen("admin");
+});
+
+document.getElementById("adminLoginBtn").addEventListener("click", adminTryLogin);
+document.getElementById("adminKeyInput").addEventListener("keydown", e=>{ if(e.key==="Enter") adminTryLogin(); });
+
+function adminTryLogin(){
+  const key = document.getElementById("adminKeyInput").value.trim();
+  const msg = document.getElementById("adminLoginMsg");
+  if(!GS_SCRIPT_URL){
+    msg.style.color = "var(--bad)";
+    msg.textContent = "⚠ Le stockage central n'est pas encore configuré (GS_SCRIPT_URL est vide dans le fichier). Suivez le guide du fichier team21-apps-script.gs.txt.";
+    return;
+  }
+  if(!key){ msg.textContent = "Veuillez entrer une clé."; return; }
+  msg.style.color = "var(--gray)";
+  msg.textContent = "Connexion en cours…";
+  jsonpRequest(GS_SCRIPT_URL, {action:"getAll", key}).then(res=>{
+    if(!res || !res.ok){
+      msg.style.color = "var(--bad)";
+      msg.textContent = "❌ Clé incorrecte, ou erreur du script. Vérifiez ADMIN_KEY dans Apps Script.";
+      return;
+    }
+    _adminKey = key;
+    _adminRows = res.data || [];
+    document.getElementById("adminLoginBox").style.display = "none";
+    document.getElementById("adminDashboard").style.display = "block";
+    renderAdminDashboard();
+  }).catch(()=>{
+    msg.style.color = "var(--bad)";
+    msg.textContent = "❌ Impossible de contacter le script. Vérifiez l'URL et votre connexion internet.";
+  });
+}
+
+document.getElementById("adminRefreshBtn").addEventListener("click", ()=>{
+  jsonpRequest(GS_SCRIPT_URL, {action:"getAll", key:_adminKey}).then(res=>{
+    if(res && res.ok){ _adminRows = res.data || []; renderAdminDashboard(); }
+  }).catch(()=>{});
+});
+
+document.getElementById("adminExportBtn").addEventListener("click", exportAdminCSV);
+
+function groupAdminRows(){
+  const byName = {};
+  _adminRows.forEach(r=>{
+    const key = (r.name||"—").trim();
+    if(!byName[key]) byName[key] = [];
+    byName[key].push(r);
+  });
+  return byName;
+}
+
+function renderAdminDashboard(){
+  const grouped = groupAdminRows();
+  const names = Object.keys(grouped).sort();
+  const allModIds = [...MODULES_FR, ...MODULES_EN, ...MODULES_AR].reduce((set,m)=>{ set.add(m.id); return set; }, new Set());
+  const totalModules = allModIds.size || 13;
+  document.getElementById("adminSummaryLine").textContent = `${names.length} étudiant(s) inscrit(s) — ${totalModules} modules disponibles`;
+
+  let html = `<table class="admin-table"><thead><tr>
+    <th>Étudiant</th><th>Progression</th><th>Modules réussis</th><th>Dernière activité</th><th></th>
+  </tr></thead><tbody>`;
+  names.forEach((name, idx)=>{
+    const rows = grouped[name];
+    const passed = rows.filter(r=>r.passed);
+    const lastActivity = rows.reduce((max,r)=>{
+      const d = new Date(r.timestamp || r.date);
+      return (!max || d>max) ? d : max;
+    }, null);
+    html += `<tr class="student-row" data-student="${idx}">
+      <td><b>${escapeHtml(name)}</b></td>
+      <td><span class="admin-progress-pill">${passed.length} / ${totalModules}</span></td>
+      <td>${passed.map(r=>escapeHtml(r.moduleTitle||("Module "+r.moduleId))).join(", ") || "—"}</td>
+      <td style="font-family:'IBM Plex Mono',monospace; font-size:12px;">${lastActivity ? lastActivity.toLocaleDateString() : "—"}</td>
+      <td style="color:var(--accent); font-size:12px;">Voir détails ▾</td>
+    </tr>
+    <tr class="admin-detail-row" id="admin-detail-${idx}" style="display:none;"><td colspan="5">
+      ${rows.map(r=>`
+        <span class="admin-mod-chip ${r.passed?'passed':'failed'}">
+          ${escapeHtml(r.moduleTitle||("Module "+r.moduleId))} — ${r.score}/${r.total}
+          ${r.passed ? `<button data-view-cert="${idx}|${r.moduleId}">🎓 Certificat</button>` : ""}
+        </span>`).join("")}
+    </td></tr>`;
+  });
+  html += `</tbody></table>`;
+  if(!names.length){
+    html = `<div style="text-align:center; color:var(--gray); padding:40px 0;">Aucune donnée pour le moment. Les résultats apparaîtront ici dès qu'un étudiant terminera un quiz.</div>`;
+  }
+  document.getElementById("adminTableWrap").innerHTML = html;
+
+  document.querySelectorAll(".student-row").forEach(row=>{
+    row.addEventListener("click", ()=>{
+      const detail = document.getElementById("admin-detail-"+row.dataset.student);
+      detail.style.display = (detail.style.display==="none") ? "table-row" : "none";
+    });
+  });
+  document.querySelectorAll("[data-view-cert]").forEach(btn=>{
+    btn.addEventListener("click", (ev)=>{
+      ev.stopPropagation();
+      const [idx, modId] = btn.dataset.viewCert.split("|");
+      const name = names[idx];
+      const row = grouped[name].find(r=>String(r.moduleId)===String(modId));
+      viewCertificateAsAdmin(name, row);
+    });
+  });
+}
+
+function viewCertificateAsAdmin(name, row){
+  const lang = row.lang || "fr";
+  if(STRINGS[lang]) setLang(lang);
+  const mod = getModules().find(m=>m.id===parseInt(row.moduleId));
+  if(!mod) return;
+  const prevName = state.userName, prevResults = state.results;
+  state.userName = name;
+  state.results = { [mod.id]: { score:Number(row.score), total:Number(row.total), passed:true, certId: row.certId, date: new Date(row.date || row.timestamp) } };
+  openCertificate(mod.id);
+  document.getElementById("certBackBtn").onclick = ()=>{
+    state.userName = prevName; state.results = prevResults;
+    document.getElementById("adminDashboard").style.display = "block";
+    showScreen("admin");
+  };
+}
+
+function escapeHtml(str){
+  return String(str).replace(/[&<>"']/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+
+function exportAdminCSV(){
+  const headers = ["Name","Lang","ModuleId","ModuleTitle","Score","Total","Passed","CertId","Date"];
+  const lines = [headers.join(",")];
+  _adminRows.forEach(r=>{
+    const vals = [r.name, r.lang, r.moduleId, r.moduleTitle, r.score, r.total, r.passed, r.certId, r.date]
+      .map(v=>`"${String(v==null?"":v).replace(/"/g,'""')}"`);
+    lines.push(vals.join(","));
+  });
+  const blob = new Blob([lines.join("\n")], {type:"text/csv;charset=utf-8;"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url; a.download = "team21_academy_progress.csv";
+  document.body.appendChild(a); a.click(); a.remove();
+  URL.revokeObjectURL(url);
+}
+
 /* ==================== INIT ==================== */
 (function initApp(){
   try{
@@ -5030,10 +6913,12 @@ function initKeyboardDiagram(rootId){
     applyUserChip(state.userName);
     renderDashboard();
     showScreen("dashboard");
+    pullResultsForName(state.userName);
   } else {
     nameInput.focus();
   }
 })();
+
 
 </script>
 </body>
