@@ -251,6 +251,22 @@ main{flex:1; width:100%; max-width:1000px; margin:0 auto; padding:32px 24px 60px
 .provider-card a{font-size:12.5px;}
 .acct-toggle{display:flex; align-items:center; gap:10px; background:var(--ice); border:1px solid var(--gray-light); border-radius:8px; padding:12px 16px; margin:12px 0; cursor:pointer;}
 .acct-toggle input{width:18px; height:18px;}
+.account-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; margin:14px 0;}
+.account-card{background:var(--white); border:1px solid var(--gray-light); border-radius:10px; padding:18px 20px;}
+.account-card h5{margin:0 0 2px; color:var(--navy); font-family:'Space Grotesk',sans-serif; font-size:16px;}
+.account-card .acc-url{font-size:12px; color:var(--gray); margin:0 0 10px;}
+.account-card ol{margin:0 0 10px; padding-left:18px; font-size:13.5px; line-height:1.7; color:#24313f;}
+.account-card ol li{margin-bottom:5px;}
+.account-card a.acc-link{font-size:12.5px; font-weight:600; display:inline-block;}
+.prompt-domain{margin:20px 0 12px;}
+.prompt-domain-title{display:flex; align-items:center; gap:10px; font-family:'Space Grotesk',sans-serif; font-size:15.5px; color:var(--navy); font-weight:700; margin:0 0 10px;}
+.prompt-domain-title .pd-icon{font-size:20px;}
+.prompt-card{background:var(--ice); border:1px solid var(--gray-light); border-radius:10px; padding:14px 16px; margin-bottom:10px; display:flex; justify-content:space-between; gap:14px; align-items:flex-start;}
+.prompt-card .prompt-text{font-family:'IBM Plex Mono',monospace; font-size:12.5px; line-height:1.65; color:#132A44; margin:0; flex:1;}
+.prompt-card .copy-btn{flex-shrink:0; background:var(--white); border:1px solid var(--accent-light); color:var(--accent); font-size:12px; font-weight:600; padding:7px 12px; border-radius:8px; white-space:nowrap;}
+.prompt-card .copy-btn:hover{background:var(--accent); color:#fff;}
+body.rtl .account-card ol{padding-left:0; padding-right:18px;}
+body.rtl .prompt-card{flex-direction:row-reverse;}
 
 /* ---------- Admin panel ---------- */
 .admin-link-wrap{text-align:center; padding-bottom:22px; margin-top:-14px;}
@@ -4963,14 +4979,49 @@ MODULES_FR.push(
   </div>
 
   <div class="lesson-block">
-    <h2><span class="tagnum">04</span>Créer votre compte</h2>
-    <p>Pour pratiquer ce module, créez un compte gratuit auprès d'un ou plusieurs fournisseurs. Vous aurez besoin d'une adresse email valide. Ne partagez jamais d'informations personnelles sensibles dans vos conversations avec une IA.</p>
-    <div class="provider-cards">
-      <div class="provider-card"><h5>ChatGPT</h5><p style="font-size:12.5px;color:var(--gray);">chat.openai.com</p><a href="https://chat.openai.com" target="_blank" rel="noopener">Créer un compte →</a></div>
-      <div class="provider-card"><h5>Gemini</h5><p style="font-size:12.5px;color:var(--gray);">gemini.google.com</p><a href="https://gemini.google.com" target="_blank" rel="noopener">Créer un compte →</a></div>
-      <div class="provider-card"><h5>Claude</h5><p style="font-size:12.5px;color:var(--gray);">claude.ai</p><a href="https://claude.ai" target="_blank" rel="noopener">Créer un compte →</a></div>
+    <h2><span class="tagnum">04</span>Créer votre compte, étape par étape</h2>
+    <p>Pour pratiquer ce module, créez un compte gratuit auprès d'un ou plusieurs fournisseurs, directement dans votre navigateur. Vous aurez besoin d'une adresse email valide. Ne partagez jamais d'informations personnelles sensibles (mots de passe, données médicales, numéros de compte) dans vos conversations avec une IA.</p>
+    <div class="account-grid">
+      <div class="account-card">
+        <h5>1. ChatGPT (OpenAI)</h5>
+        <p class="acc-url">chat.openai.com</p>
+        <ol>
+          <li>Ouvrez votre navigateur et allez sur <b>chat.openai.com</b></li>
+          <li>Cliquez sur « S'inscrire » et choisissez de continuer avec Google, Microsoft, Apple, ou une adresse email</li>
+          <li>Confirmez votre adresse email si demandé, puis acceptez les conditions d'utilisation</li>
+          <li>Vous arrivez sur l'écran de conversation, prêt(e) à taper votre premier message</li>
+        </ol>
+        <a class="acc-link" href="https://chat.openai.com" target="_blank" rel="noopener">Ouvrir ChatGPT →</a>
+      </div>
+      <div class="account-card">
+        <h5>2. Gemini (Google)</h5>
+        <p class="acc-url">gemini.google.com</p>
+        <ol>
+          <li>Allez sur <b>gemini.google.com</b></li>
+          <li>Connectez-vous avec un compte Google existant, ou créez-en un gratuitement</li>
+          <li>Acceptez les conditions d'utilisation de Gemini</li>
+          <li>La fenêtre de discussion s'ouvre automatiquement — vous pouvez commencer à écrire</li>
+        </ol>
+        <a class="acc-link" href="https://gemini.google.com" target="_blank" rel="noopener">Ouvrir Gemini →</a>
+      </div>
+      <div class="account-card">
+        <h5>3. Claude (Anthropic)</h5>
+        <p class="acc-url">claude.ai</p>
+        <ol>
+          <li>Allez sur <b>claude.ai</b></li>
+          <li>Cliquez sur « S'inscrire » et entrez votre email, ou continuez avec Google</li>
+          <li>Saisissez le code de vérification reçu par email et complétez votre profil</li>
+          <li>Tapez votre premier message dans la zone de texte en bas de l'écran</li>
+        </ol>
+        <a class="acc-link" href="https://claude.ai" target="_blank" rel="noopener">Ouvrir Claude →</a>
+      </div>
     </div>
     <label class="acct-toggle"><input type="checkbox" id="acctCheck13"> <span id="acctCheckLabel13">J'ai créé un compte sur au moins un de ces services.</span></label>
+    <p>Votre <b>premier prompt</b> ne doit pas être une question au hasard : utilisez-le pour que l'IA vous connaisse et vous aide à progresser dans votre domaine. Copiez le prompt ci-dessous dans ChatGPT, Gemini ou Claude, et adaptez-le à votre situation.</p>
+    <div class="prompt-card">
+      <p class="prompt-text">Je voudrais que tu m'aides à mieux utiliser l'intelligence artificielle dans mon domaine. Avant de me donner des conseils, pose-moi des questions pour mieux me connaître : mon métier ou mon domaine d'intérêt, mon niveau actuel avec les outils numériques, mes objectifs, et le temps que je peux consacrer chaque semaine. Ensuite, propose-moi un plan simple de 4 semaines pour progresser.</p>
+      <button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ Copié';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 Copier</button>
+    </div>
   </div>
 
   <div class="lesson-block">
@@ -5005,7 +5056,44 @@ MODULES_FR.push(
   </div>
 
   <div class="lesson-block">
-    <h2><span class="tagnum">07</span>Utiliser l'IA de façon responsable</h2>
+    <h2><span class="tagnum">07</span>Bibliothèque de prompts par domaine</h2>
+    <p>Choisissez votre domaine ci-dessous, copiez un prompt avec le bouton « Copier », collez-le dans ChatGPT, Gemini ou Claude, remplacez les éléments entre crochets [ ] par votre propre situation, puis testez. Chaque domaine commence par un prompt de découverte : l'IA vous pose des questions sur vous avant de vous conseiller.</p>
+
+    <div class="prompt-domain">
+      <div class="prompt-domain-title"><span class="pd-icon">💼</span>Affaires &amp; Entrepreneuriat</div>
+      <div class="prompt-card"><p class="prompt-text">Je suis [ton métier/secteur, ex : gérant d'une petite entreprise de restauration]. Pose-moi des questions sur mon activité, mes plus grands défis actuels et mes objectifs pour les 6 prochains mois, puis propose-moi 3 façons concrètes d'utiliser l'IA pour gagner du temps ou augmenter mes revenus.</p><button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ Copié';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 Copier</button></div>
+      <div class="prompt-card"><p class="prompt-text">Tu es un consultant en stratégie d'entreprise. Aide-moi à analyser les forces, faiblesses, opportunités et menaces (SWOT) de mon activité : [décris ton entreprise en 2-3 phrases].</p><button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ Copié';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 Copier</button></div>
+      <div class="prompt-card"><p class="prompt-text">Rédige un plan marketing simple sur 30 jours pour promouvoir [ton produit/service] auprès de [ton public cible], avec un budget limité.</p><button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ Copié';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 Copier</button></div>
+      <div class="prompt-card"><p class="prompt-text">Résume ce rapport financier / ces chiffres de vente en 5 points clés compréhensibles par une personne non spécialiste : [colle tes données].</p><button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ Copié';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 Copier</button></div>
+    </div>
+
+    <div class="prompt-domain">
+      <div class="prompt-domain-title"><span class="pd-icon">🩺</span>Santé &amp; Bien-être</div>
+      <div class="prompt-card"><p class="prompt-text">Je m'intéresse à la santé et au bien-être dans le cadre de [ton contexte, ex : ma pratique professionnelle ou ma vie personnelle]. Pose-moi des questions sur mes connaissances actuelles et mes objectifs, puis propose-moi 3 façons dont l'IA peut m'aider à mieux m'informer sur la santé, sans jamais remplacer un avis médical.</p><button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ Copié';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 Copier</button></div>
+      <div class="prompt-card"><p class="prompt-text">Explique-moi en langage simple ce que signifie [terme médical], et quelles questions je devrais poser à mon médecin à ce sujet.</p><button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ Copié';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 Copier</button></div>
+      <div class="prompt-card"><p class="prompt-text">Aide-moi à créer une routine hebdomadaire équilibrée (sommeil, activité physique, alimentation) adaptée à [ta situation, ex : emploi de bureau, horaires irréguliers].</p><button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ Copié';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 Copier</button></div>
+      <div class="prompt-card"><p class="prompt-text">Je prépare une formation/sensibilisation sur [sujet de santé publique]. Aide-moi à structurer un plan de présentation en 5 points pour un public non spécialiste.</p><button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ Copié';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 Copier</button></div>
+    </div>
+
+    <div class="prompt-domain">
+      <div class="prompt-domain-title"><span class="pd-icon">🎓</span>Éducation &amp; Formation</div>
+      <div class="prompt-card"><p class="prompt-text">Je suis [élève / enseignant(e) / formateur(-trice)] et je m'intéresse à [matière/domaine]. Pose-moi des questions sur mon niveau actuel, la façon dont j'apprends le mieux et mes objectifs, puis propose-moi un plan d'étude personnalisé de 4 semaines.</p><button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ Copié';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 Copier</button></div>
+      <div class="prompt-card"><p class="prompt-text">Explique-moi [concept ou notion] comme si j'avais 12 ans, puis donne-moi une version plus avancée pour un niveau universitaire.</p><button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ Copié';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 Copier</button></div>
+      <div class="prompt-card"><p class="prompt-text">Crée-moi un quiz de 10 questions à choix multiples sur [sujet], avec les réponses et une courte explication pour chacune.</p><button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ Copié';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 Copier</button></div>
+      <div class="prompt-card"><p class="prompt-text">Je prépare un cours sur [sujet] pour des apprenants adultes débutants. Propose-moi un plan de leçon de 60 minutes avec des exemples concrets et un exercice pratique.</p><button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ Copié';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 Copier</button></div>
+    </div>
+
+    <div class="prompt-domain">
+      <div class="prompt-domain-title"><span class="pd-icon">📄</span>Recherche d'emploi</div>
+      <div class="prompt-card"><p class="prompt-text">Je suis à la recherche d'un emploi dans [secteur/métier visé]. Pose-moi des questions sur mon expérience, mes compétences et le type de poste que je recherche, puis conseille-moi sur les 3 priorités à travailler pour augmenter mes chances.</p><button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ Copié';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 Copier</button></div>
+      <div class="prompt-card"><p class="prompt-text">Tu es un recruteur expérimenté dans le secteur [secteur]. Voici mon CV actuel : [colle le texte de ton CV]. Restructure-le pour le rendre plus percutant, avec des puces orientées résultats, et signale les points faibles à corriger.</p><button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ Copié';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 Copier</button></div>
+      <div class="prompt-card"><p class="prompt-text">Rédige une lettre de motivation pour le poste de [intitulé du poste] chez [nom de l'entreprise], en mettant en avant mon expérience en [compétence clé].</p><button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ Copié';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 Copier</button></div>
+      <div class="prompt-card"><p class="prompt-text">Prépare-moi à un entretien d'embauche pour un poste de [intitulé du poste] : pose-moi 5 questions d'entretien courantes une par une, et donne-moi un retour sur chacune de mes réponses.</p><button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ Copié';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 Copier</button></div>
+    </div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">08</span>Utiliser l'IA de façon responsable</h2>
     <ul>
       <li>Vérifiez toujours les faits importants avant de vous y fier (rapport, décision, examen).</li>
       <li>Ne partagez jamais de mots de passe, données médicales ou informations confidentielles dans un prompt.</li>
@@ -5015,7 +5103,7 @@ MODULES_FR.push(
   </div>
 
   <div class="lesson-block">
-    <h2><span class="tagnum">08</span>Références</h2>
+    <h2><span class="tagnum">09</span>Références</h2>
     <div class="cheat-box">
       <h4>✅ Fiche mémo — Compétences validées par ce cours</h4>
       <ul>
@@ -5451,14 +5539,49 @@ MODULES_EN.push(
   </div>
 
   <div class="lesson-block">
-    <h2><span class="tagnum">04</span>Create your account</h2>
-    <p>To practice this module, create a free account with one or more providers. You'll need a valid email address. Never share sensitive personal information in your conversations with an AI.</p>
-    <div class="provider-cards">
-      <div class="provider-card"><h5>ChatGPT</h5><p style="font-size:12.5px;color:var(--gray);">chat.openai.com</p><a href="https://chat.openai.com" target="_blank" rel="noopener">Create an account →</a></div>
-      <div class="provider-card"><h5>Gemini</h5><p style="font-size:12.5px;color:var(--gray);">gemini.google.com</p><a href="https://gemini.google.com" target="_blank" rel="noopener">Create an account →</a></div>
-      <div class="provider-card"><h5>Claude</h5><p style="font-size:12.5px;color:var(--gray);">claude.ai</p><a href="https://claude.ai" target="_blank" rel="noopener">Create an account →</a></div>
+    <h2><span class="tagnum">04</span>Create your account, step by step</h2>
+    <p>To practice this module, create a free account with one or more providers, right in your browser. You'll need a valid email address. Never share sensitive personal information (passwords, medical data, account numbers) in your conversations with an AI.</p>
+    <div class="account-grid">
+      <div class="account-card">
+        <h5>1. ChatGPT (OpenAI)</h5>
+        <p class="acc-url">chat.openai.com</p>
+        <ol>
+          <li>Open your browser and go to <b>chat.openai.com</b></li>
+          <li>Click "Sign up" and choose to continue with Google, Microsoft, Apple, or an email address</li>
+          <li>Confirm your email if asked, then accept the terms of use</li>
+          <li>You land on the chat screen, ready to type your first message</li>
+        </ol>
+        <a class="acc-link" href="https://chat.openai.com" target="_blank" rel="noopener">Open ChatGPT →</a>
+      </div>
+      <div class="account-card">
+        <h5>2. Gemini (Google)</h5>
+        <p class="acc-url">gemini.google.com</p>
+        <ol>
+          <li>Go to <b>gemini.google.com</b></li>
+          <li>Sign in with an existing Google account, or create one for free</li>
+          <li>Accept Gemini's terms of use</li>
+          <li>The chat window opens automatically — you can start typing</li>
+        </ol>
+        <a class="acc-link" href="https://gemini.google.com" target="_blank" rel="noopener">Open Gemini →</a>
+      </div>
+      <div class="account-card">
+        <h5>3. Claude (Anthropic)</h5>
+        <p class="acc-url">claude.ai</p>
+        <ol>
+          <li>Go to <b>claude.ai</b></li>
+          <li>Click "Sign up" and enter your email, or continue with Google</li>
+          <li>Enter the verification code you receive by email and complete your profile</li>
+          <li>Type your first message in the text box at the bottom of the screen</li>
+        </ol>
+        <a class="acc-link" href="https://claude.ai" target="_blank" rel="noopener">Open Claude →</a>
+      </div>
     </div>
     <label class="acct-toggle"><input type="checkbox" id="acctCheck13"> <span id="acctCheckLabel13">I've created an account with at least one of these services.</span></label>
+    <p>Your <b>first prompt</b> shouldn't be a random question — use it to help the AI get to know you and guide you in your field. Copy the prompt below into ChatGPT, Gemini, or Claude, and adapt it to your own situation.</p>
+    <div class="prompt-card">
+      <p class="prompt-text">I'd like your help using AI better in my field. Before giving me advice, ask me questions to get to know me: my job or area of interest, my current comfort level with digital tools, my goals, and how much time I can spend each week. Then suggest a simple 4-week plan to help me improve.</p>
+      <button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ Copied';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 Copy</button>
+    </div>
   </div>
 
   <div class="lesson-block">
@@ -5493,7 +5616,44 @@ MODULES_EN.push(
   </div>
 
   <div class="lesson-block">
-    <h2><span class="tagnum">07</span>Using AI responsibly</h2>
+    <h2><span class="tagnum">07</span>Prompt library by domain</h2>
+    <p>Pick your domain below, copy a prompt with the "Copy" button, paste it into ChatGPT, Gemini, or Claude, replace the bracketed [ ] parts with your own situation, then test it. Every domain starts with a discovery prompt: the AI asks about you before it advises you.</p>
+
+    <div class="prompt-domain">
+      <div class="prompt-domain-title"><span class="pd-icon">💼</span>Business &amp; Entrepreneurship</div>
+      <div class="prompt-card"><p class="prompt-text">I'm [your role/industry, e.g. the owner of a small bakery]. Ask me questions about my business, my biggest current challenges, and my goals for the next 6 months, then suggest 3 concrete ways I could use AI to save time or grow revenue.</p><button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ Copied';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 Copy</button></div>
+      <div class="prompt-card"><p class="prompt-text">You are a business strategy consultant. Help me analyze the strengths, weaknesses, opportunities, and threats (SWOT) of my business: [describe your business in 2-3 sentences].</p><button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ Copied';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 Copy</button></div>
+      <div class="prompt-card"><p class="prompt-text">Write a simple 30-day marketing plan to promote [your product/service] to [your target audience], on a limited budget.</p><button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ Copied';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 Copy</button></div>
+      <div class="prompt-card"><p class="prompt-text">Summarize this financial report / these sales numbers into 5 key points a non-specialist could understand: [paste your data].</p><button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ Copied';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 Copy</button></div>
+    </div>
+
+    <div class="prompt-domain">
+      <div class="prompt-domain-title"><span class="pd-icon">🩺</span>Health &amp; Wellbeing</div>
+      <div class="prompt-card"><p class="prompt-text">I'm interested in health and wellbeing in the context of [your context, e.g. my job or personal life]. Ask me about my current knowledge and goals, then suggest 3 ways AI can help me stay better informed about health, without ever replacing medical advice.</p><button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ Copied';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 Copy</button></div>
+      <div class="prompt-card"><p class="prompt-text">Explain [medical term] in plain language, and tell me what questions I should ask my doctor about it.</p><button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ Copied';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 Copy</button></div>
+      <div class="prompt-card"><p class="prompt-text">Help me build a balanced weekly routine (sleep, exercise, food) suited to [your situation, e.g. desk job, irregular hours].</p><button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ Copied';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 Copy</button></div>
+      <div class="prompt-card"><p class="prompt-text">I'm preparing a training/awareness session on [public health topic]. Help me structure a 5-point presentation outline for a non-specialist audience.</p><button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ Copied';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 Copy</button></div>
+    </div>
+
+    <div class="prompt-domain">
+      <div class="prompt-domain-title"><span class="pd-icon">🎓</span>Education &amp; Training</div>
+      <div class="prompt-card"><p class="prompt-text">I'm a [student / teacher / trainer] interested in [subject/domain]. Ask me about my current level, how I learn best, and my goals, then suggest a personalized 4-week study plan.</p><button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ Copied';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 Copy</button></div>
+      <div class="prompt-card"><p class="prompt-text">Explain [concept] as if I were 12 years old, then give me a more advanced version for a university level.</p><button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ Copied';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 Copy</button></div>
+      <div class="prompt-card"><p class="prompt-text">Create a 10-question multiple-choice quiz on [topic], with answers and a short explanation for each.</p><button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ Copied';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 Copy</button></div>
+      <div class="prompt-card"><p class="prompt-text">I'm preparing a lesson on [topic] for beginner adult learners. Suggest a 60-minute lesson plan with concrete examples and a practical exercise.</p><button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ Copied';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 Copy</button></div>
+    </div>
+
+    <div class="prompt-domain">
+      <div class="prompt-domain-title"><span class="pd-icon">📄</span>Job Seeking</div>
+      <div class="prompt-card"><p class="prompt-text">I'm job hunting in [target industry/role]. Ask me about my experience, skills, and the kind of role I'm looking for, then advise me on the 3 priorities I should work on to improve my chances.</p><button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ Copied';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 Copy</button></div>
+      <div class="prompt-card"><p class="prompt-text">You are an experienced recruiter in the [industry] sector. Here is my current CV: [paste your CV text]. Restructure it to make it more impactful, with results-focused bullet points, and flag any weak areas to fix.</p><button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ Copied';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 Copy</button></div>
+      <div class="prompt-card"><p class="prompt-text">Write a cover letter for the [job title] position at [company name], highlighting my experience in [key skill].</p><button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ Copied';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 Copy</button></div>
+      <div class="prompt-card"><p class="prompt-text">Prepare me for a job interview for a [job title] role: ask me 5 common interview questions one at a time, and give me feedback on each answer.</p><button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ Copied';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 Copy</button></div>
+    </div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">08</span>Using AI responsibly</h2>
     <ul>
       <li>Always verify important facts before relying on them (a report, decision, exam).</li>
       <li>Never share passwords, medical data, or confidential information in a prompt.</li>
@@ -5503,7 +5663,7 @@ MODULES_EN.push(
   </div>
 
   <div class="lesson-block">
-    <h2><span class="tagnum">08</span>References</h2>
+    <h2><span class="tagnum">09</span>References</h2>
     <div class="cheat-box">
       <h4>✅ Cheat sheet — Skills validated by this course</h4>
       <ul>
@@ -5939,14 +6099,49 @@ MODULES_AR.push(
   </div>
 
   <div class="lesson-block">
-    <h2><span class="tagnum">04</span>إنشاء حسابك</h2>
-    <p>لممارسة هذه الوحدة، أنشئ حسابًا مجانيًا لدى مزوّد واحد أو أكثر. ستحتاج إلى عنوان بريد إلكتروني صالح. لا تشارك أبدًا معلومات شخصية حساسة في محادثاتك مع ذكاء اصطناعي.</p>
-    <div class="provider-cards">
-      <div class="provider-card"><h5>ChatGPT</h5><p style="font-size:12.5px;color:var(--gray);">chat.openai.com</p><a href="https://chat.openai.com" target="_blank" rel="noopener">إنشاء حساب ←</a></div>
-      <div class="provider-card"><h5>Gemini</h5><p style="font-size:12.5px;color:var(--gray);">gemini.google.com</p><a href="https://gemini.google.com" target="_blank" rel="noopener">إنشاء حساب ←</a></div>
-      <div class="provider-card"><h5>Claude</h5><p style="font-size:12.5px;color:var(--gray);">claude.ai</p><a href="https://claude.ai" target="_blank" rel="noopener">إنشاء حساب ←</a></div>
+    <h2><span class="tagnum">04</span>إنشاء حسابك خطوة بخطوة</h2>
+    <p>لممارسة هذه الوحدة، أنشئ حسابًا مجانيًا لدى مزوّد واحد أو أكثر، مباشرة من متصفحك. ستحتاج إلى عنوان بريد إلكتروني صالح. لا تشارك أبدًا معلومات شخصية حساسة (كلمات مرور، بيانات طبية، أرقام حسابات) في محادثاتك مع ذكاء اصطناعي.</p>
+    <div class="account-grid">
+      <div class="account-card">
+        <h5>1. ChatGPT (OpenAI)</h5>
+        <p class="acc-url">chat.openai.com</p>
+        <ol>
+          <li>افتح متصفحك وانتقل إلى <b>chat.openai.com</b></li>
+          <li>اضغط على "التسجيل" واختر المتابعة عبر Google أو Microsoft أو Apple أو بريد إلكتروني</li>
+          <li>أكّد بريدك الإلكتروني إذا طُلب منك ذلك، ثم وافق على شروط الاستخدام</li>
+          <li>ستصل إلى شاشة المحادثة، جاهزًا لكتابة رسالتك الأولى</li>
+        </ol>
+        <a class="acc-link" href="https://chat.openai.com" target="_blank" rel="noopener">فتح ChatGPT ←</a>
+      </div>
+      <div class="account-card">
+        <h5>2. Gemini (Google)</h5>
+        <p class="acc-url">gemini.google.com</p>
+        <ol>
+          <li>انتقل إلى <b>gemini.google.com</b></li>
+          <li>سجّل الدخول بحساب Google موجود، أو أنشئ واحدًا مجانًا</li>
+          <li>وافق على شروط استخدام Gemini</li>
+          <li>تُفتح نافذة المحادثة تلقائيًا — يمكنك البدء بالكتابة</li>
+        </ol>
+        <a class="acc-link" href="https://gemini.google.com" target="_blank" rel="noopener">فتح Gemini ←</a>
+      </div>
+      <div class="account-card">
+        <h5>3. Claude (Anthropic)</h5>
+        <p class="acc-url">claude.ai</p>
+        <ol>
+          <li>انتقل إلى <b>claude.ai</b></li>
+          <li>اضغط على "التسجيل" وأدخل بريدك الإلكتروني، أو تابع عبر Google</li>
+          <li>أدخل رمز التحقق المرسل إلى بريدك الإلكتروني وأكمل ملفك الشخصي</li>
+          <li>اكتب رسالتك الأولى في مربع النص أسفل الشاشة</li>
+        </ol>
+        <a class="acc-link" href="https://claude.ai" target="_blank" rel="noopener">فتح Claude ←</a>
+      </div>
     </div>
     <label class="acct-toggle"><input type="checkbox" id="acctCheck13"> <span id="acctCheckLabel13">لقد أنشأت حسابًا في واحدة على الأقل من هذه الخدمات.</span></label>
+    <p><b>أمرك الأول</b> يجب ألا يكون سؤالًا عشوائيًا — استخدمه لجعل الذكاء الاصطناعي يتعرف عليك ويساعدك على التقدم في مجالك. انسخ الأمر أدناه إلى ChatGPT أو Gemini أو Claude، وعدّله حسب وضعك.</p>
+    <div class="prompt-card">
+      <p class="prompt-text">أرغب في مساعدتك لي على استخدام الذكاء الاصطناعي بشكل أفضل في مجالي. قبل أن تقدّم لي أي نصيحة، اطرح عليّ أسئلة لتتعرف عليّ بشكل أفضل: مهنتي أو مجال اهتمامي، مستواي الحالي مع الأدوات الرقمية، أهدافي، والوقت الذي يمكنني تخصيصه أسبوعيًا. ثم اقترح عليّ خطة بسيطة من 4 أسابيع للتقدم.</p>
+      <button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ تم النسخ';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 نسخ</button>
+    </div>
   </div>
 
   <div class="lesson-block">
@@ -5981,7 +6176,44 @@ MODULES_AR.push(
   </div>
 
   <div class="lesson-block">
-    <h2><span class="tagnum">07</span>استخدام الذكاء الاصطناعي بمسؤولية</h2>
+    <h2><span class="tagnum">07</span>مكتبة الأوامر حسب المجال</h2>
+    <p>اختر مجالك أدناه، انسخ أمرًا (Prompt) بزر "نسخ"، ألصقه في ChatGPT أو Gemini أو Claude، استبدل ما بين القوسين [ ] بوضعك الخاص، ثم جرّبه. يبدأ كل مجال بأمر اكتشاف: يطرح عليك الذكاء الاصطناعي أسئلة عنك قبل أن ينصحك.</p>
+
+    <div class="prompt-domain">
+      <div class="prompt-domain-title"><span class="pd-icon">💼</span>الأعمال وريادة الأعمال</div>
+      <div class="prompt-card"><p class="prompt-text">أنا [دورك/مجال عملك، مثال: صاحب مخبز صغير]. اطرح عليّ أسئلة حول نشاطي التجاري، وأكبر التحديات التي أواجهها حاليًا، وأهدافي خلال الأشهر الستة القادمة، ثم اقترح عليّ 3 طرق ملموسة لاستخدام الذكاء الاصطناعي لتوفير الوقت أو زيادة الإيرادات.</p><button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ تم النسخ';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 نسخ</button></div>
+      <div class="prompt-card"><p class="prompt-text">أنت مستشار استراتيجية أعمال. ساعدني في تحليل نقاط القوة والضعف والفرص والتهديدات (SWOT) لنشاطي: [صف نشاطك في 2-3 جمل].</p><button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ تم النسخ';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 نسخ</button></div>
+      <div class="prompt-card"><p class="prompt-text">اكتب خطة تسويقية بسيطة لمدة 30 يومًا للترويج لـ [منتجك/خدمتك] لدى [جمهورك المستهدف]، بميزانية محدودة.</p><button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ تم النسخ';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 نسخ</button></div>
+      <div class="prompt-card"><p class="prompt-text">لخّص هذا التقرير المالي / أرقام المبيعات هذه في 5 نقاط رئيسية يفهمها غير المتخصص: [ألصق بياناتك هنا].</p><button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ تم النسخ';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 نسخ</button></div>
+    </div>
+
+    <div class="prompt-domain">
+      <div class="prompt-domain-title"><span class="pd-icon">🩺</span>الصحة والعافية</div>
+      <div class="prompt-card"><p class="prompt-text">أهتم بالصحة والعافية في إطار [سياقك، مثال: عملي المهني أو حياتي الشخصية]. اطرح عليّ أسئلة حول معرفتي الحالية وأهدافي، ثم اقترح 3 طرق يمكن للذكاء الاصطناعي أن يساعدني بها على البقاء مطّلعًا بشكل أفضل على الصحة، دون أن يحل أبدًا محل الاستشارة الطبية.</p><button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ تم النسخ';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 نسخ</button></div>
+      <div class="prompt-card"><p class="prompt-text">اشرح لي [مصطلح طبي] بلغة بسيطة، وأخبرني بالأسئلة التي يجب أن أطرحها على طبيبي حول هذا الموضوع.</p><button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ تم النسخ';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 نسخ</button></div>
+      <div class="prompt-card"><p class="prompt-text">ساعدني في بناء روتين أسبوعي متوازن (النوم، النشاط البدني، التغذية) يناسب [وضعك، مثال: عمل مكتبي، ساعات غير منتظمة].</p><button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ تم النسخ';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 نسخ</button></div>
+      <div class="prompt-card"><p class="prompt-text">أحضّر دورة توعية حول [موضوع صحة عامة]. ساعدني في بناء مخطط عرض من 5 نقاط لجمهور غير متخصص.</p><button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ تم النسخ';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 نسخ</button></div>
+    </div>
+
+    <div class="prompt-domain">
+      <div class="prompt-domain-title"><span class="pd-icon">🎓</span>التعليم والتدريب</div>
+      <div class="prompt-card"><p class="prompt-text">أنا [طالب / معلم / مدرّب] ومهتم بـ [المادة/المجال]. اطرح عليّ أسئلة حول مستواي الحالي، وكيفية تعلّمي بشكل أفضل، وأهدافي، ثم اقترح خطة دراسة شخصية لمدة 4 أسابيع.</p><button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ تم النسخ';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 نسخ</button></div>
+      <div class="prompt-card"><p class="prompt-text">اشرح لي [مفهوم] وكأنني في سن 12 عامًا، ثم أعطني نسخة أكثر تقدمًا لمستوى جامعي.</p><button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ تم النسخ';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 نسخ</button></div>
+      <div class="prompt-card"><p class="prompt-text">أنشئ لي اختبارًا من 10 أسئلة اختيار من متعدد حول [موضوع]، مع الإجابات وشرح قصير لكل منها.</p><button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ تم النسخ';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 نسخ</button></div>
+      <div class="prompt-card"><p class="prompt-text">أحضّر درسًا حول [موضوع] لمتعلمين بالغين مبتدئين. اقترح خطة درس مدتها 60 دقيقة مع أمثلة ملموسة وتمرين عملي.</p><button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ تم النسخ';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 نسخ</button></div>
+    </div>
+
+    <div class="prompt-domain">
+      <div class="prompt-domain-title"><span class="pd-icon">📄</span>البحث عن عمل</div>
+      <div class="prompt-card"><p class="prompt-text">أبحث عن عمل في [القطاع/الوظيفة المستهدفة]. اطرح عليّ أسئلة حول خبرتي ومهاراتي ونوع الوظيفة التي أبحث عنها، ثم انصحني بـ 3 أولويات يجب أن أعمل عليها لزيادة فرصي.</p><button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ تم النسخ';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 نسخ</button></div>
+      <div class="prompt-card"><p class="prompt-text">أنت مسؤول توظيف ذو خبرة في قطاع [القطاع]. هذه سيرتي الذاتية الحالية: [ألصق نص سيرتك الذاتية]. أعد هيكلتها لتصبح أكثر تأثيرًا، بنقاط تركز على النتائج، وأشر إلى نقاط الضعف التي يجب تصحيحها.</p><button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ تم النسخ';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 نسخ</button></div>
+      <div class="prompt-card"><p class="prompt-text">اكتب خطاب تحفيز لوظيفة [مسمى الوظيفة] في [اسم الشركة]، مع إبراز خبرتي في [مهارة رئيسية].</p><button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ تم النسخ';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 نسخ</button></div>
+      <div class="prompt-card"><p class="prompt-text">جهّزني لمقابلة عمل لوظيفة [مسمى الوظيفة]: اطرح عليّ 5 أسئلة مقابلة شائعة واحدًا تلو الآخر، وأعطني ملاحظات على كل إجابة.</p><button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ تم النسخ';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 نسخ</button></div>
+    </div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">08</span>استخدام الذكاء الاصطناعي بمسؤولية</h2>
     <ul>
       <li>تحقق دائمًا من الحقائق المهمة قبل الاعتماد عليها (تقرير، قرار، امتحان).</li>
       <li>لا تشارك أبدًا كلمات مرور أو بيانات طبية أو معلومات سرية في أمر (Prompt).</li>
@@ -5991,7 +6223,7 @@ MODULES_AR.push(
   </div>
 
   <div class="lesson-block">
-    <h2><span class="tagnum">08</span>مراجع</h2>
+    <h2><span class="tagnum">09</span>مراجع</h2>
     <div class="cheat-box">
       <h4>✅ بطاقة تلخيص — المهارات المعتمدة في هذا الكورس</h4>
       <ul>
