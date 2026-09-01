@@ -4663,7 +4663,57 @@ MODULES_FR.push(
   </div>
 
   <div class="lesson-block">
-    <h2><span class="tagnum">07</span>Références</h2>
+    <h2><span class="tagnum">07</span>Créer votre premier compte IA</h2>
+    <p>Avant de continuer vers les modules suivants, créez un compte gratuit auprès d'un ou plusieurs fournisseurs d'IA conversationnelle, directement dans votre navigateur. Vous aurez besoin d'une adresse email valide. Ne partagez jamais d'informations personnelles sensibles (mots de passe, données médicales, numéros de compte) dans vos conversations avec une IA.</p>
+    <div class="account-grid">
+      <div class="account-card">
+        <h5>1. ChatGPT (OpenAI)</h5>
+        <p class="acc-url">chat.openai.com</p>
+        <ol>
+          <li>Ouvrez votre navigateur et allez sur <b>chat.openai.com</b></li>
+          <li>Cliquez sur « S'inscrire » et choisissez de continuer avec Google, Microsoft, Apple, ou une adresse email</li>
+          <li>Confirmez votre adresse email si demandé, puis acceptez les conditions d'utilisation</li>
+          <li>Vous arrivez sur l'écran de conversation, prêt(e) à taper votre premier message</li>
+        </ol>
+        <a class="acc-link" href="https://chat.openai.com" target="_blank" rel="noopener">Ouvrir ChatGPT →</a>
+      </div>
+      <div class="account-card">
+        <h5>2. Gemini (Google)</h5>
+        <p class="acc-url">gemini.google.com</p>
+        <ol>
+          <li>Allez sur <b>gemini.google.com</b></li>
+          <li>Connectez-vous avec un compte Google existant, ou créez-en un gratuitement</li>
+          <li>Acceptez les conditions d'utilisation de Gemini</li>
+          <li>La fenêtre de discussion s'ouvre automatiquement — vous pouvez commencer à écrire</li>
+        </ol>
+        <a class="acc-link" href="https://gemini.google.com" target="_blank" rel="noopener">Ouvrir Gemini →</a>
+      </div>
+      <div class="account-card">
+        <h5>3. Claude (Anthropic)</h5>
+        <p class="acc-url">claude.ai</p>
+        <ol>
+          <li>Allez sur <b>claude.ai</b></li>
+          <li>Cliquez sur « S'inscrire » et entrez votre email, ou continuez avec Google</li>
+          <li>Saisissez le code de vérification reçu par email et complétez votre profil</li>
+          <li>Tapez votre premier message dans la zone de texte en bas de l'écran</li>
+        </ol>
+        <a class="acc-link" href="https://claude.ai" target="_blank" rel="noopener">Ouvrir Claude →</a>
+      </div>
+    </div>
+    <label class="acct-toggle"><input type="checkbox" id="acctCheck10"> <span id="acctCheckLabel10">J'ai créé un compte sur au moins un de ces services.</span></label>
+    <p>Ne posez pas n'importe quelle question comme premier message : utilisez-le pour que l'IA vous connaisse et vous aide à progresser dans votre domaine. Copiez ce prompt de découverte dans ChatGPT, Gemini ou Claude, et adaptez-le à votre situation.</p>
+    <div class="prompt-card">
+      <p class="prompt-text">Je voudrais que tu m'aides à mieux utiliser l'intelligence artificielle dans mon domaine. Avant de me donner des conseils, pose-moi des questions pour mieux me connaître : mon métier ou mon domaine d'intérêt, mon niveau actuel avec les outils numériques, mes objectifs, et le temps que je peux consacrer chaque semaine. Ensuite, propose-moi un plan simple de 4 semaines pour progresser.</p>
+      <button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ Copié';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 Copier</button>
+    </div>
+    <div class="fact-box">
+      <div class="fb-label">💡 Pour aller plus loin</div>
+      Le Module 13 (« Comprendre les Grands Modèles de Langage ») reprend ces trois comptes pour vous apprendre à écrire des prompts avancés, à comparer les réponses des modèles, et à comprendre des notions plus techniques comme la « fenêtre de contexte ».
+    </div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">08</span>Références</h2>
     <div class="cheat-box">
       <h4>✅ Fiche mémo — Ce que vous devez retenir du Module 10</h4>
       <ul>
@@ -4935,12 +4985,12 @@ MODULES_FR.push(
 },
 {
   id:13,
-  title:"Comprendre les Grands Modèles de Langage (LLM)",
-  short:"Plongez dans le fonctionnement de ChatGPT, Gemini et Claude, et apprenez à créer un compte et à formuler des prompts efficaces.",
-  duration:"40-50 min",
+  title:"Comprendre les Grands Modèles de Langage (LLM) — Niveau avancé",
+  short:"Approfondissez le fonctionnement de ChatGPT, Gemini et Claude : fenêtre de contexte, prompts avancés et bibliothèque de prompts par domaine.",
+  duration:"45-55 min",
   level:2,
   prereq:10,
-  objectives:["Expliquer ce qu'est un grand modèle de langage (LLM) et comment il fonctionne","Comparer ChatGPT, Gemini et Claude selon leurs points forts","Créer un compte auprès d'un fournisseur d'IA et rédiger des prompts efficaces"],
+  objectives:["Expliquer ce qu'est un grand modèle de langage (LLM) et comment il fonctionne","Expliquer ce qu'est une fenêtre de contexte et pourquoi elle limite une conversation","Comparer ChatGPT, Gemini et Claude selon leurs points forts","Rédiger des prompts efficaces à l'aide d'une bibliothèque de prompts par domaine"],
   lesson:`
   <div class="lesson-block">
     <h2><span class="tagnum">01</span>Qu'est-ce qu'un grand modèle de langage ?</h2>
@@ -4968,64 +5018,57 @@ MODULES_FR.push(
   </div>
 
   <div class="lesson-block">
-    <h2><span class="tagnum">03</span>Comparer les principaux LLM</h2>
+    <h2><span class="tagnum">03</span>La fenêtre de contexte : la mémoire de travail d'un LLM</h2>
+    <p>La <b>fenêtre de contexte</b> (context window) est la quantité maximale de texte qu'un LLM peut « garder en tête » en même temps pendant une conversation : votre message, l'historique de la discussion, et tout document que vous avez collé ou téléversé. Elle se mesure en <b>tokens</b> (les petits fragments de mots vus au point 02) — pas en mots ni en pages.</p>
+    <p>Une fois cette limite atteinte, le modèle commence à « oublier » les premiers échanges de la conversation pour faire de la place aux nouveaux — un peu comme un bureau qui ne peut contenir qu'un certain nombre de dossiers ouverts à la fois. C'est pourquoi une IA peut parfois perdre le fil d'une très longue conversation, ou ne plus se souvenir d'une consigne donnée au tout début.</p>
+    <div class="plain-box">
+      <div class="pb-label">🤓 En clair</div>
+      Imaginez une table de travail : plus elle est grande, plus vous pouvez y étaler de documents en même temps sans devoir en ranger. La fenêtre de contexte, c'est la taille de cette table pour l'IA. ChatGPT, Gemini et Claude ont chacun une table de taille différente, et cette taille évolue régulièrement avec les nouvelles versions des modèles.
+    </div>
+    <ul>
+      <li><b>Conversations longues :</b> au-delà d'un certain point, mieux vaut résumer ce qui compte et démarrer une nouvelle conversation plutôt que de continuer indéfiniment.</li>
+      <li><b>Documents longs :</b> un modèle avec une grande fenêtre de contexte peut analyser un long rapport ou un livre entier en une seule fois ; un modèle avec une petite fenêtre devra le découper en plusieurs parties.</li>
+      <li><b>Coût et rapidité :</b> plus la fenêtre de contexte utilisée est grande, plus une réponse peut être lente ou coûteuse à produire.</li>
+    </ul>
+    <div class="example-box"><b>À retenir :</b> si l'IA semble avoir « oublié » une information que vous avez donnée il y a longtemps dans la même conversation, ce n'est probablement pas un bug — c'est la fenêtre de contexte qui a été dépassée. Rappelez l'information importante, ou ouvrez une nouvelle conversation.</div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">04</span>Comparer les principaux LLM</h2>
     <ul>
       <li><b>ChatGPT (OpenAI) :</b> l'un des LLM les plus connus du grand public ; excellent pour la conversation générale, la rédaction et le brainstorming ; propose une version gratuite et des abonnements payants pour des capacités avancées.</li>
       <li><b>Gemini (Google) :</b> profondément intégré aux outils Google (Gmail, Docs, Recherche) ; pratique pour ceux qui utilisent déjà l'écosystème Google au quotidien.</li>
       <li><b>Claude (Anthropic) :</b> reconnu pour la qualité de sa rédaction, sa capacité à traiter de longs documents, et une attention particulière portée à la sécurité et à l'honnêteté des réponses.</li>
     </ul>
-    <p>Il n'existe pas de « meilleur » modèle universel : le bon choix dépend de la tâche, de la langue, du budget et des habitudes de chacun. Beaucoup de professionnels utilisent d'ailleurs plusieurs LLM selon le contexte.</p>
+    <p>Il n'existe pas de « meilleur » modèle universel : le bon choix dépend de la tâche, de la langue, du budget, de la taille de fenêtre de contexte nécessaire, et des habitudes de chacun. Beaucoup de professionnels utilisent d'ailleurs plusieurs LLM selon le contexte.</p>
     <div class="quote-box">« Le prompt n'est pas une simple question — c'est une instruction. Plus elle est claire, meilleure est la réponse. »<footer>— Innocent Forteh, Directeur du Programme, Team21 Academy</footer></div>
   </div>
 
   <div class="lesson-block">
-    <h2><span class="tagnum">04</span>Créer votre compte, étape par étape</h2>
-    <p>Pour pratiquer ce module, créez un compte gratuit auprès d'un ou plusieurs fournisseurs, directement dans votre navigateur. Vous aurez besoin d'une adresse email valide. Ne partagez jamais d'informations personnelles sensibles (mots de passe, données médicales, numéros de compte) dans vos conversations avec une IA.</p>
+    <h2><span class="tagnum">05</span>Vos comptes IA</h2>
+    <p>Vous avez déjà créé un compte sur ChatGPT, Gemini et/ou Claude au Module 10. Si ce n'est pas encore fait, prenez un instant pour le faire maintenant — vous en aurez besoin pour les laboratoires de ce module.</p>
     <div class="account-grid">
       <div class="account-card">
         <h5>1. ChatGPT (OpenAI)</h5>
         <p class="acc-url">chat.openai.com</p>
-        <ol>
-          <li>Ouvrez votre navigateur et allez sur <b>chat.openai.com</b></li>
-          <li>Cliquez sur « S'inscrire » et choisissez de continuer avec Google, Microsoft, Apple, ou une adresse email</li>
-          <li>Confirmez votre adresse email si demandé, puis acceptez les conditions d'utilisation</li>
-          <li>Vous arrivez sur l'écran de conversation, prêt(e) à taper votre premier message</li>
-        </ol>
         <a class="acc-link" href="https://chat.openai.com" target="_blank" rel="noopener">Ouvrir ChatGPT →</a>
       </div>
       <div class="account-card">
         <h5>2. Gemini (Google)</h5>
         <p class="acc-url">gemini.google.com</p>
-        <ol>
-          <li>Allez sur <b>gemini.google.com</b></li>
-          <li>Connectez-vous avec un compte Google existant, ou créez-en un gratuitement</li>
-          <li>Acceptez les conditions d'utilisation de Gemini</li>
-          <li>La fenêtre de discussion s'ouvre automatiquement — vous pouvez commencer à écrire</li>
-        </ol>
         <a class="acc-link" href="https://gemini.google.com" target="_blank" rel="noopener">Ouvrir Gemini →</a>
       </div>
       <div class="account-card">
         <h5>3. Claude (Anthropic)</h5>
         <p class="acc-url">claude.ai</p>
-        <ol>
-          <li>Allez sur <b>claude.ai</b></li>
-          <li>Cliquez sur « S'inscrire » et entrez votre email, ou continuez avec Google</li>
-          <li>Saisissez le code de vérification reçu par email et complétez votre profil</li>
-          <li>Tapez votre premier message dans la zone de texte en bas de l'écran</li>
-        </ol>
         <a class="acc-link" href="https://claude.ai" target="_blank" rel="noopener">Ouvrir Claude →</a>
       </div>
     </div>
     <label class="acct-toggle"><input type="checkbox" id="acctCheck13"> <span id="acctCheckLabel13">J'ai créé un compte sur au moins un de ces services.</span></label>
-    <p>Votre <b>premier prompt</b> ne doit pas être une question au hasard : utilisez-le pour que l'IA vous connaisse et vous aide à progresser dans votre domaine. Copiez le prompt ci-dessous dans ChatGPT, Gemini ou Claude, et adaptez-le à votre situation.</p>
-    <div class="prompt-card">
-      <p class="prompt-text">Je voudrais que tu m'aides à mieux utiliser l'intelligence artificielle dans mon domaine. Avant de me donner des conseils, pose-moi des questions pour mieux me connaître : mon métier ou mon domaine d'intérêt, mon niveau actuel avec les outils numériques, mes objectifs, et le temps que je peux consacrer chaque semaine. Ensuite, propose-moi un plan simple de 4 semaines pour progresser.</p>
-      <button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ Copié';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 Copier</button>
-    </div>
   </div>
 
   <div class="lesson-block">
-    <h2><span class="tagnum">05</span>Anatomie d'un bon prompt</h2>
+    <h2><span class="tagnum">06</span>Anatomie d'un bon prompt</h2>
     <ul>
       <li><b>Contexte / rôle :</b> précisez qui doit répondre et dans quel cadre (« Tu es un professeur de mathématiques pour débutants »).</li>
       <li><b>Tâche claire :</b> dites exactement ce que vous voulez, sans ambiguïté.</li>
@@ -5037,7 +5080,7 @@ MODULES_FR.push(
   </div>
 
   <div class="lesson-block">
-    <h2><span class="tagnum">06</span>Laboratoire pratique — Écrivez et testez vos prompts</h2>
+    <h2><span class="tagnum">07</span>Laboratoire pratique — Écrivez et testez vos prompts</h2>
     <div class="demo-widget">
       <div class="demo-label">Atelier interactif — analysez la qualité de votre prompt</div>
       <div id="promptLab1"></div>
@@ -5056,7 +5099,7 @@ MODULES_FR.push(
   </div>
 
   <div class="lesson-block">
-    <h2><span class="tagnum">07</span>Bibliothèque de prompts par domaine</h2>
+    <h2><span class="tagnum">08</span>Bibliothèque de prompts par domaine</h2>
     <p>Choisissez votre domaine ci-dessous, copiez un prompt avec le bouton « Copier », collez-le dans ChatGPT, Gemini ou Claude, remplacez les éléments entre crochets [ ] par votre propre situation, puis testez. Chaque domaine commence par un prompt de découverte : l'IA vous pose des questions sur vous avant de vous conseiller.</p>
 
     <div class="prompt-domain">
@@ -5093,7 +5136,7 @@ MODULES_FR.push(
   </div>
 
   <div class="lesson-block">
-    <h2><span class="tagnum">08</span>Utiliser l'IA de façon responsable</h2>
+    <h2><span class="tagnum">09</span>Utiliser l'IA de façon responsable</h2>
     <ul>
       <li>Vérifiez toujours les faits importants avant de vous y fier (rapport, décision, examen).</li>
       <li>Ne partagez jamais de mots de passe, données médicales ou informations confidentielles dans un prompt.</li>
@@ -5103,7 +5146,7 @@ MODULES_FR.push(
   </div>
 
   <div class="lesson-block">
-    <h2><span class="tagnum">09</span>Références</h2>
+    <h2><span class="tagnum">10</span>Références</h2>
     <div class="cheat-box">
       <h4>✅ Fiche mémo — Compétences validées par ce cours</h4>
       <ul>
@@ -5135,7 +5178,10 @@ MODULES_FR.push(
     {q:"« Tu es un professeur de mathématiques pour débutants » est un exemple de :",options:["Contexte / rôle donné à l'IA dans un prompt","Une erreur de syntaxe","Un mot de passe","Une donnée personnelle sensible"],correct:0},
     {q:"Demander une réponse « en 3 points, 100 mots maximum » illustre :",options:["La précision du format attendu dans un prompt","Une hallucination de l'IA","Un bug du modèle","Une tokenisation incorrecte"],correct:0},
     {q:"Pourquoi est-il utile de poser la même question à deux LLM différents ?",options:["Pour comparer le ton, la longueur et la précision des réponses","Cela n'apporte jamais rien","Pour surcharger volontairement les serveurs","Parce qu'un seul LLM ne peut jamais répondre"],correct:0},
-    {q:"Utiliser l'IA de façon responsable implique notamment de :",options:["Garder un esprit critique et vérifier les faits importants","Croire aveuglément toutes les réponses","Ne jamais utiliser l'IA pour quoi que ce soit","Partager systématiquement des données confidentielles"],correct:0}
+    {q:"Utiliser l'IA de façon responsable implique notamment de :",options:["Garder un esprit critique et vérifier les faits importants","Croire aveuglément toutes les réponses","Ne jamais utiliser l'IA pour quoi que ce soit","Partager systématiquement des données confidentielles"],correct:0},
+    {q:"La fenêtre de contexte (context window) d'un LLM désigne :",options:["La quantité maximale de texte que le modèle peut garder en tête en même temps","La couleur de l'interface du chatbot","Le nombre d'utilisateurs connectés en même temps","La vitesse d'internet nécessaire pour l'utiliser"],correct:0},
+    {q:"Que se passe-t-il généralement quand une conversation dépasse la fenêtre de contexte d'un modèle ?",options:["Le modèle commence à « oublier » les premiers échanges pour faire de la place","Le modèle s'arrête définitivement et ne répond plus jamais","Le compte de l'utilisateur est automatiquement supprimé","Rien, il n'y a aucune limite de ce type"],correct:0},
+    {q:"La fenêtre de contexte se mesure en :",options:["Tokens","Pages imprimées","Minutes de conversation","Gigaoctets de stockage"],correct:0}
   ]
 });
 MODULES_EN.push(
@@ -5223,7 +5269,57 @@ MODULES_EN.push(
   </div>
 
   <div class="lesson-block">
-    <h2><span class="tagnum">07</span>References</h2>
+    <h2><span class="tagnum">07</span>Create your first AI account</h2>
+    <p>Before moving on to the next modules, create a free account with one or more conversational AI providers, right in your browser. You'll need a valid email address. Never share sensitive personal information (passwords, medical data, account numbers) in your conversations with an AI.</p>
+    <div class="account-grid">
+      <div class="account-card">
+        <h5>1. ChatGPT (OpenAI)</h5>
+        <p class="acc-url">chat.openai.com</p>
+        <ol>
+          <li>Open your browser and go to <b>chat.openai.com</b></li>
+          <li>Click "Sign up" and choose to continue with Google, Microsoft, Apple, or an email address</li>
+          <li>Confirm your email if asked, then accept the terms of use</li>
+          <li>You land on the chat screen, ready to type your first message</li>
+        </ol>
+        <a class="acc-link" href="https://chat.openai.com" target="_blank" rel="noopener">Open ChatGPT →</a>
+      </div>
+      <div class="account-card">
+        <h5>2. Gemini (Google)</h5>
+        <p class="acc-url">gemini.google.com</p>
+        <ol>
+          <li>Go to <b>gemini.google.com</b></li>
+          <li>Sign in with an existing Google account, or create one for free</li>
+          <li>Accept Gemini's terms of use</li>
+          <li>The chat window opens automatically — you can start typing</li>
+        </ol>
+        <a class="acc-link" href="https://gemini.google.com" target="_blank" rel="noopener">Open Gemini →</a>
+      </div>
+      <div class="account-card">
+        <h5>3. Claude (Anthropic)</h5>
+        <p class="acc-url">claude.ai</p>
+        <ol>
+          <li>Go to <b>claude.ai</b></li>
+          <li>Click "Sign up" and enter your email, or continue with Google</li>
+          <li>Enter the verification code you receive by email and complete your profile</li>
+          <li>Type your first message in the text box at the bottom of the screen</li>
+        </ol>
+        <a class="acc-link" href="https://claude.ai" target="_blank" rel="noopener">Open Claude →</a>
+      </div>
+    </div>
+    <label class="acct-toggle"><input type="checkbox" id="acctCheck10"> <span id="acctCheckLabel10">I've created an account with at least one of these services.</span></label>
+    <p>Don't waste your first message on a random question — use it to help the AI get to know you and guide you in your field. Copy this discovery prompt into ChatGPT, Gemini, or Claude, and adapt it to your own situation.</p>
+    <div class="prompt-card">
+      <p class="prompt-text">I'd like your help using AI better in my field. Before giving me advice, ask me questions to get to know me: my job or area of interest, my current comfort level with digital tools, my goals, and how much time I can spend each week. Then suggest a simple 4-week plan to help me improve.</p>
+      <button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ Copied';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 Copy</button>
+    </div>
+    <div class="fact-box">
+      <div class="fb-label">💡 Going further</div>
+      Module 13 ("Understanding Large Language Models") picks these three accounts back up to teach you advanced prompting, how to compare model responses, and more technical ideas like the "context window."
+    </div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">08</span>References</h2>
     <div class="cheat-box">
       <h4>✅ Cheat sheet — What to remember from Module 10</h4>
       <ul>
@@ -5495,12 +5591,12 @@ MODULES_EN.push(
 },
 {
   id:13,
-  title:"Understanding Large Language Models (LLMs)",
-  short:"Dive into how ChatGPT, Gemini, and Claude work, and learn to create an account and write effective prompts.",
-  duration:"40-50 min",
+  title:"Understanding Large Language Models (LLMs) — Advanced Level",
+  short:"Go deeper into how ChatGPT, Gemini, and Claude work: context windows, advanced prompting, and a prompt library by domain.",
+  duration:"45-55 min",
   level:2,
   prereq:10,
-  objectives:["Explain what a Large Language Model (LLM) is and how it works","Compare ChatGPT, Gemini, and Claude by their strengths","Create an account with an AI provider and write effective prompts"],
+  objectives:["Explain what a Large Language Model (LLM) is and how it works","Explain what a context window is and why it limits a conversation","Compare ChatGPT, Gemini, and Claude by their strengths","Write effective prompts using a prompt library by domain"],
   lesson:`
   <div class="lesson-block">
     <h2><span class="tagnum">01</span>What is a large language model?</h2>
@@ -5528,64 +5624,57 @@ MODULES_EN.push(
   </div>
 
   <div class="lesson-block">
-    <h2><span class="tagnum">03</span>Comparing the major LLMs</h2>
+    <h2><span class="tagnum">03</span>The context window: an LLM's working memory</h2>
+    <p>The <b>context window</b> is the maximum amount of text an LLM can "keep in mind" at once during a conversation: your message, the chat history, and any document you've pasted or uploaded. It's measured in <b>tokens</b> (the small word fragments from point 02) — not in words or pages.</p>
+    <p>Once that limit is reached, the model starts to "forget" the earliest parts of the conversation to make room for new ones — a bit like a desk that can only hold so many open folders at once. That's why an AI can sometimes lose track of a very long conversation, or no longer remember an instruction given right at the start.</p>
+    <div class="plain-box">
+      <div class="pb-label">🤓 In plain terms</div>
+      Picture a work desk: the bigger it is, the more documents you can spread out at once without having to put any away. The context window is the size of that desk for the AI. ChatGPT, Gemini, and Claude each have a differently sized desk, and that size regularly grows as new model versions are released.
+    </div>
+    <ul>
+      <li><b>Long conversations:</b> past a certain point, it's better to summarize what matters and start a new conversation than to keep going indefinitely.</li>
+      <li><b>Long documents:</b> a model with a large context window can analyze a long report or an entire book in one go; a model with a small one will need it split into parts.</li>
+      <li><b>Cost and speed:</b> the more of the context window is being used, the slower or more expensive a response can be to produce.</li>
+    </ul>
+    <div class="example-box"><b>Good to know:</b> if the AI seems to have "forgotten" something you mentioned much earlier in the same conversation, it's probably not a bug — the context window has likely been exceeded. Restate the important information, or start a new conversation.</div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">04</span>Comparing the major LLMs</h2>
     <ul>
       <li><b>ChatGPT (OpenAI):</b> one of the most widely known LLMs; excellent for general conversation, writing, and brainstorming; offers a free tier and paid plans for advanced capabilities.</li>
       <li><b>Gemini (Google):</b> deeply integrated into Google's tools (Gmail, Docs, Search); convenient for those already living in the Google ecosystem.</li>
       <li><b>Claude (Anthropic):</b> known for writing quality, its ability to handle long documents, and particular attention to safety and honesty in its responses.</li>
     </ul>
-    <p>There is no single "best" model for everything: the right choice depends on the task, the language, the budget, and personal habits. Many professionals actually use several LLMs depending on the context.</p>
+    <p>There is no single "best" model for everything: the right choice depends on the task, the language, the budget, the context-window size you need, and personal habits. Many professionals actually use several LLMs depending on the context.</p>
     <div class="quote-box">"A prompt isn't just a question — it's an instruction. The clearer it is, the better the answer."<footer>— Innocent Forteh, Program Director, Team21 Academy</footer></div>
   </div>
 
   <div class="lesson-block">
-    <h2><span class="tagnum">04</span>Create your account, step by step</h2>
-    <p>To practice this module, create a free account with one or more providers, right in your browser. You'll need a valid email address. Never share sensitive personal information (passwords, medical data, account numbers) in your conversations with an AI.</p>
+    <h2><span class="tagnum">05</span>Your AI accounts</h2>
+    <p>You already created an account on ChatGPT, Gemini, and/or Claude back in Module 10. If you haven't yet, take a moment to do so now — you'll need it for this module's labs.</p>
     <div class="account-grid">
       <div class="account-card">
         <h5>1. ChatGPT (OpenAI)</h5>
         <p class="acc-url">chat.openai.com</p>
-        <ol>
-          <li>Open your browser and go to <b>chat.openai.com</b></li>
-          <li>Click "Sign up" and choose to continue with Google, Microsoft, Apple, or an email address</li>
-          <li>Confirm your email if asked, then accept the terms of use</li>
-          <li>You land on the chat screen, ready to type your first message</li>
-        </ol>
         <a class="acc-link" href="https://chat.openai.com" target="_blank" rel="noopener">Open ChatGPT →</a>
       </div>
       <div class="account-card">
         <h5>2. Gemini (Google)</h5>
         <p class="acc-url">gemini.google.com</p>
-        <ol>
-          <li>Go to <b>gemini.google.com</b></li>
-          <li>Sign in with an existing Google account, or create one for free</li>
-          <li>Accept Gemini's terms of use</li>
-          <li>The chat window opens automatically — you can start typing</li>
-        </ol>
         <a class="acc-link" href="https://gemini.google.com" target="_blank" rel="noopener">Open Gemini →</a>
       </div>
       <div class="account-card">
         <h5>3. Claude (Anthropic)</h5>
         <p class="acc-url">claude.ai</p>
-        <ol>
-          <li>Go to <b>claude.ai</b></li>
-          <li>Click "Sign up" and enter your email, or continue with Google</li>
-          <li>Enter the verification code you receive by email and complete your profile</li>
-          <li>Type your first message in the text box at the bottom of the screen</li>
-        </ol>
         <a class="acc-link" href="https://claude.ai" target="_blank" rel="noopener">Open Claude →</a>
       </div>
     </div>
     <label class="acct-toggle"><input type="checkbox" id="acctCheck13"> <span id="acctCheckLabel13">I've created an account with at least one of these services.</span></label>
-    <p>Your <b>first prompt</b> shouldn't be a random question — use it to help the AI get to know you and guide you in your field. Copy the prompt below into ChatGPT, Gemini, or Claude, and adapt it to your own situation.</p>
-    <div class="prompt-card">
-      <p class="prompt-text">I'd like your help using AI better in my field. Before giving me advice, ask me questions to get to know me: my job or area of interest, my current comfort level with digital tools, my goals, and how much time I can spend each week. Then suggest a simple 4-week plan to help me improve.</p>
-      <button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ Copied';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 Copy</button>
-    </div>
   </div>
 
   <div class="lesson-block">
-    <h2><span class="tagnum">05</span>Anatomy of a good prompt</h2>
+    <h2><span class="tagnum">06</span>Anatomy of a good prompt</h2>
     <ul>
       <li><b>Context / role:</b> specify who should answer and in what capacity ("You are a math teacher for beginners").</li>
       <li><b>Clear task:</b> say exactly what you want, without ambiguity.</li>
@@ -5597,7 +5686,7 @@ MODULES_EN.push(
   </div>
 
   <div class="lesson-block">
-    <h2><span class="tagnum">06</span>Hands-on lab — Write and test your prompts</h2>
+    <h2><span class="tagnum">07</span>Hands-on lab — Write and test your prompts</h2>
     <div class="demo-widget">
       <div class="demo-label">Interactive workshop — analyze your prompt's quality</div>
       <div id="promptLab1"></div>
@@ -5616,7 +5705,7 @@ MODULES_EN.push(
   </div>
 
   <div class="lesson-block">
-    <h2><span class="tagnum">07</span>Prompt library by domain</h2>
+    <h2><span class="tagnum">08</span>Prompt library by domain</h2>
     <p>Pick your domain below, copy a prompt with the "Copy" button, paste it into ChatGPT, Gemini, or Claude, replace the bracketed [ ] parts with your own situation, then test it. Every domain starts with a discovery prompt: the AI asks about you before it advises you.</p>
 
     <div class="prompt-domain">
@@ -5653,7 +5742,7 @@ MODULES_EN.push(
   </div>
 
   <div class="lesson-block">
-    <h2><span class="tagnum">08</span>Using AI responsibly</h2>
+    <h2><span class="tagnum">09</span>Using AI responsibly</h2>
     <ul>
       <li>Always verify important facts before relying on them (a report, decision, exam).</li>
       <li>Never share passwords, medical data, or confidential information in a prompt.</li>
@@ -5663,7 +5752,7 @@ MODULES_EN.push(
   </div>
 
   <div class="lesson-block">
-    <h2><span class="tagnum">09</span>References</h2>
+    <h2><span class="tagnum">10</span>References</h2>
     <div class="cheat-box">
       <h4>✅ Cheat sheet — Skills validated by this course</h4>
       <ul>
@@ -5695,7 +5784,10 @@ MODULES_EN.push(
     {q:"'You are a math teacher for beginners' is an example of:",options:["Context / role given to the AI in a prompt","A syntax error","A password","Sensitive personal data"],correct:0},
     {q:"Asking for an answer 'in 3 bullet points, 100 words max' illustrates:",options:["Specifying the expected format in a prompt","An AI hallucination","A model bug","Incorrect tokenization"],correct:0},
     {q:"Why is it useful to ask the same question to two different LLMs?",options:["To compare the tone, length, and accuracy of the answers","It never helps at all","To deliberately overload the servers","Because a single LLM can never answer"],correct:0},
-    {q:"Using AI responsibly notably means:",options:["Keeping a critical mindset and verifying important facts","Blindly believing every answer","Never using AI for anything","Always sharing confidential data"],correct:0}
+    {q:"Using AI responsibly notably means:",options:["Keeping a critical mindset and verifying important facts","Blindly believing every answer","Never using AI for anything","Always sharing confidential data"],correct:0},
+    {q:"An LLM's context window refers to:",options:["The maximum amount of text the model can keep in mind at once","The color scheme of the chatbot interface","The number of users connected at the same time","The internet speed needed to use it"],correct:0},
+    {q:"What typically happens when a conversation exceeds a model's context window?",options:["The model starts to 'forget' the earliest exchanges to make room","The model shuts down permanently and never responds again","The user's account is automatically deleted","Nothing, there is no such limit"],correct:0},
+    {q:"A context window is measured in:",options:["Tokens","Printed pages","Minutes of conversation","Gigabytes of storage"],correct:0}
   ]
 });
 MODULES_AR.push(
@@ -5783,7 +5875,57 @@ MODULES_AR.push(
   </div>
 
   <div class="lesson-block">
-    <h2><span class="tagnum">07</span>مراجع</h2>
+    <h2><span class="tagnum">07</span>إنشاء أول حساب ذكاء اصطناعي لك</h2>
+    <p>قبل الانتقال إلى الوحدات التالية، أنشئ حسابًا مجانيًا لدى مزوّد واحد أو أكثر من مزوّدي الذكاء الاصطناعي المحادثي، مباشرة من متصفحك. ستحتاج إلى عنوان بريد إلكتروني صالح. لا تشارك أبدًا معلومات شخصية حساسة (كلمات مرور، بيانات طبية، أرقام حسابات) في محادثاتك مع ذكاء اصطناعي.</p>
+    <div class="account-grid">
+      <div class="account-card">
+        <h5>1. ChatGPT (OpenAI)</h5>
+        <p class="acc-url">chat.openai.com</p>
+        <ol>
+          <li>افتح متصفحك وانتقل إلى <b>chat.openai.com</b></li>
+          <li>اضغط على "التسجيل" واختر المتابعة عبر Google أو Microsoft أو Apple أو بريد إلكتروني</li>
+          <li>أكّد بريدك الإلكتروني إذا طُلب منك ذلك، ثم وافق على شروط الاستخدام</li>
+          <li>ستصل إلى شاشة المحادثة، جاهزًا لكتابة رسالتك الأولى</li>
+        </ol>
+        <a class="acc-link" href="https://chat.openai.com" target="_blank" rel="noopener">فتح ChatGPT ←</a>
+      </div>
+      <div class="account-card">
+        <h5>2. Gemini (Google)</h5>
+        <p class="acc-url">gemini.google.com</p>
+        <ol>
+          <li>انتقل إلى <b>gemini.google.com</b></li>
+          <li>سجّل الدخول بحساب Google موجود، أو أنشئ واحدًا مجانًا</li>
+          <li>وافق على شروط استخدام Gemini</li>
+          <li>تُفتح نافذة المحادثة تلقائيًا — يمكنك البدء بالكتابة</li>
+        </ol>
+        <a class="acc-link" href="https://gemini.google.com" target="_blank" rel="noopener">فتح Gemini ←</a>
+      </div>
+      <div class="account-card">
+        <h5>3. Claude (Anthropic)</h5>
+        <p class="acc-url">claude.ai</p>
+        <ol>
+          <li>انتقل إلى <b>claude.ai</b></li>
+          <li>اضغط على "التسجيل" وأدخل بريدك الإلكتروني، أو تابع عبر Google</li>
+          <li>أدخل رمز التحقق المرسل إلى بريدك الإلكتروني وأكمل ملفك الشخصي</li>
+          <li>اكتب رسالتك الأولى في مربع النص أسفل الشاشة</li>
+        </ol>
+        <a class="acc-link" href="https://claude.ai" target="_blank" rel="noopener">فتح Claude ←</a>
+      </div>
+    </div>
+    <label class="acct-toggle"><input type="checkbox" id="acctCheck10"> <span id="acctCheckLabel10">لقد أنشأت حسابًا في واحدة على الأقل من هذه الخدمات.</span></label>
+    <p>لا تستخدم رسالتك الأولى لسؤال عشوائي: استخدمها لجعل الذكاء الاصطناعي يتعرف عليك ويساعدك على التقدم في مجالك. انسخ أمر الاكتشاف هذا إلى ChatGPT أو Gemini أو Claude، وعدّله حسب وضعك.</p>
+    <div class="prompt-card">
+      <p class="prompt-text">أرغب في مساعدتك لي على استخدام الذكاء الاصطناعي بشكل أفضل في مجالي. قبل أن تقدّم لي أي نصيحة، اطرح عليّ أسئلة لتتعرف عليّ بشكل أفضل: مهنتي أو مجال اهتمامي، مستواي الحالي مع الأدوات الرقمية، أهدافي، والوقت الذي يمكنني تخصيصه أسبوعيًا. ثم اقترح عليّ خطة بسيطة من 4 أسابيع للتقدم.</p>
+      <button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ تم النسخ';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 نسخ</button>
+    </div>
+    <div class="fact-box">
+      <div class="fb-label">💡 لمزيد من التعمق</div>
+      تعود الوحدة 13 ("فهم النماذج اللغوية الكبيرة") إلى هذه الحسابات الثلاثة لتعلّمك كتابة أوامر متقدمة، ومقارنة إجابات النماذج، وفهم مفاهيم أكثر تقنية مثل "نافذة السياق".
+    </div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">08</span>مراجع</h2>
     <div class="cheat-box">
       <h4>✅ بطاقة تلخيص — ما يجب أن تتذكره من الوحدة 10</h4>
       <ul>
@@ -6055,12 +6197,12 @@ MODULES_AR.push(
 },
 {
   id:13,
-  title:"فهم النماذج اللغوية الكبيرة (LLM)",
-  short:"تعمّق في كيفية عمل ChatGPT وGemini وClaude، وتعلّم إنشاء حساب وكتابة أوامر (Prompts) فعّالة.",
-  duration:"40-50 دقيقة",
+  title:"فهم النماذج اللغوية الكبيرة (LLM) — المستوى المتقدم",
+  short:"تعمّق في كيفية عمل ChatGPT وGemini وClaude: نافذة السياق، الأوامر المتقدمة، ومكتبة أوامر حسب المجال.",
+  duration:"45-55 دقيقة",
   level:2,
   prereq:10,
-  objectives:["شرح ماهية النموذج اللغوي الكبير (LLM) وكيفية عمله","مقارنة ChatGPT وGemini وClaude حسب نقاط قوة كل منها","إنشاء حساب لدى مزوّد ذكاء اصطناعي وكتابة أوامر فعّالة"],
+  objectives:["شرح ماهية النموذج اللغوي الكبير (LLM) وكيفية عمله","شرح ماهية نافذة السياق ولماذا تحدّ من المحادثة","مقارنة ChatGPT وGemini وClaude حسب نقاط قوة كل منها","كتابة أوامر فعّالة باستخدام مكتبة أوامر حسب المجال"],
   lesson:`
   <div class="lesson-block">
     <h2><span class="tagnum">01</span>ما هو النموذج اللغوي الكبير؟</h2>
@@ -6088,64 +6230,57 @@ MODULES_AR.push(
   </div>
 
   <div class="lesson-block">
-    <h2><span class="tagnum">03</span>مقارنة أهم النماذج اللغوية الكبيرة</h2>
+    <h2><span class="tagnum">03</span>نافذة السياق: الذاكرة العاملة لنموذج LLM</h2>
+    <p><b>نافذة السياق</b> (context window) هي الكمية القصوى من النص التي يمكن لنموذج LLM "الاحتفاظ بها في ذهنه" في آن واحد أثناء المحادثة: رسالتك، وسجل المحادثة، وأي مستند ألصقته أو رفعته. تُقاس بـ<b>tokens</b> (الأجزاء الصغيرة من الكلمات التي رأيناها في النقطة 02) — وليس بالكلمات أو الصفحات.</p>
+    <p>عند بلوغ هذا الحد، يبدأ النموذج في "نسيان" أول أجزاء المحادثة لإفساح المجال لأجزاء جديدة — تمامًا مثل مكتب لا يستطيع أن يحمل سوى عدد معين من الملفات المفتوحة في وقت واحد. لهذا قد يفقد الذكاء الاصطناعي أحيانًا خيط محادثة طويلة جدًا، أو لا يعود يتذكر تعليمة أُعطيت في بداية المحادثة.</p>
+    <div class="plain-box">
+      <div class="pb-label">🤓 بكل بساطة</div>
+      تخيّل طاولة عمل: كلما كانت أكبر، استطعت أن تفرد عليها المزيد من المستندات في آن واحد دون الحاجة لترتيبها جانبًا. نافذة السياق هي حجم هذه الطاولة بالنسبة للذكاء الاصطناعي. لكل من ChatGPT وGemini وClaude طاولة بحجم مختلف، وهذا الحجم يتوسع بانتظام مع كل إصدار جديد من النماذج.
+    </div>
+    <ul>
+      <li><b>المحادثات الطويلة:</b> بعد نقطة معينة، من الأفضل تلخيص ما يهم وبدء محادثة جديدة بدلًا من الاستمرار إلى ما لا نهاية.</li>
+      <li><b>المستندات الطويلة:</b> يمكن لنموذج بنافذة سياق كبيرة تحليل تقرير طويل أو كتاب كامل دفعة واحدة؛ أما النموذج بنافذة سياق صغيرة فسيحتاج إلى تقسيمه إلى أجزاء.</li>
+      <li><b>التكلفة والسرعة:</b> كلما زاد استخدام نافذة السياق، أمكن أن تصبح الإجابة أبطأ أو أكثر تكلفة في إنتاجها.</li>
+    </ul>
+    <div class="example-box"><b>يجب تذكره:</b> إذا بدا أن الذكاء الاصطناعي قد "نسي" معلومة أعطيتها منذ وقت طويل في نفس المحادثة، فمن المرجح أن هذا ليس خللًا — بل تجاوزًا لنافذة السياق. أعد ذكر المعلومة المهمة، أو ابدأ محادثة جديدة.</div>
+  </div>
+
+  <div class="lesson-block">
+    <h2><span class="tagnum">04</span>مقارنة أهم النماذج اللغوية الكبيرة</h2>
     <ul>
       <li><b>ChatGPT (OpenAI):</b> أحد أشهر النماذج اللغوية الكبيرة لدى الجمهور؛ ممتاز للمحادثة العامة والكتابة والعصف الذهني؛ يقدّم نسخة مجانية واشتراكات مدفوعة لقدرات متقدمة.</li>
       <li><b>Gemini (Google):</b> مدمج بعمق في أدوات Google (Gmail، Docs، البحث)؛ عملي لمن يستخدم بالفعل منظومة Google يوميًا.</li>
       <li><b>Claude (Anthropic):</b> معروف بجودة الكتابة، وقدرته على معالجة المستندات الطويلة، واهتمام خاص بأمان وصدق الإجابات.</li>
     </ul>
-    <p>لا يوجد نموذج "أفضل" عالميًا لكل شيء: يعتمد الاختيار الصحيح على المهمة واللغة والميزانية وعادات كل شخص. يستخدم كثير من المحترفين في الواقع عدة نماذج لغوية حسب السياق.</p>
+    <p>لا يوجد نموذج "أفضل" عالميًا لكل شيء: يعتمد الاختيار الصحيح على المهمة واللغة والميزانية وحجم نافذة السياق الذي تحتاجه وعادات كل شخص. يستخدم كثير من المحترفين في الواقع عدة نماذج لغوية حسب السياق.</p>
     <div class="quote-box">"الأمر (Prompt) ليس مجرد سؤال — إنه تعليمة. كلما كان أوضح، كانت الإجابة أفضل."<footer>— إنوسنت فورته، مدير البرنامج، أكاديمية Team21</footer></div>
   </div>
 
   <div class="lesson-block">
-    <h2><span class="tagnum">04</span>إنشاء حسابك خطوة بخطوة</h2>
-    <p>لممارسة هذه الوحدة، أنشئ حسابًا مجانيًا لدى مزوّد واحد أو أكثر، مباشرة من متصفحك. ستحتاج إلى عنوان بريد إلكتروني صالح. لا تشارك أبدًا معلومات شخصية حساسة (كلمات مرور، بيانات طبية، أرقام حسابات) في محادثاتك مع ذكاء اصطناعي.</p>
+    <h2><span class="tagnum">05</span>حساباتك في الذكاء الاصطناعي</h2>
+    <p>لقد أنشأت بالفعل حسابًا في ChatGPT وGemini و/أو Claude في الوحدة 10. إذا لم تفعل بعد، خذ لحظة للقيام بذلك الآن — ستحتاجه لتمارين هذه الوحدة.</p>
     <div class="account-grid">
       <div class="account-card">
         <h5>1. ChatGPT (OpenAI)</h5>
         <p class="acc-url">chat.openai.com</p>
-        <ol>
-          <li>افتح متصفحك وانتقل إلى <b>chat.openai.com</b></li>
-          <li>اضغط على "التسجيل" واختر المتابعة عبر Google أو Microsoft أو Apple أو بريد إلكتروني</li>
-          <li>أكّد بريدك الإلكتروني إذا طُلب منك ذلك، ثم وافق على شروط الاستخدام</li>
-          <li>ستصل إلى شاشة المحادثة، جاهزًا لكتابة رسالتك الأولى</li>
-        </ol>
         <a class="acc-link" href="https://chat.openai.com" target="_blank" rel="noopener">فتح ChatGPT ←</a>
       </div>
       <div class="account-card">
         <h5>2. Gemini (Google)</h5>
         <p class="acc-url">gemini.google.com</p>
-        <ol>
-          <li>انتقل إلى <b>gemini.google.com</b></li>
-          <li>سجّل الدخول بحساب Google موجود، أو أنشئ واحدًا مجانًا</li>
-          <li>وافق على شروط استخدام Gemini</li>
-          <li>تُفتح نافذة المحادثة تلقائيًا — يمكنك البدء بالكتابة</li>
-        </ol>
         <a class="acc-link" href="https://gemini.google.com" target="_blank" rel="noopener">فتح Gemini ←</a>
       </div>
       <div class="account-card">
         <h5>3. Claude (Anthropic)</h5>
         <p class="acc-url">claude.ai</p>
-        <ol>
-          <li>انتقل إلى <b>claude.ai</b></li>
-          <li>اضغط على "التسجيل" وأدخل بريدك الإلكتروني، أو تابع عبر Google</li>
-          <li>أدخل رمز التحقق المرسل إلى بريدك الإلكتروني وأكمل ملفك الشخصي</li>
-          <li>اكتب رسالتك الأولى في مربع النص أسفل الشاشة</li>
-        </ol>
         <a class="acc-link" href="https://claude.ai" target="_blank" rel="noopener">فتح Claude ←</a>
       </div>
     </div>
     <label class="acct-toggle"><input type="checkbox" id="acctCheck13"> <span id="acctCheckLabel13">لقد أنشأت حسابًا في واحدة على الأقل من هذه الخدمات.</span></label>
-    <p><b>أمرك الأول</b> يجب ألا يكون سؤالًا عشوائيًا — استخدمه لجعل الذكاء الاصطناعي يتعرف عليك ويساعدك على التقدم في مجالك. انسخ الأمر أدناه إلى ChatGPT أو Gemini أو Claude، وعدّله حسب وضعك.</p>
-    <div class="prompt-card">
-      <p class="prompt-text">أرغب في مساعدتك لي على استخدام الذكاء الاصطناعي بشكل أفضل في مجالي. قبل أن تقدّم لي أي نصيحة، اطرح عليّ أسئلة لتتعرف عليّ بشكل أفضل: مهنتي أو مجال اهتمامي، مستواي الحالي مع الأدوات الرقمية، أهدافي، والوقت الذي يمكنني تخصيصه أسبوعيًا. ثم اقترح عليّ خطة بسيطة من 4 أسابيع للتقدم.</p>
-      <button class="copy-btn" onclick="try{navigator.clipboard.writeText(this.previousElementSibling.innerText);var t=this,o=t.textContent;t.textContent='✓ تم النسخ';setTimeout(function(){t.textContent=o;},1400);}catch(e){}">📋 نسخ</button>
-    </div>
   </div>
 
   <div class="lesson-block">
-    <h2><span class="tagnum">05</span>تشريح أمر (Prompt) جيد</h2>
+    <h2><span class="tagnum">06</span>تشريح أمر (Prompt) جيد</h2>
     <ul>
       <li><b>السياق / الدور:</b> حدّد من يجب أن يجيب وفي أي إطار ("أنت معلم رياضيات للمبتدئين").</li>
       <li><b>مهمة واضحة:</b> قل بالضبط ما تريده، دون غموض.</li>
@@ -6157,7 +6292,7 @@ MODULES_AR.push(
   </div>
 
   <div class="lesson-block">
-    <h2><span class="tagnum">06</span>تمرين عملي — اكتب واختبر أوامرك</h2>
+    <h2><span class="tagnum">07</span>تمرين عملي — اكتب واختبر أوامرك</h2>
     <div class="demo-widget">
       <div class="demo-label">ورشة تفاعلية — حلّل جودة أمرك</div>
       <div id="promptLab1"></div>
@@ -6176,7 +6311,7 @@ MODULES_AR.push(
   </div>
 
   <div class="lesson-block">
-    <h2><span class="tagnum">07</span>مكتبة الأوامر حسب المجال</h2>
+    <h2><span class="tagnum">08</span>مكتبة الأوامر حسب المجال</h2>
     <p>اختر مجالك أدناه، انسخ أمرًا (Prompt) بزر "نسخ"، ألصقه في ChatGPT أو Gemini أو Claude، استبدل ما بين القوسين [ ] بوضعك الخاص، ثم جرّبه. يبدأ كل مجال بأمر اكتشاف: يطرح عليك الذكاء الاصطناعي أسئلة عنك قبل أن ينصحك.</p>
 
     <div class="prompt-domain">
@@ -6213,7 +6348,7 @@ MODULES_AR.push(
   </div>
 
   <div class="lesson-block">
-    <h2><span class="tagnum">08</span>استخدام الذكاء الاصطناعي بمسؤولية</h2>
+    <h2><span class="tagnum">09</span>استخدام الذكاء الاصطناعي بمسؤولية</h2>
     <ul>
       <li>تحقق دائمًا من الحقائق المهمة قبل الاعتماد عليها (تقرير، قرار، امتحان).</li>
       <li>لا تشارك أبدًا كلمات مرور أو بيانات طبية أو معلومات سرية في أمر (Prompt).</li>
@@ -6223,7 +6358,7 @@ MODULES_AR.push(
   </div>
 
   <div class="lesson-block">
-    <h2><span class="tagnum">09</span>مراجع</h2>
+    <h2><span class="tagnum">10</span>مراجع</h2>
     <div class="cheat-box">
       <h4>✅ بطاقة تلخيص — المهارات المعتمدة في هذا الكورس</h4>
       <ul>
@@ -6255,7 +6390,10 @@ MODULES_AR.push(
     {q:"أنت معلم رياضيات للمبتدئين مثال على:",options:["سياق / دور مُعطى للذكاء الاصطناعي في أمر","خطأ نحوي","كلمة مرور","بيانات شخصية حساسة"],correct:0},
     {q:"طلب إجابة في 3 نقاط، 100 كلمة كحد أقصى يوضح:",options:["تحديد الصيغة المتوقعة في أمر","هلوسة من الذكاء الاصطناعي","خطأ في النموذج","تجزئة غير صحيحة"],correct:0},
     {q:"لماذا من المفيد طرح نفس السؤال على نموذجين لغويين مختلفين؟",options:["لمقارنة النبرة والطول ودقة الإجابات","لا يفيد أبدًا","لإثقال الخوادم عمدًا","لأن نموذجًا واحدًا لا يمكنه الإجابة أبدًا"],correct:0},
-    {q:"يعني استخدام الذكاء الاصطناعي بمسؤولية خصوصًا:",options:["الحفاظ على تفكير نقدي والتحقق من الحقائق المهمة","تصديق كل إجابة بشكل أعمى","عدم استخدام الذكاء الاصطناعي إطلاقًا لأي شيء","مشاركة بيانات سرية بشكل منهجي"],correct:0}
+    {q:"يعني استخدام الذكاء الاصطناعي بمسؤولية خصوصًا:",options:["الحفاظ على تفكير نقدي والتحقق من الحقائق المهمة","تصديق كل إجابة بشكل أعمى","عدم استخدام الذكاء الاصطناعي إطلاقًا لأي شيء","مشاركة بيانات سرية بشكل منهجي"],correct:0},
+    {q:"تشير نافذة السياق (context window) لنموذج LLM إلى:",options:["الكمية القصوى من النص التي يمكن للنموذج الاحتفاظ بها في ذهنه في آن واحد","لون واجهة روبوت المحادثة","عدد المستخدمين المتصلين في نفس الوقت","سرعة الإنترنت اللازمة لاستخدامه"],correct:0},
+    {q:"ماذا يحدث عادةً عندما تتجاوز محادثة ما نافذة سياق النموذج؟",options:["يبدأ النموذج في \"نسيان\" أول أجزاء المحادثة لإفساح المجال","يتوقف النموذج نهائيًا ولا يجيب مرة أخرى أبدًا","يُحذف حساب المستخدم تلقائيًا","لا شيء، لا يوجد حد من هذا النوع"],correct:0},
+    {q:"تُقاس نافذة السياق بـ:",options:["Tokens","صفحات مطبوعة","دقائق المحادثة","غيغابايت من التخزين"],correct:0}
   ]
 });
 /* ==================== LANGUAGE ==================== */
