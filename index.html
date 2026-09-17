@@ -9859,7 +9859,7 @@ function renderDashboard(){
 
   document.getElementById("progressSummary").textContent = `${passedCount} / ${allMods.length} ${t("progressOf")}`;
   renderResumeBanner();
-  [grid, grid2].forEach(g=>{
+  [grid, grid2, grid3].forEach(g=>{
     g.querySelectorAll("[data-lesson]").forEach(b=>b.addEventListener("click", ()=>openLesson(parseInt(b.dataset.lesson))));
     g.querySelectorAll("[data-quiz]").forEach(b=>b.addEventListener("click", ()=>openQuiz(parseInt(b.dataset.quiz))));
     g.querySelectorAll("[data-cert]").forEach(b=>b.addEventListener("click", ()=>openCertificate(parseInt(b.dataset.cert))));
